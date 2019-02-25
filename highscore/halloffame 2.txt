@@ -1,0 +1,19 @@
+<div class="entry">
+    <div class="name">Aníbal</div>
+    <div class="score">150000</div>
+</div>
+
+<div class="entry">
+    <div class="name">Andréia</div>
+    <div class="score">40000</div>
+</div>
+
+<div class="entry">
+    <div class="name">Francisco</div>
+    <div class="score">20000</div>
+</div>
+
+<div class="entry">
+    <div class="name">Jéssica</div>
+    <div class="score">10000</div>
+</div>

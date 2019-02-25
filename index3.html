@@ -1,0 +1,795 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <title>Acsendo Go y el Invierno laboral</title>
+      
+      <meta property="og:url"                content="http://elbot.me/GoT/index.html" />
+      <meta property="og:type"               content="website" />
+      <meta property="og:title"              content="Acsendo Go y el Invierno laboral" />
+      <meta property="og:description"        content="El invierno laboral esta llegando a su empresa?" />
+      <meta property="og:image"              content="http://elbot.me/GoT/ImagenRedes.jpg" />
+
+      <script type="text/javascript" src="js/jquery-1.9.1.min.js" async></script>
+      <script type="text/javascript" src="js/gsap/TweenMax.min.js" async></script>
+      <link src="https://fonts.googleapis.com/css?family=Nunito:200,400,700" rel="stylesheet"> 
+      <link rel="stylesheet" href="Font-Awesome-master/css/font-awesome.min.css">
+
+      
+      <style>
+          img{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.select_disable{-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-o-user-select:none;user-select:none}body{overflow:hidden;font-family:'Nunito',sans-serif;font-weight:400}#game_wrapper{width:100%;height:100%;position:absolute;top:15px;left:0;overflow:hidden}#tutorial_wrapper{width:100%;height:100%;position:absolute;top:15px;left:0;overflow:hidden;z-index:5}.running_div,img{-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none}.white_walker:active .char{opacity:1}.health{position:absolute;top:-2vh;left:0;height:.5vh;width:3vh;margin-left:-1.5vh;background-color:#f0ffff;padding:2px;border-radius:4px;box-shadow:0 1px 1px 1px rgba(0,0,0,.25)}.boss_health{position:absolute;top:-2vh;left:0;height:.5vh;width:5vh;margin-left:-1.5vh;background-color:#f0ffff;padding:2px;border-radius:4px;box-shadow:0 1px 1px 1px rgba(0,0,0,.25)}.healthbar{position:relative;width:100%;height:100%;background-color:red;border-radius:2px}.acsendo_logo{position:absolute;opacity:0;top:0;left:0;height:3vh;width:3vh;margin-left:-1.5vh}.running_div img:not(.acsendo_logo){width:auto;height:100%}.star{top:-2vh;left:0;margin-top:-1vh;margin-left:-4.5vh;width:3vh!important;height:3vh!important;position:absolute;z-index:3}#wall_patt,.wall_patt{width:auto;height:100%;position:absolute;display:block;top:0}#char1{position:absolute;width:auto;height:15.8vh;left:88.7vh;top:28.7vh}#char2{position:absolute;width:auto;height:17.5vh;left:114.7vh;top:57.2vh}#char3{position:absolute;width:auto;height:20.2vh;left:129vh;top:54.5vh}#char4{position:absolute;width:auto;height:18.2vh;left:167.5vh;top:28.5vh}#char5{position:absolute;width:auto;height:18.9vh;left:182.9vh;top:63.7vh}#char6{position:absolute;width:auto;height:16.5vh;left:211.9vh;top:17.5vh}#char8{position:absolute;width:auto;height:24.9vh;left:276.9vh;top:55.7vh}#char9{position:absolute;width:auto;height:15vh;left:230.8vh;top:21.9vh}#char10{position:absolute;width:auto;height:17.2vh;left:221.3vh;top:22.8vh}#char11{position:absolute;width:auto;height:16.7vh;left:224.9vh;top:78.8vh}#char12{position:absolute;width:auto;height:20.5vh;left:217vh;top:75.1vh}#char13{position:absolute;width:auto;height:16.7vh;left:233.9vh;top:78.8vh}#char14{position:absolute;width:auto;height:17vh;left:291vh;top:20.7vh}#char15{position:absolute;width:auto;height:14.7vh;left:298.8vh;top:23vh}#char16{position:absolute;width:auto;height:14.9vh;left:305.2vh;top:22.8vh}#char17{position:absolute;width:auto;height:17.7vh;left:301.6vh;top:55.7vh}#char18{position:absolute;width:auto;height:25.7vh;left:344.4vh;top:11.1vh}#char19{position:absolute;width:auto;height:18.1vh;left:318.7vh;top:30.9vh}#char20{position:absolute;width:auto;height:18.1vh;left:332.5vh;top:30.9vh}#char21{position:absolute;width:auto;height:15.7vh;left:338.2vh;top:58.8vh}#char22{position:absolute;width:auto;height:15.7vh;left:342.6vh;top:58.8vh}#char23{position:absolute;width:auto;height:17.3vh;left:345.3vh;top:75.7vh}#char24{position:absolute;width:auto;height:16.7vh;left:370.2vh;top:23.1vh}#char25{position:absolute;width:auto;height:18.8vh;left:388.9vh;top:27.4vh}#char26{position:absolute;width:auto;height:16.1vh;left:399vh;top:30vh}#char27{position:absolute;width:auto;height:16.8vh;left:405.7vh;top:29.2vh}#char28{position:absolute;width:auto;height:16.7vh;left:380.6vh;top:60vh}#char29{position:absolute;width:auto;height:16.4vh;left:384.7vh;top:60.5vh}#char30{position:absolute;width:auto;height:14.6vh;left:371.3vh;top:62.1vh}#char31{position:absolute;width:auto;height:19.3vh;left:401.7vh;top:58.7vh}#char32{position:absolute;width:auto;height:19.3vh;left:411.6vh;top:58.7vh}#char33{position:absolute;width:auto;height:18.3vh;left:391.2vh;top:76.4vh}#char34{position:absolute;width:auto;height:16.8vh;left:419.2vh;top:18.7vh}#char35{position:absolute;width:auto;height:16.8vh;left:431.3vh;top:18.7vh}#char36{position:absolute;width:auto;height:17.2vh;left:469.4vh;top:18.8vh}#char37{position:absolute;width:auto;height:15.3vh;left:476.7vh;top:21.8vh}#char38{position:absolute;width:auto;height:20.2vh;left:490.3vh;top:14.2vh}#char39{position:absolute;width:auto;height:17.2vh;left:455.3vh;top:30.6vh}#char40{position:absolute;width:auto;height:18.2vh;left:430.1vh;top:55.8vh}#char41{position:absolute;width:auto;height:17.2vh;left:497.2vh;top:30.1vh}#char42{position:absolute;width:auto;height:17.2vh;left:508.2vh;top:30.1vh}#char43{position:absolute;width:auto;height:19.4vh;left:475.5vh;top:54.6vh}#char44{position:absolute;width:auto;height:19.4vh;left:489.1vh;top:54.6vh}#char45{position:absolute;width:auto;height:19.4vh;left:502.1vh;top:54.6vh}#char46{position:absolute;width:auto;height:17.5vh;left:437.1vh;top:78.1vh}#char47{position:absolute;width:auto;height:15.5vh;left:444.3vh;top:80.7vh}#char48{position:absolute;width:auto;height:16.7vh;left:465.7vh;top:77.1vh}#char49{position:absolute;width:auto;height:16.7vh;left:460.5vh;top:77.1vh}#char50{position:absolute;width:auto;height:15.7vh;left:508.2vh;top:79.3vh}#char51{position:absolute;width:auto;height:17.5vh;left:516.7vh;top:77.6vh}#char52{position:absolute;width:auto;height:15.7vh;left:500vh;top:79.3vh}#char53{position:absolute;width:auto;height:18.6vh;left:546.4vh;top:22.5vh}#char54{position:absolute;width:auto;height:16.8vh;left:579.1vh;top:30.7vh}#char55{position:absolute;width:auto;height:16.8vh;left:589.5vh;top:30.7vh}#char56{position:absolute;width:auto;height:18.3vh;left:527.6vh;top:59.7vh}#char57{position:absolute;width:auto;height:18.3vh;left:542.3vh;top:59.7vh}#char58{position:absolute;width:auto;height:15.8vh;left:565.7vh;top:55vh}#char59{position:absolute;width:auto;height:15.8vh;left:572vh;top:55vh}#char60{position:absolute;width:auto;height:17.6vh;left:563.2vh;top:76.7vh}#char61{position:absolute;width:auto;height:17.6vh;left:574vh;top:76.7vh}#char62{position:absolute;width:auto;height:17.3vh;left:606.9vh;top:22vh}#char63{position:absolute;width:auto;height:15.3vh;left:614.1vh;top:24.6vh}#char64{position:absolute;width:auto;height:17.3vh;left:634.3vh;top:22vh}#char65{position:absolute;width:auto;height:15.2vh;left:629.1vh;top:24.6vh}#char66{position:absolute;width:auto;height:19.1vh;left:653.2vh;top:26vh}#char67{position:absolute;width:auto;height:18.6vh;left:599.4vh;top:55.1vh}#char68{position:absolute;width:auto;height:18.2vh;left:632.5vh;top:52.7vh}#char69{position:absolute;width:auto;height:18.2vh;left:662.4vh;top:55.1vh}#char70{position:absolute;width:auto;height:18.2vh;left:618.1vh;top:57.8vh}#char71{position:absolute;width:auto;height:18.2vh;left:647.5vh;top:57.7vh}#char72{position:absolute;width:auto;height:18.2vh;left:632.5vh;top:64.1vh}#char73{position:absolute;width:auto;height:18.2vh;left:662.5vh;top:64.7vh}#char74{position:absolute;width:auto;height:18.3vh;left:600vh;top:78.3vh}#char75{position:absolute;width:auto;height:16.2vh;left:610vh;top:80.4vh}#char76{position:absolute;width:auto;height:17.7vh;left:616.6vh;top:79vh}#char77{position:absolute;width:auto;height:16.2vh;left:650vh;top:80.2vh}.front{position:absolute;left:0;top:0;z-index:1}.char{z-index:2}.white_walker p{background-color:red;position:absolute;top:0;right:0;margin:0;color:#fff;padding:0 .35em;border-radius:100%;text-align:center}#hud{position:fixed;width:100%;top:0;left:0;background-color:#33384f;z-index:6;box-shadow:0 3px 10px rgba(0,0,0,.2)}#bonus{font-weight:700;color:#fff;font-size:24pt;position:absolute;right:170px;top:0;text-shadow:0 5px 0 #008967;-ms-transform:scale(3);-webkit-transform:scale(3);transform:scale(3);-webkit-animation:bonusAnim .3s ease-in-out infinite;-moz-animation:bonusAnim .3s ease-in-out infinite;animation:bonusAnim .3s ease-in-out infinite}@-webkit-keyframes bonusAnim{0%{text-shadow:0 5px 0 #e53846}33%{text-shadow:0 5px 0 #00abf7}66%{text-shadow:0 5px 0 #fc8238}100%{text-shadow:0 5px 0 #e53846}}@-moz-keyframes bonusAnim{0%{text-shadow:0 5px 0 #e53846}33%{text-shadow:0 5px 0 #00abf7}66%{text-shadow:0 5px 0 #fc8238}100%{text-shadow:0 5px 0 #e53846}}@keyframes bonusAnim{0%{text-shadow:0 5px 0 #e53846}33%{text-shadow:0 5px 0 #00abf7}66%{text-shadow:0 5px 0 #fc8238}100%{text-shadow:0 5px 0 #e53846}}.highscore{-webkit-animation:highScoreAnim .3s ease-in-out infinite;-moz-animation:highScoreAnim .3s ease-in-out infinite;animation:highScoreAnim .3s ease-in-out infinite}@-webkit-keyframes highScoreAnim{0%{color:#e53846}33%{color:#00abf7}66%{color:#fc8238}100%{color:#e53846}}@-moz-keyframes highScoreAnim{0%{color:#e53846}33%{color:#00abf7}66%{color:#fc8238}100%{color:#e53846}}@keyframes highScoreAnim{0%{color:#e53846}33%{color:#00abf7}66%{color:#fc8238}100%{color:#e53846}}.special{width:64px;height:64px;margin-right:10px;float:left;position:relative;cursor:pointer;border:3px solid #fff}#laser{background-color:aqua}#atomic{background-color:#7fffd4}#minas{background-color:#f0ffff}#atomic_radius{position:absolute;width:350px;height:350px;border-radius:100%;background-color:rgba(255,0,0,.3);border:3px solid red;display:none}#wall,.wall{height:29%;display:block;width:100%;background-color:#f7f8f9}#rodape,.rodape{height:2%;display:block;width:100%;background-color:#5e616a}#floor1,.floor1{height:20%;display:block;width:100%;background:#e2dcd5}#corridor,.corridor{height:8%;display:block;width:100%;background:#f7f3f0}#floor2,.floor2{height:41%;display:block;width:100%;background:#e2dcd5}#bodymovin,#bodymovin2{position:absolute;width:auto;height:21vh;display:block;overflow:hidden;transform:translate3d(0,0,0);margin:auto;top:36vh;left:33%;z-index:6}#popup{position:fixed;width:100%;height:100%;top:0;left:0;background-color:rgba(0,0,0,.75);z-index:7}.popup_module{width:100vh;height:65vh;border-radius:15px;top:18vh;position:relative;margin:auto;background-color:#33384f;text-align:center;color:#fff;box-shadow:0 3px 10px rgba(0,0,0,.3);background:#33384f url(wavves.png);background-size:100% auto;background-repeat:no-repeat;background-position:center bottom}#intro_screen{background-color:#fff;color:#333851;width:650px;height:80vh;top:10vh;display:none}.intro_slide{padding-top:10vh}.intro_slide img{width:auto}#intro_screen .intro_slide p{font-size:14pt;padding:0 3em}#intro_screen .intro_slide h1{font-size:24pt;margin:0}.intro2,.intro3,.intro4{display:none}#intro_nav{position:absolute;bottom:20px;height:20px;width:auto;margin-left:50%;transform:translateX(-50%)}.intro_bola{width:13px;height:13px;border-radius:10px;float:left;margin:10px;background-color:#b8c2e0;cursor:pointer;-webkit-transition:background-color .6s;transition:background-color .6s}.intro_bola.active{background-color:#4c5470}.intro_custom_text{display:none}#char_select{top:15vh;height:75vh;width:120vh}.button{border-radius:10px;color:#fff;cursor:pointer;float:left;width:4vh;height:4vh;margin:5px 10px 10px}.button img{position:relative;width:70%;height:70%;left:15%;top:50%;transform:translateY(-50%)}.button.large{width:25vh;height:6vh;margin-left:17.5vh;margin-right:17.5vh;display:inline-block;margin-bottom:35px}.button.large p{line-height:6vh;vertical-align:middle;margin:0}.button.large img{display:inline;float:left;width:30px;height:30px}.button.large.twitter{background-color:#61b0eb;width:12vh;margin-right:.5vh;box-shadow:0 5px 0 #3e8ecb}.button.large.twitter:hover{margin-top:10px;margin-bottom:30px;box-shadow:0 0 0 #3e8ecb}.button.large.twitter:active{background-color:#3e8ecb}.button.large.facebook{background-color:#566ea8;width:12vh;margin-left:.5vh;box-shadow:0 5px 0 #415993}.button.large.facebook:hover{margin-top:10px;margin-bottom:30px;box-shadow:0 0 0 #415993}.button.large.facebook:active{background-color:#415993}#score{width:150px;text-align:center;line-height:4vh;position:absolute;right:0;top:0;background-color:#00c780;box-shadow:0 5px 0 #008967;cursor:default}#pause,.pause{margin-left:20px;background-color:#00abf7;box-shadow:0 5px 0 #2a7a9f}#pause:hover{margin-top:10px;margin-bottom:-5px;box-shadow:0 0 0 #2a7a9f}.start{background-color:#05c9a3;box-shadow:0 5px 0 #037c59;margin-left:50%!important;transform:translateX(-50%);width:250px!important}.button.large.ranking{background-color:#05c9a3;box-shadow:0 5px 0 #037c59;margin-left:50%!important;transform:translateX(-50%);width:25vh !imporant}.start.button.large p{margin:0;line-height:6vh}.start:hover,.ranking:hover{margin-top:10px;margin-bottom:30px;box-shadow:0 0 0 #037c59!important}.start:active,.ranking:active{background-color:#037c59!important}.pause:hover{margin-top:10px;margin-bottom:30px;box-shadow:0 0 0 #2a7a9f}#pause:active,.pause:active{background-color:#2a7a9f}#mute,.muter{background-color:#00ccd6;box-shadow:0 5px 0 #008c94}.muter{position:absolute;right:30px;top:20px}.muter img{left:0}#mute:hover,.muter:hover{margin-top:10px;margin-bottom:-5px;box-shadow:0 0 0 #008c94}#mute:active,.muter:active{background-color:#008c94}#restart,.restart{margin-right:20px;background-color:#fc8238;box-shadow:0 5px 0 #d76e2f}#restart:hover{margin-top:10px;margin-bottom:-5px;box-shadow:0 0 0 #d76e2f}.restart:hover{margin-top:10px;margin-bottom:30px;box-shadow:0 0 0 #2a7a9f}#restart:active,.restart:active{background-color:#d76e2f}.quit{background-color:#e53846;box-shadow:0 5px 0 #b02b3e}.quit:hover{margin-top:10px;margin-bottom:30px;box-shadow:0 0 0 #b02b3e}.quit:active{background-color:#b02b3e}.logo{height:2.5vh;width:auto;position:absolute;left:50%;margin-top:2vh;transform:translate(-50%,0)}.subtext{text-align:center;margin-top:1.5em}.smalltext{font-size:10pt}#pause_menu,#share_screen{display:none;width:60vh;height:70vh;top:10vh}#pause_menu h1{line-height:100%;font-size:36pt;padding-top:25%;padding-bottom:10%}#share_screen h1{line-height:100%;font-size:36pt;padding-top:25%}#cheering_char{position:absolute}#char_select h1{padding-top:2em;padding-bottom:0;margin:0}#picker_wrapper{padding:5vh;height:50vh;position:relative;padding-left:0}.char_picker{background-color:#fff;color:#393e54;font-weight:700;border-radius:10px;width:35%;height:100%;position:relative;float:left;margin-left:15%;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.3)}.char_picker span{position:absolute;width:71%;height:100%;top:0;left:0;padding-left:8vh;padding-right:3vh;text-align:left}.char_picker img{height:107%;margin-top:-3%;margin-left:-110%;width:auto}.char_picker .barra_habilidade{height:5px;width:100%;border-radius:10px;background-color:#c6cce0}.char_picker .nivel_habilidade{height:100%;border-radius:10px;background-color:#393e54;animation:2s ease-out 0 1 slideInFromLeft}#jon .barra_habilidade.liderazgo{width:80%;padding-right:20%}#dany .barra_habilidade.liderazgo{width:100%}#jon .barra_habilidade.trabajo{width:100%}#dany .barra_habilidade.trabajo{width:80%;padding-right:20%}#jon .barra_habilidade.influencia{width:80%;padding-right:20%}#dany .barra_habilidade.influencia{width:60%;padding-right:40%}#jon .barra_habilidade.desarrollo{width:70%;padding-right:30%}#dany .barra_habilidade.desarrollo{width:90%;padding-right:10%}@keyframes slideInFromLeft{0%{width:0}100%{width:100%}}.char_picker p.char_nombre{font-weight:700;margin-top:2em;margin-bottom:.2em}.char_picker p.char_cargo{font-weight:400;font-size:10pt;margin-top:0;margin-bottom:1.5em}.char_picker p.habilidade{font-weight:400;font-size:9pt;margin-bottom:.5vh;margin-top:1.5vh}.char_picker .boton_seleccionar{color:#3ab99a;font-weight:400;border:2px solid #3ab99a;border-radius:2em;text-align:center;padding:4px 13px;display:inline;-webkit-transition:background-color 1s;transition:background-color 1s;position:absolute;bottom:5vh;left:8vh}.char_picker:hover > span > .boton_seleccionar{background-color:#3ab99a;color:#fff}.margin_bottom_20{margin-bottom:20px}.estrellas{position:absolute;left:0;top:0;height:100%;width:auto}.score_bar{width:100%;height:5px;background-color:#7fffd4}.barscore{height:100%;width:0;background-color:red}.set0{height:14.4vh;width:auto;left:121.5vh;top:9.1vh;position:absolute;opacity:0;margin-top:30px}.set1{height:9.6vh;width:auto;left:282.6vh;top:14.7vh;position:absolute;opacity:0;margin-top:30px}.set2{height:14.4vh;width:auto;left:325.9vh;top:9.1vh;position:absolute;opacity:0;margin-top:30px}.set3{height:9.6vh;width:auto;left:369.3vh;top:11.4vh;position:absolute;opacity:0;margin-top:30px}.set4{height:18.3vh;width:auto;left:406.6vh;top:4.7vh;position:absolute;opacity:0;margin-top:30px}.set5{height:14.4vh;width:auto;left:438.3vh;top:9.1vh;position:absolute;opacity:0;margin-top:30px}.set6{height:18.4vh;width:auto;left:480vh;top:5.3vh;position:absolute;opacity:0;margin-top:30px}.set7{height:14.4vh;width:auto;left:580.8vh;top:9.1vh;position:absolute;opacity:0;margin-top:30px}.hole{position:absolute;width:19.5vh;height:19.5vh;left:70vw;top:70vh;border-radius:15.8vh;z-index:5;-webkit-transition:box-shadow .6s;transition:box-shadow .6s}.hole.box_shadow{box-shadow:0 0 0 99999px rgba(0,0,0,.7);-webkit-box-shadow:0 0 0 100vw rgba(0,0,0,.7);-moz-box-shadow:0 0 0 99999px rgba(0,0,0,.7)}.hole h1{display:none;cursor:auto;margin-top:0}.hole .pause.button.large.hidden{display:none;margin:0;text-align:center}.hole .pause.button.large.hidden:hover{margin-top:5px}#dummy{position:absolute;width:auto;height:15.7vh;margin-left:50%;transform:translateX(-50%);bottom:0}#dummy .acsendo_logo,.health{left:2.5vh}.fixed_text{position:absolute;font-weight:600;color:#fff;width:500px;size:24pt;transform:translate(-100%,-7%);margin-top:0}.intro_arrow.right{position:absolute;right:0;top:50%;cursor:pointer}.intro_arrow.right i{font-size:38pt;margin-top:-.5em;margin-right:-2em;color:#fff}.intro_arrow.left{position:absolute;left:0;top:50%;cursor:pointer;display:none}.intro_arrow.left i{font-size:38pt;margin-top:-.5em;margin-left:-2em;color:#fff}@media screen and (min-height: 750px){.char_picker p.habilidade{margin-bottom:.5em;margin-top:1.5em}}#mobile{display:none}#mobile h1{position:absolute;top:40%;transform:translateY(-50%);width:100%;text-align:center}@media (orientation: portrait){#mobile{display:block;position:fixed;top:0;left:0;width:100%;height:100%;background-color:#33384f;z-index:10;color:#fff}}#twitter-widget-0{width:25vh!important}#twitter-widget-0 #widget{display:block!important}#twitter-widget-0 .btn-o{width:100%!important}#twitter-widget-0 .btn-o a{width:100%!important;text-align:center!important}
+      </style>
+      <script src="bodymovin.js"></script>
+      <script>
+          function startTutorial(e){theme.addEventListener("ended",function(){this.currentTime=0,this.play()},!1),theme.play(),theme.volume=.3;var t=3;tl=new TimelineLite,tutTl=new TimelineLite,game_width=$("#wall_patt").width(),$("#popup").css("display","none"),walkCycle(e),tl.to($(".running_div"),120,{marginLeft:-game_width}),setTimeout(function(){tl.pause(),$(".hole").addClass("box_shadow"),anim.pause(),$(".hole").css("cursor","pointer"),$(".white_walker").css("cursor","pointer").hover(function(){$(this).find(".char").css("opacity",".7")},function(){$(this).find(".char").css("opacity","1")}),$(".hole h1").fadeIn(300),$(".hole").click(function(){1==t?(t--,triggerHealspell2(),$("#dummy").find(".health, .boss_health, .star").css("opacity","0"),$("#dummy").find(".char").attr("src","char/char22.png"),$("#dummy").removeClass("white_walker"),TweenLite.to($("#dummy").find(".acsendo_logo"),.5,{opacity:"1",top:"-3vh",ease:Elastic.easeOut.config(1,.3),delay:.2}),$(".hole h1").fadeOut(function(){$(this).text("¡Perfecto! Un empleado feliz es un empleado más productivo").fadeIn(),$(".hole .pause").fadeIn()}),$(".start_game").click(function(){$("#tutorial_wrapper").css("display","none"),startGame(e)})):(t--,triggerHit(),$("#dummy").find(".health .healthbar").css("width",33*t+"%"))})},3e3)}function startGame(e){tutorial=!1,pausable=!0,millisDiscount=0,anim.destroy(),$(".running_div").css("marginLeft","0"),tl=new TimelineLite,$("#bodymovin").css("z-index","0");var t=$(".character").length;for(i=1;i<=t;i++){$("#game_wrapper > .character:nth-of-type("+i+").character").children("div").hasClass("health")?$("#game_wrapper > .character:nth-of-type("+i+").character").data("hp",3):$("#game_wrapper > .character:nth-of-type("+i+").character").children("div").hasClass("boss_health")&&$("#game_wrapper > .character:nth-of-type("+i+").character").data("hp",5);var a=$("#game_wrapper > .character:nth-of-type("+i+").character").find(".acsendo_logo").data("logo");$("#game_wrapper > .character:nth-of-type("+i+").character").find(".health, .boss_health, .star").css("left",a+"vh")}game_width=$("#wall_patt").width(),$("#popup").css("display","none"),walkCycle(e),tl.to($(".running_div"),50,{marginLeft:-game_width,ease:Sine.easeIn,onComplete:function(){checkHighscore(e)}})}function restartGame(e){pausable=!0,millisDiscount=0,deadCount=0,liderDeaths=0,rrhhDeaths=0,ventasDeaths=0,tecnologiaDeaths=0,customSuccDeaths=0,administracionDeaths=0,departamentoOrder=[],$("#score span").html(0),anim.destroy(),tl.stop(),$(".running_div").css("marginLeft","0"),tl=new TimelineLite;var t=$("#game_wrapper .character").length;for(i=1;i<=t;i++){if($("#game_wrapper > .character:nth-of-type("+i+").character").find(".acsendo_logo").css({opacity:"0",marginTop:"0"}),$("#game_wrapper > .character:nth-of-type("+i+").character").find(".health, .boss_health, .star").css("opacity","1"),$("#game_wrapper > .character:nth-of-type("+i+").character").find(".health .healthbar, .boss_health .healthbar").css("width","100%"),!$("#game_wrapper > .character:nth-of-type("+i+").character").hasClass("white_walker")){var a=$("#game_wrapper > .character:nth-of-type("+i+").character").find(".char").attr("src"),s=a.length,r=a.substring(0,s-4);$("#game_wrapper > .character:nth-of-type("+i+").character").find(".char").attr("src",r+"_w.png"),$("#game_wrapper > .character:nth-of-type("+i+").character").addClass("white_walker")}$("#game_wrapper > .character:nth-of-type("+i+").character").children("div").hasClass("health")?$("#game_wrapper > .character:nth-of-type("+i+").character").data("hp",3):$("#game_wrapper > .character:nth-of-type("+i+").character").children("div").hasClass("boss_health")&&$("#game_wrapper > .character:nth-of-type("+i+").character").data("hp",5);var o=$("#game_wrapper > .character:nth-of-type("+i+").character").find(".acsendo_logo").data("logo");$("#game_wrapper > .character:nth-of-type("+i+").character").find(".health, .boss_health, .star").css("left",o+"vh")}game_width=$("#wall_patt").width(),$("#popup").css("display","none"),walkCycle(e),tl.to($(".running_div"),50,{marginLeft:-game_width,ease:Sine.easeIn,onComplete:function(){checkHighscore(e)}})}function results(){var e=$("#results_screen").offset(),t=$("#results_screen h1:eq(0)").offset();$("#results_screen").scroll(function(a){e=$("#results_screen").offset(),t=$("#results_screen h1:eq(0)").offset(),e.top>t.top+35?(TweenLite.to($("#results_screen"),.6,{top:"30vh",ease:Power2.easeOut}),TweenLite.to($("h3.score_display"),.6,{marginTop:"0",ease:Power2.easeOut}),TweenLite.to($("h1.score_display"),.6,{fontSize:"32pt",ease:Power2.easeOut})):(TweenLite.to($("#results_screen"),.6,{top:"50vh",ease:Power2.easeOut}),TweenLite.to($("h3.score_display"),.6,{marginTop:"10vh",ease:Power2.easeOut}),TweenLite.to($("h1.score_display"),.6,{fontSize:"64pt",ease:Power2.easeOut}))});var a=document.getElementById("radar"),s=a.getContext("2d");s.restore(),s.clearRect(0,0,a.width,a.height),s.save(),s.transform(1,0,0,1,150,110),s.lineWidth=3,s.font="10px Arial",s.textAlign="center",s.rotate(36*Math.PI/180),s.beginPath(),s.lineTo(0,70),s.translate(0,90),s.rotate(-36*Math.PI/180),s.fillText("Tecnología",0,0),s.rotate(36*Math.PI/180),s.translate(0,-90),s.rotate(72*Math.PI/180),s.lineTo(0,70),s.translate(-20,75),s.rotate(-108*Math.PI/180),s.textAlign="right",s.fillText("RRHH",0,0),s.rotate(108*Math.PI/180),s.translate(20,-75),s.rotate(72*Math.PI/180),s.lineTo(0,70),s.translate(0,80),s.rotate(-180*Math.PI/180),s.textAlign="center",s.fillText("Ventas",0,0),s.rotate(180*Math.PI/180),s.translate(0,-80),s.rotate(72*Math.PI/180),s.lineTo(0,70),s.translate(20,75),s.rotate(-252*Math.PI/180),s.textAlign="left",s.fillText("Customer",0,0),s.fillText("Success",0,12),s.rotate(252*Math.PI/180),s.translate(-20,-75),s.rotate(72*Math.PI/180),s.lineTo(0,70),s.translate(0,90),s.rotate(-324*Math.PI/180),s.textAlign="center",s.fillText("Administración",0,0),s.rotate(324*Math.PI/180),s.translate(0,-90),s.rotate(72*Math.PI/180),s.closePath(),s.stroke(),s.lineWidth=1,s.beginPath(),s.lineTo(0,0),s.lineTo(0,70),s.rotate(72*Math.PI/180),s.stroke(),s.beginPath(),s.lineTo(0,0),s.lineTo(0,70),s.rotate(72*Math.PI/180),s.stroke(),s.beginPath(),s.lineTo(0,0),s.lineTo(0,70),s.rotate(72*Math.PI/180),s.stroke(),s.beginPath(),s.lineTo(0,0),s.lineTo(0,70),s.rotate(72*Math.PI/180),s.stroke(),s.beginPath(),s.lineTo(0,0),s.lineTo(0,70),s.rotate(72*Math.PI/180),s.stroke();var i=5*tecnologiaDeaths,r=rrhhDeaths*(100/7),o=5*ventasDeaths,n=customSuccDeaths*(100/15),c=administracionDeaths*(100/14);s.beginPath(),20==tecnologiaDeaths?s.lineTo(0,3.5*tecnologiaDeaths):s.lineTo(0,3*tecnologiaDeaths),s.rotate(72*Math.PI/180),7==rrhhDeaths?s.lineTo(0,10*rrhhDeaths):s.lineTo(0,rrhhDeaths*(60/7)),s.rotate(72*Math.PI/180),20==ventasDeaths?s.lineTo(0,3.5*ventasDeaths):s.lineTo(0,3*ventasDeaths),s.rotate(72*Math.PI/180),15==customSuccDeaths?s.lineTo(0,customSuccDeaths*(70/15)):s.lineTo(0,4*customSuccDeaths),s.rotate(72*Math.PI/180),14==administracionDeaths?s.lineTo(0,5*administracionDeaths):s.lineTo(0,administracionDeaths*(60/14)),s.rotate(72*Math.PI/180),s.closePath(),s.fillStyle="rgba(5,201,163,.75)",s.fill();var l=[i,r,o,n,c],h=[tecnologiaDeaths,rrhhDeaths,ventasDeaths,customSuccDeaths,administracionDeaths],d=["Tecnologia","RRHH","Ventas","Customer Success","Administración"],p=["imgs/lider_tech.png","imgs/lider_rrhh.png","imgs/lider_ventas.png","imgs/lider_customsucc.png","imgs/lider_admin.png"],u=[20,7,20,15,14],m=0,g=0;if(0==departamentoOrder.length)for(var f=0;f<l.length;f++)l[f]>l[m]&&(m=f),l[f]<l[g]&&(g=f);else if(5!=departamentoOrder.length){m=departamentoOrder[0];for(var f=0;f<l.length;f++)l[f]<l[g]&&(g=f)}else{var _=departamentoOrder.length;m=departamentoOrder[0],g=departamentoOrder[_-1]}$("#mejor_lider div").html(d[m]),$("#mejor_lider").css("background-image","url("+p[m]+")"),$("#mejor_dept div").html(d[m]+"<div class='subtext smalltext'><span>"+h[m]+"</span>/<span>"+u[m]+"</span></div>"),$("#peor_dept div").html(d[g]+"<div class='subtext smalltext'><span>"+h[g]+"</span>/<span>"+u[g]+"</span></div>"),$("#picto_results div.tecnologia, #picto_results div.rrhh, #picto_results div.ventas, #picto_results div.customSucc, #picto_results div.administracion").html("");for(var f=0;20>f;f++)f<u[0]&&(tecnologiaDeaths>f?$("#picto_results div.tecnologia").append("<img class='picto' src='picto_convert.png'/>"):$("#picto_results div.tecnologia").append("<img class='picto' src='picto_walker.png'/>")),f<u[1]&&(rrhhDeaths>f?$("#picto_results div.rrhh").append("<img class='picto' src='picto_convert.png'/>"):$("#picto_results div.rrhh").append("<img class='picto' src='picto_walker.png'/>")),f<u[2]&&(ventasDeaths>f?$("#picto_results div.ventas").append("<img class='picto' src='picto_convert.png'/>"):$("#picto_results div.ventas").append("<img class='picto' src='picto_walker.png'/>")),f<u[3]&&(customSuccDeaths>f?$("#picto_results div.customSucc").append("<img class='picto' src='picto_convert.png'/>"):$("#picto_results div.customSucc").append("<img class='picto' src='picto_walker.png'/>")),f<u[4]&&(administracionDeaths>f?$("#picto_results div.administracion").append("<img class='picto' src='picto_convert.png'/>"):$("#picto_results div.administracion").append("<img class='picto' src='picto_walker.png'/>"));var v=u[0]+u[1]+u[2]+u[3]+u[4]-(ventasDeaths+tecnologiaDeaths+rrhhDeaths+customSuccDeaths+administracionDeaths),w=5-departamentoOrder.length;$(".personasNum").html(v),$(".deptNum").html(w);var b=Math.round(liderDeaths/7*100);isNaN(b)&&(b=0),$("#results_bars > div.liderazgo").css("width","calc("+b+"% - 40px)"),$("#results_bars p.percentage_right.liderazgo").text(b+"%");var y=Math.round(departamentoOrder.length/5*100);isNaN(y)&&(y=0),$("#results_bars > div.departamentos").css("width","calc("+y+"% - 40px)"),$("#results_bars p.percentage_right.departamentos").text(y+"%");var D=Math.round((h[0]+h[1]+h[2]+h[3]+h[4])/(u[0]+u[1]+u[2]+u[3]+u[4])*100);isNaN(D)&&(D=0),$("#results_bars > div.empleados").css("width","calc("+D+"% - 40px)"),$("#results_bars p.percentage_right.empleados").text(D+"%"),20==ventasDeaths&&(ventasDeaths=40),20==tecnologiaDeaths&&(tecnologiaDeaths=40),7==rrhhDeaths&&(rrhhDeaths=14),15==customSuccDeaths&&(customSuccDeaths=30),14==administracionDeaths&&(administracionDeaths=28);var T=(ventasDeaths+tecnologiaDeaths+rrhhDeaths+customSuccDeaths+administracionDeaths)/152*100,k=Math.round(4*T-(D+y+b));isNaN(k)&&(k=0),$("#results_bars > div.condiciones").css("width","calc("+k+"% - 40px)"),$("#results_bars p.percentage_right.condiciones").text(k+"%"),$("#popup, #results_screen").css("display","block"),$("#popup h1#results").fadeIn(300),TweenLite.to($("#results_screen"),1.5,{boxShadow:"0px 0px 50px 20px rgba(0,0,0,.3)",rotationX:0,transformOrigin:"bottom center",opacity:1,ease:Power2.easeOut,onComplete:function(){$("#resultado .percentage").text(Math.round(T)+"%").fadeIn(300),$("#resultado .resultado_nivel").css("height",T+"%")}})}function bonusScore(e,t){triggerSuccess(),bonusTime.kill(),bonusTime2.kill(),$("#bonus").remove(),$("#bonus").css({opacity:"1","-webkit-transform":"scale(3)","-moz-transform":"scale(3)","-ms-transform":"scale(3)","-o-transform":"scale(3)",transform:"scale(3)","-webkit-transform":"rotation(0)","-moz-transform":"rotation(0)","-ms-transform":"rotation(0)","-o-transform":"rotation(0)",transform:"rotation(0)"}),$("#hud").append("<div id='bonus'>+"+e+"</div>"),bonusTime.to($("#bonus"),.7,{scale:1,rotation:353,ease:Elastic.easeInOut.config(1,.3),onComplete:function(){bonusTime2.to($("#bonus"),.3,{opacity:0,ease:Power1.easeInOut,delay:1.2,onComplete:function(){$("#hud #bonus").remove()}})}}),departamentoOrder.push(t)}function checkHighscore(e){pausable=!1,millisEnd=new Date;var t=millisEnd.getTime()-millisStart.getTime();score=Math.floor(.001*(t-millisDiscount)*deadCount+1e3*deadCount),$(".button.large.twitter").parent().attr("href","https://twitter.com/intent/tweet?text=Hice%20"+score+"%20puntos%20en%20Game%20of%20Thrones%20de%20Acsendo!%20Pruebalo!"),$(".popup_module").css("display","none"),$("#popup, #share_screen").css("display","block"),$("h1.score_display").html(score),$("#score_screen").fadeIn(300);var a=localStorage.getItem("highscore");null==a?(localStorage.setItem("highscore",0),a=0):$("#share_screen h2.best_display").html("SU MEJOR SCORE: "+a),score>a&&(a=score,localStorage.setItem("highscore",score),$("#share_screen h1.score_display").addClass("highscore"),$("#share_screen h2.best_display").html("¡NUEVO HIGHSCORE!"),triggerHighscore());var s;"jon"==e?s="jon.png":"dany"==e&&(s="dany.png"),console.log(s),$("#cheering_char").attr("src",s),score<6e4?console.log("Mal resultado (menos de 6.000)"):score<1e5?console.log("Resultado regular (6.000-10.000)"):console.log("Buen resultado (más de 10.000)")}function triggerHealspell2(){if(!mute){var e=new Audio("snd/convert2.wav");e.play()}}function triggerHealspell3(){if(!mute){var e=new Audio("snd/convert.wav");e.play()}}function triggerHit(){if(!mute){var e=new Audio("snd/hit.wav");e.play(),e.volume=.5}}function triggerSuccess(){if(!mute){var e=new Audio("snd/success.wav");e.play(),e.volume=.5}}function triggerHighscore(){if(!mute){var e=new Audio("snd/highscore.wav");e.play(),e.volume=.5}}var tl,tutTl,bonusTime=new TimelineLite,bonusTime2=new TimelineLite,anim,animEstrellas,mute=!1,pausable=!0,tutorial=!0,deadCount=0,millisStart,millisEnd,millisMiddle,millisDiscount=0,bonusVentas=!1,bonusTecnologia=!1,bonusRrhh=!1,bonusCustomSucc=!1,bonusAdministracion=!1,ventasDeaths=0,tecnologiaDeaths=0,rrhhDeaths=0,customSuccDeaths=0,administracionDeaths=0,departamentoOrder=[],liderDeaths=0,theme=new Audio("snd/theme_bit.mp3");$(document).ready(function(){function e(){tutorial||(pausable=!0,tl.paused(!tl.paused()),o.innerHTML=tl.paused()?"<img src='btn/play.svg''/>":"<img src='btn/pause.svg'/>",tl.paused()?(millisMiddle=new Date,r=!1,anim.pause(),$(".white_walker").css("cursor","auto"),$(".white_walker").hover(function(){$(this).find(".char").css("opacity","1")}),$("#popup").css("display","block"),$(".popup_module").css("display","none"),$("#pause_menu").css("display","block")):(millisMiddleEnd=new Date,millisDiscount+=millisMiddleEnd.getTime()-millisMiddle.getTime(),r=!0,anim.play(),$(".white_walker").css("cursor","pointer"),$(".white_walker").hover(function(){$(this).find(".char").css("opacity",".7")},function(){$(this).find(".char").css("opacity","1")}),$("#popup").css("display","none")))}function t(e){millisStart=new Date,millisDiscount=0,originalUrl=e.find(".char").attr("src"),urlLength=originalUrl.length,subString=originalUrl.substring(0,urlLength-6),e.data("hp",0),e.removeClass("white_walker"),e.find(".health, .boss_health, .star").css("opacity","0");var t=e.find(".acsendo_logo").data("logo");e.find(".acsendo_logo").css({left:t+"vh"}),e.find(".char").attr("src",subString+".png"),TweenLite.to(e.find(".acsendo_logo"),.5,{opacity:"1",top:"-3vh",ease:Elastic.easeOut.config(1,.3),delay:.2}),e.hasClass("ventas")?ventasDeaths+=1:e.hasClass("tecnologia")?tecnologiaDeaths+=1:e.hasClass("rrhh")?rrhhDeaths+=1:e.hasClass("customSucc")?customSuccDeaths+=1:e.hasClass("administracion")?administracionDeaths+=1:console.log("something went terribly wrong"),deadCount++}var a=0,s=1;$("#mute, .muter").click(function(){$(this).hasClass("mute")?(theme.volume=0,$(this).removeClass("mute").addClass("unmute"),$("#mute, .muter").html("<img src='btn/mute.svg'/>"),mute=!0):$(this).hasClass("unmute")&&(theme.volume=.3,$(this).removeClass("unmute").addClass("mute"),$("#mute, .muter").html("<img src='btn/unmute.svg'/>"),mute=!1)}),$(".intro_bola").click(function(){$(this).hasClass("active")||($(".active").removeClass("active"),$(this).addClass("active"),s=$(this).data("num"),$(".intro_slide").fadeOut(300),$(".intro_slide.intro"+s).delay(300).fadeIn(300),s>=3?($(".intro_arrow.right").fadeOut(),$(".intro_arrow.left").fadeIn()):2==s?$(".intro_arrow.left, .intro_arrow.right").fadeIn():1>=s&&($(".intro_arrow.left").fadeOut(),$(".intro_arrow.right").fadeIn()))}),$(".intro_arrow").click(function(){$(this).hasClass("right")?(s++,s>=3?$(this).fadeOut():2==s&&$(".intro_arrow.left").fadeIn()):$(this).hasClass("left")&&(s--,1>=s?$(this).fadeOut():2==s&&$(".intro_arrow.right").fadeIn()),$(".intro_slide").fadeOut(300),$(".intro_bola.active").removeClass("active"),$(".intro_slide.intro"+s).delay(300).fadeIn(300),$(".intro_bola.bola"+s).addClass("active")}),$(".start").click(function(){$("#char_select, #popup").fadeOut(300),startTutorial(n)});var r=($(window).width(),!0),o=document.getElementById("pause"),n="";$(window).blur(function(){pausable&&(tl.paused()||(e(),pausable=!1))}),$(".button.pause, #pause").click(function(){e()});var c=0;setInterval(function(){var e=$(".running_div").css("margin-left");if(parseInt($(".set"+c).css("left"))+parseInt(e)<500){$(".set"+c);TweenLite.to($(".set"+c),.5,{opacity:"1","margin-top":"0",ease:Elastic.easeOut.config(1,.3)}),c++}},200),$("#popup .char_picker").click(function(){$(this).is("#jon")?(n="jon",$(".intro_custom_text.juan").css("display","block")):$(this).is("#dany")&&(n="dany",$(".intro_custom_text.daniela").css("display","block")),$("#char_select").fadeOut(300),$("#intro_screen").delay(400).fadeIn(300)}),$("#restart, .restart").click(function(){tutorial||(tl.paused()&&e(),restartGame(n))}),$("img, div").on("dragstart",function(e){e.preventDefault()}),$(".white_walker").mousedown(function(){var e=[1,9,10,11,12,13,24,31,32,33,36,37,43,44,45,60,61,54,55],s=[4,25,26,27,34,35,40,46,47,48,49,56,57,68,69,70,71,72,73],o=[8,21,22,41,42,77],n=[17,19,20,23,28,29,30,39,58,59,62,63,64,65],c=[2,3,14,15,16,38,50,51,52,53,74,75,76];if(r){var l=$(this).data("hp");if(l>1)l--,$(this).data("hp",l),$(this).find(".health .healthbar").css("width",100/3*l+"%"),$(this).find(".boss_health .healthbar").css("width",20*l+"%"),triggerHit();else if(1===l){if(t($(this)),$(this).is("#char6"))for(liderDeaths++,triggerHealspell3(),i=0;i<e.length;i++){var h=$("#char"+e[i]).data("hp")-1;$("#char"+e[i]).data("hp",h),$("#char"+e[i]).find(".acsendo_logo").data("hp",h),$("#char"+e[i]).find(".health .healthbar").css("width",100/3*h+"%"),$("#char"+e[i]).append("<div class='estrellas'><img src='estrellas_loop.gif'/></div>"),setTimeout(function(){for(i=0;i<e.length;i++)$("#char"+e[i]).children(".estrellas").remove()},1500),0==h&&t($("#char"+e[i]))}else if($(this).is("#char67"))for(liderDeaths++,triggerHealspell3(),i=0;i<s.length;i++){var h=$("#char"+s[i]).data("hp")-1;$("#char"+s[i]).data("hp",h),$("#char"+s[i]).find(".acsendo_logo").data("hp",h),$("#char"+s[i]).find(".health .healthbar").css("width",100/3*h+"%"),$("#char"+s[i]).append("<div class='estrellas'><img src='estrellas_loop.gif'/></div>"),setTimeout(function(){for(i=0;i<s.length;i++)$("#char"+s[i]).children(".estrellas").remove()},1500),0==h&&t($("#char"+s[i]))}else if($(this).is("#char66"))for(liderDeaths++,triggerHealspell3(),i=0;i<o.length;i++){var h=$("#char"+o[i]).data("hp")-1;$("#char"+o[i]).data("hp",h),$("#char"+o[i]).find(".acsendo_logo").data("hp",h),$("#char"+o[i]).find(".health .healthbar").css("width",100/3*h+"%"),$("#char"+o[i]).append("<div class='estrellas'><img src='estrellas_loop.gif'/></div>"),setTimeout(function(){for(i=0;i<o.length;i++)$("#char"+o[i]).children(".estrellas").remove()},1500),0==h&&t($("#char"+o[i]))}else if($(this).is("#char5"))for(liderDeaths++,triggerHealspell3(),i=0;i<n.length;i++){var h=$("#char"+n[i]).data("hp")-1;$("#char"+n[i]).data("hp",h),$("#char"+n[i]).find(".acsendo_logo").data("hp",h),$("#char"+n[i]).find(".health .healthbar").css("width",100/3*h+"%"),$("#char"+n[i]).append("<div class='estrellas'><img src='estrellas_loop.gif'/></div>"),setTimeout(function(){for(i=0;i<n.length;i++)$("#char"+n[i]).children(".estrellas").remove()},1500),0==h&&t($("#char"+n[i]))}else if($(this).is("#char18"))for(liderDeaths++,triggerHealspell3(),i=0;i<c.length;i++){var h=$("#char"+c[i]).data("hp")-1;$("#char"+c[i]).data("hp",h),$("#char"+c[i]).find(".acsendo_logo").data("hp",h),$("#char"+c[i]).find(".health .healthbar").css("width",100/3*h+"%"),$("#char"+c[i]).append("<div class='estrellas'><img src='estrellas_loop.gif'/></div>"),setTimeout(function(){for(i=0;i<c.length;i++)$("#char"+c[i]).children(".estrellas").remove()},1500),0==h&&t($("#char"+c[i]))}else if($(this).is("#char31")&&$("#char32").data("hp")<=0||$(this).is("#char32")&&$("#char31").data("hp")<=0)for(liderDeaths+=2,triggerHealspell3(),i=1;i<=77;i++){var h=$("#char"+i).data("hp")-1;$("#char"+i).data("hp",h),$("#char"+i).find(".acsendo_logo").data("hp",h),$("#char"+i).find(".health .healthbar").css("width",100/3*h+"%"),$("#char"+i).find(".boss_health .healthbar").css("width",20*h+"%"),$("#char"+i).append("<div class='estrellas'><img src='estrellas_loop.gif'/></div>"),setTimeout(function(){for(i=1;i<=77;i++)$("#char"+i).children(".estrellas").remove()},1500),0===h&&t($("#char"+i))}else triggerHealspell2();if(!bonusTecnologia)for(i=0;i<s.length;i++){if($("#char"+s[i]).data("hp")>0){bonusTecnologia=!1;break}i==s.length-1&&$("#char"+s[i]).data("hp")<=0&&(bonusTecnologia=!0,deadCount+=20,bonusScore(2e3,0))}if(!bonusRrhh)for(i=0;i<o.length;i++){if($("#char"+o[i]).data("hp")>0){bonusRrhh=!1;break}i==o.length-1&&$("#char"+o[i]).data("hp")<=0&&(bonusRrhh=!0,deadCount+=7,bonusScore(700,1))}if(!bonusVentas)for(i=0;i<e.length;i++){if($("#char"+e[i]).data("hp")>0){bonusVentas=!1;break}i==e.length-1&&$("#char"+e[i]).data("hp")<=0&&(bonusVentas=!0,deadCount+=19,bonusScore(1900,2))}if(!bonusCustomSucc)for(i=0;i<n.length;i++){if($("#char"+n[i]).data("hp")>0){bonusCustomSucc=!1;break}i==n.length-1&&$("#char"+n[i]).data("hp")<=0&&(bonusCustomSucc=!0,deadCount+=20,bonusScore(2e3,3))}if(!bonusAdministracion)for(i=0;i<c.length;i++){if($("#char"+c[i]).data("hp")>0){bonusAdministracion=!1;break}i==c.length-1&&$("#char"+c[i]).data("hp")<=0&&(bonusAdministracion=!0,deadCount+=14,bonusScore(1400,4))}a=1e3*deadCount,$("#score span").html(a)}}}).mouseup(function(){}),$("body").keydown(function(t){80==t.keyCode&&pausable&&(e(),pausable=!1),$("html").on("keydown",function(e){})}),$("body").keyup(function(e){tutorial||(pausable=!0)})});
+      </script>
+    </head>
+    <body>
+        
+        <div id="game_wrapper">
+            <span id="wall"></span>
+            <span id="rodape"></span>
+            <span id="floor1"></span>
+            <span id="corridor"></span>
+            <span id="floor2"></span>
+            
+            <img id="wall_patt" class="running_div" src="walls.png"/>
+            
+            <img class="set0 running_div" src="set/set2.png"/>
+            <img class="set1 running_div" src="set/set1.png"/>
+            <img class="set2 running_div" src="set/set2.png"/>
+            <img class="set3 running_div" src="set/set3.png"/>
+            <img class="set4 running_div" src="set/set4.png"/>
+            <img class="set5 running_div" src="set/set2.png"/>
+            <img class="set6 running_div" src="set/set5.png"/>
+            <img class="set7 running_div" src="set/set2.png"/>
+            
+            <div class="running_div white_walker character ventas" id="char1">
+                <img class="acsendo_logo" data-logo="6.4" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char1_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char4">
+                <img class="acsendo_logo" data-logo="7.3" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char4_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char6">
+                <img class="acsendo_logo" data-logo="2.5" src="acsendo_logo.png"/>
+                <img class="star" src="boss_star.png"/>
+                <div class="boss_health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char6_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char9">
+                <img class="acsendo_logo" data-logo="6.7" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char9_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char10">
+                <img class="acsendo_logo" data-logo="7.3" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char10_w.png"/>
+            </div>
+            
+            
+            <div class="running_div white_walker character administracion" id="char15">
+                <img class="acsendo_logo" data-logo="5" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="front" src="front/front15.png"/>
+                <img class="char" src="char/char15_w.png"/>
+            </div>
+            
+            
+            <div class="running_div white_walker character administracion" id="char18">
+                <img class="acsendo_logo" data-logo="6.7" src="acsendo_logo.png"/>
+                <img class="star" src="boss_star.png"/>
+                <div class="boss_health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char18_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character customSucc" id="char19">
+                <img class="acsendo_logo" data-logo="8.9" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char19_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character customSucc" id="char20">
+                <img class="acsendo_logo" data-logo="8.5" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char20_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char24">
+                <img class="acsendo_logo" data-logo="6.8" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char24_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char25">
+                <img class="acsendo_logo" data-logo="7.3" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char25_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char26">
+                <img class="acsendo_logo" data-logo="3.5" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char26_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char27">
+                <img class="acsendo_logo" data-logo="4.3" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char27_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char34">
+                <img class="acsendo_logo" data-logo="7.1" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char34_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char35">
+                <img class="acsendo_logo" data-logo="9.9" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char35_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char36">
+                <img class="acsendo_logo" data-logo="4.5" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char36_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char37">
+                <img class="acsendo_logo" data-logo="3.6" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char37_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character administracion" id="char38">
+                <img class="acsendo_logo" data-logo="4.1" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char38_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character customSucc" id="char39">
+                <img class="acsendo_logo" data-logo="7.1" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char39_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character rrhh" id="char41">
+                <img class="acsendo_logo" data-logo="5.9" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="front" src="front/front41.png"/>
+                <img class="char" src="char/char41_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character rrhh" id="char42">
+                <img class="acsendo_logo" data-logo="7.4" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char42_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character administracion" id="char53">
+                <img class="acsendo_logo" data-logo="12.5" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char53_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char54">
+                <img class="acsendo_logo" data-logo="2.7" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char54_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char55">
+                <img class="acsendo_logo" data-logo="2.8" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char55_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character customSucc" id="char62">
+                <img class="acsendo_logo" data-logo="4.3" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char62_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character customSucc" id="char63">
+                <img class="acsendo_logo" data-logo="3.8" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char63_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character customSucc" id="char64">
+                <img class="acsendo_logo" data-logo="7.5" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char64_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character customSucc" id="char65">
+                <img class="acsendo_logo" data-logo="6.2" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char65_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character rrhh" id="char66">
+                <img class="acsendo_logo" data-logo="4.8" src="acsendo_logo.png"/>
+                <img class="star" src="boss_star.png"/>
+                <div class="boss_health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char66_w.png"/>
+            </div>
+            
+            
+            
+            
+            <span id="bodymovin"></span>
+            
+            
+
+            
+            <div class="running_div white_walker character administracion" id="char2">
+                <img class="acsendo_logo" data-logo="10.3" src="acsendo_logo.png"/>
+                <img class="front" src="front/front2.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char2_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character administracion" id="char3">
+                <img class="acsendo_logo" data-logo="3.2" src="acsendo_logo.png"/>
+                <img class="front" src="front/front3.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char3_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character customSucc" id="char5">
+                <img class="acsendo_logo" data-logo="5.2" src="acsendo_logo.png"/>
+                <img class="star" src="boss_star.png"/>
+                <div class="boss_health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char5_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char11">
+                <img class="acsendo_logo" data-logo="4.1" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="front" src="front/front11.png"/>
+                <img class="char" src="char/char11_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char12">
+                <img class="acsendo_logo" data-logo="4.8" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="front" src="front/front12.png"/>
+                <img class="char" src="char/char12_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char13">
+                <img class="acsendo_logo" data-logo="7.5" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="front" src="front/front13.png"/>
+                <img class="char" src="char/char13_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character rrhh" id="char8">
+                <img class="acsendo_logo" data-logo="7.3" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char8_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character administracion" id="char14">
+                <img class="acsendo_logo" data-logo="4.8" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="front" src="front/front14.png"/>
+                <img class="char" src="char/char14_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character administracion" id="char16">
+                <img class="acsendo_logo" data-logo="6.4" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="front" src="front/front16.png"/>
+                <img class="char" src="char/char16_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character customSucc" id="char17">
+                <img class="acsendo_logo" data-logo="8.2" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char17_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character rrhh" id="char21">
+                <img class="acsendo_logo" data-logo="2.1" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char21_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character rrhh" id="char22">
+                <img class="acsendo_logo" data-logo="2.5" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char22_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character customSucc" id="char23">
+                <img class="acsendo_logo" data-logo="7.8" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char23_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character customSucc" id="char28">
+                <img class="acsendo_logo" data-logo="2.5" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="front" src="front/front28.png"/>
+                <img class="char" src="char/char28_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character customSucc" id="char29">
+                <img class="acsendo_logo" data-logo="5" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="front" src="front/front29.png"/>
+                <img class="char" src="char/char29_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character customSucc" id="char30">
+                <img class="acsendo_logo" data-logo="6.3" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char30_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char31">
+                <img class="acsendo_logo" data-logo="4.8" src="acsendo_logo.png"/>
+                <img class="star" src="boss_star.png"/>
+                <div class="boss_health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char31_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char32">
+                <img class="acsendo_logo" data-logo="5.6" src="acsendo_logo.png"/>
+                <img class="star" src="boss_star.png"/>
+                <div class="boss_health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char32_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char33">
+                <img class="acsendo_logo" data-logo="7.3" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char33_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char40">
+                <img class="acsendo_logo" data-logo="7.2" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char40_w.png"/>
+            </div>
+            
+            
+            <div class="running_div white_walker character ventas" id="char43">
+                <img class="acsendo_logo" data-logo="7.7" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char43_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char44">
+                <img class="acsendo_logo" data-logo="6.2" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char44_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char45">
+                <img class="acsendo_logo" data-logo="9.8" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char45_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char46">
+                <img class="acsendo_logo" data-logo="4.5" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char46_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char47">
+                <img class="acsendo_logo" data-logo="4" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char47_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char48">
+                <img class="acsendo_logo" data-logo="5.6" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char48_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char49">
+                <img class="acsendo_logo" data-logo="4.2" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char49_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character administracion" id="char50">
+                <img class="acsendo_logo" data-logo="3.6" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="front" src="front/front50.png"/>
+                <img class="char" src="char/char50_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character administracion" id="char51">
+                <img class="acsendo_logo" data-logo="3.1" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="front" src="front/front51.png"/>
+                <img class="char" src="char/char51_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character administracion" id="char52">
+                <img class="acsendo_logo" data-logo="3.8" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char52_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char56">
+                <img class="acsendo_logo" data-logo="6.4" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char56_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char57">
+                <img class="acsendo_logo" data-logo="5" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char57_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character customSucc" id="char58">
+                <img class="acsendo_logo" data-logo="3" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char58_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character customSucc" id="char59">
+                <img class="acsendo_logo" data-logo="2.2" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char59_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char60">
+                <img class="acsendo_logo" data-logo="6.6" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char60_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character ventas" id="char61">
+                <img class="acsendo_logo" data-logo="6.3" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char61_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char67">
+                <img class="acsendo_logo" data-logo="7.1" src="acsendo_logo.png"/>
+                <img class="star" src="boss_star.png"/>
+                <div class="boss_health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char67_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char68">
+                <img class="acsendo_logo" data-logo="7.2" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char68_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char69">
+                <img class="acsendo_logo" data-logo="7.2" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char69_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char70">
+                <img class="acsendo_logo" data-logo="7.2" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char70_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char71">
+                <img class="acsendo_logo" data-logo="7.2" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char71_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char72">
+                <img class="acsendo_logo" data-logo="7.2" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char72_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character tecnologia" id="char73">
+                <img class="acsendo_logo" data-logo="7.2" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char73_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character administracion" id="char74">
+                <img class="acsendo_logo" data-logo="7.2" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="front" src="front/front74.png"/>
+                <img class="char" src="char/char74_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character administracion" id="char75">
+                <img class="acsendo_logo" data-logo="3.6" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="front" src="front/front75.png"/>
+                <img class="char" src="char/char75_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character administracion" id="char76">
+                <img class="acsendo_logo" data-logo="4.1" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="front" src="front/front76.png"/>
+                <img class="char" src="char/char76_w.png"/>
+            </div>
+            
+            <div class="running_div white_walker character rrhh" id="char77">
+                <img class="acsendo_logo" data-logo="4.8" src="acsendo_logo.png"/>
+                <div class="health"><div class="healthbar"></div></div>
+                <img class="char" src="char/char77_w.png"/>
+            </div>
+            
+            
+        </div>
+        
+        
+        <div id="tutorial_wrapper">
+            <div class="hole running_div">
+                <div class="white_walker character" id="dummy">
+                    <img class="acsendo_logo" data-logo="2.5" src="acsendo_logo.png"/>
+                    <div class="health"><div class="healthbar"></div></div>
+                    <img class="char" src="char/char22_w.png"/>
+                </div>
+                <div class="fixed_text">
+                    <h1>Haz clic sobre los empleados desmotivados</h1>
+                    <div class="pause button large hidden start_game">
+                        <img src="btn/play.svg"/>
+                        <p>Empezar</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <span class="wall"></span>
+            <span class="rodape"></span>
+            <span class="floor1"></span>
+            <span class="corridor"></span>
+            <span class="floor2"></span>
+            
+            <div id="bodymovin2"></div>
+            
+            <img class="wall_patt running_div" src="walls_tut.png"/>
+        </div>
+        
+        
+        
+        
+        <div id="popup">
+            <div id="intro_screen" class="popup_module">
+                <div class="intro_arrow left"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+                <div class="intro_arrow right"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+                <div class="muter mute button">
+                    <img src="btn/unmute.svg"/>
+                </div>
+                <div class="intro_slide intro1">
+                    <h1>Bienvenido a:</h1>
+                    <img src="imgs/westerosinc.png"/>
+                    <p class="intro_custom_text juan">Juan Nieve ascendió como un colaborador más, empezó en un cargo operativo y escaló en la organización hasta ser nombrado Director de RR.HH. Lo que lo convierte en uno de los empleados con mayor trayectoria en Westeros Inc.</p>
+                    
+                    <p class="intro_custom_text daniela">Daniela Tamayo, heredera legítima del Trono, es la nueva Directora de RR.HH. Tras varios años fuera del país, regresó para incorporarse al negocio que fue fundado por su familia cuando ella aún era una niña.</p>
+                </div>
+                <div class="intro_slide intro2">
+                    <img src="imgs/embargo.png"/>
+                    <h1>Sin embargo...</h1>
+                    <p class="intro_custom_text juan">Sin embargo, ahora se enfrenta a un gran reto. Como nuevo encargado de gestionar el talento de la compañía deberá mejorar el clima laboral y aumentar el compromiso de los colaboradores.</p>
+                    
+                    <p class="intro_custom_text daniela">Tras su llegada a la empresa, Daniela ha previsto una gran catástrofe para Westeros si no se logran mejoras en el clima laboral.</p>
+                </div>
+                <div class="intro_slide intro3">
+                    <img src="imgs/invierno.png"/>
+                    <h1>¡El invierno ha llegado!</h1>
+                    <p class="intro_custom_text juan">¿Tienes lo que hace falta para afrontar el invierno junto a Juan?</p>
+                    
+                    <p class="intro_custom_text daniela">El fin de Westeros parece acercarse, ¡ayuda a Daniela a evitarlo antes de que sea muy tarde!</p>
+                    
+                    <div class="start button large">
+                        <p>¡Jugar ahora!</p>
+                    </div>
+                </div>
+                <!--
+                <div class="intro_slide intro4">
+                    <img src="imgs/ayuda.png"/>
+                    <h1>¡Necesitamos tu ayuda!</h1>
+                    <p>Como responsable de RR.HH debes ayudar a Westeros Inc a afrontar el invierno laboral con Acsendo Go y logar un ambiente de trabajo amable, motivador y transparente.</p>
+                    <div class="start button large">
+                        <p>¡Jugar ahora!</p>
+                    </div>
+                </div>
+                -->
+                <div id="intro_nav">
+                    <div data-num="1" class="intro_bola bola1 active"></div>
+                    <div data-num="2" class="intro_bola bola2"></div>
+                    <div data-num="3" class="intro_bola bola3"></div>
+                </div>
+            </div>
+            
+            
+        
+            <div id="share_screen" class="popup_module">
+                <div class="muter mute button">
+                    <img src="btn/unmute.svg"/>
+                </div>
+                <img src="" id="cheering_char"/>
+                <h1 class="score_display"></h1>
+                <h2 class="best_display"></h2>
+                
+                <a href="https://twitter.com/intent/tweet?text=Hello%20world"  onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
+                    <div class="button large twitter">
+                        <p>
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            Twitter
+                        </p>
+                    </div>
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Felbot.me%2FGoT%2Findex.html&amp;src=sdkpreparse" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
+                    <div class="button large facebook">
+                        <p>
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                            Facebook
+                        </p>
+                    </div>
+                </a>
+                <div class="ranking button large">
+                    <p>RANKING</p>
+                </div>
+                <div class="restart button large">
+                    <img src="btn/restart.svg"/>
+                    <p>REINICIAR</p>
+                </div>
+            </div>
+            
+            <div id="char_select" class="popup_module">
+                <div class="muter mute button">
+                    <img src="btn/unmute.svg"/>
+                </div>
+                <h1>Escoge tu personaje</h1>
+                <div id="picker_wrapper">
+                    <div class="char_picker" id="dany">
+                        <span>
+                            <p class="char_nombre">DANIELA TARAZONA</p>
+                            <p class="char_cargo">Directora de RRHH</p>
+                            
+                            <p class="habilidade">Liderazgo</p>
+                            <div class="barra_habilidade liderazgo">
+                                <div class="nivel_habilidade"></div>
+                            </div>
+                            
+                            <p class="habilidade">Trabajo en equipo</p>
+                            <div class="barra_habilidade trabajo">
+                                <div class="nivel_habilidade"></div>
+                            </div>
+                            
+                            <p class="habilidade">Influencia y negociación</p>
+                            <div class="barra_habilidade influencia">
+                                <div class="nivel_habilidade"></div>
+                            </div>
+                            
+                            <p class="habilidade">Desarrollo de habilidades</p>
+                            <div class="barra_habilidade desarrollo margin_bottom_20">
+                                <div class="nivel_habilidade"></div>
+                            </div>
+                            
+                            <div class="boton_seleccionar">Seleccionar</div>
+                        </span>
+                        
+                        <img src="dany.png"/>
+                    </div>
+                    <div class="char_picker" id="jon">
+                        <span>
+                            <p class="char_nombre">JUAN NIEVE</p>
+                            <p class="char_cargo">Director de RRHH</p>
+                            
+                            <p class="habilidade">Liderazgo</p>
+                            <div class="barra_habilidade liderazgo">
+                                <div class="nivel_habilidade"></div>
+                            </div>
+                            
+                            <p class="habilidade">Trabajo en equipo</p>
+                            <div class="barra_habilidade trabajo">
+                                <div class="nivel_habilidade"></div>
+                            </div>
+                            
+                            <p class="habilidade">Influencia y negociación</p>
+                            <div class="barra_habilidade influencia">
+                                <div class="nivel_habilidade"></div>
+                            </div>
+                            
+                            <p class="habilidade">Desarrollo de habilidades</p>
+                            <div class="barra_habilidade desarrollo margin_bottom_20">
+                                <div class="nivel_habilidade"></div>
+                            </div>
+                            
+                            <div class="boton_seleccionar">Seleccionar</div>
+                        </span>
+                        
+                        <img src="jon.png"/>
+                    </div>
+                </div>
+            </div>
+            <div id="pause_menu" class="popup_module">
+                <div class="muter mute button">
+                    <img src="btn/unmute.svg"/>
+                </div>
+                
+                <h1>PAUSA</h1>
+                <div class="pause button large">
+                    <img src="btn/play.svg"/>
+                    <p>CONTINUAR</p>
+                </div>
+                <div class="restart button large">
+                    <img src="btn/restart.svg"/>
+                    <p>REINICIAR</p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div id="hud">
+            
+            <div id="pause" class="button">
+                <img src="btn/pause.svg"/>
+            </div>
+            <div id="mute" class="mute button">
+                <img src="btn/unmute.svg"/>
+            </div>
+            <div id="restart" class="button">
+                <img src="btn/restart.svg"/>
+            </div>
+            
+            
+            <img class="logo" src="logo_go.png"/>
+            
+            <div class="button" id="score">
+                SCORE: <span>0</span>
+            </div>
+            <!--
+            <div class="score_bar">
+                <div class="barscore"></div>
+            </div>-->
+        </div>
+        
+        <div id="mobile">
+            <h1>Apenas disponible en Desktop</h1>
+        </div>
+        <!--
+        -->
+        <script>
+            function walkCycle(chosenChar) {
+                
+                var elem = document.getElementById('bodymovin')
+                var animData = {
+                    container: elem,
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    rendererSettings: {
+                        progressiveLoad:false
+                    },
+                    path: chosenChar + '.json'
+                };
+                anim = bodymovin.loadAnimation(animData);
+            }
+
+        </script>
+        
+    </body>
+</html>
+      
