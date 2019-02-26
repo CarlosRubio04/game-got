@@ -46,6 +46,7 @@
               overflow:hidden;
               font-family:'Nunito', sans-serif;
               font-weight:400;
+              cursor: url('shoot.png'), auto !important;
           }
           #game_wrapper {
               width:100%;
@@ -1711,6 +1712,69 @@
               display: none;
           }
 
+          .cursor {
+                width: 20px;
+                height: 20px;
+                border: 4px solid #00ccd6;
+                border-radius: 50%;
+                position: absolute;
+                transition-duration: 200ms;
+                transition-timing-function: ease-out;
+                animation: cursorAnim .5s infinite alternate;
+                pointer-events: none;
+                z-index: 99999999;
+            }
+
+            .cursor::after {
+                content: "";
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                border: 8px solid #fc8238;
+                border-radius: 50%;
+                opacity: .5;
+                top: -8px;
+                left: -8px;
+                animation: cursorAnim2 .5s infinite alternate;
+            }
+
+            @keyframes cursorAnim {
+                from {
+                    transform: scale(1);
+                }
+                to {
+                    transform: scale(.7);
+                }
+            }
+
+            @keyframes cursorAnim2 {
+                from {
+                    transform: scale(1);
+                }
+                to {
+                    transform: scale(.4);
+                }
+            }
+
+            @keyframes cursorAnim3 {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(3);
+                }
+                100% {
+                    transform: scale(1);
+                    opacity: 0;
+                }
+            }
+
+            .expand {
+                animation: cursorAnim3 .5s forwards;
+                border: 1px solid #fb0606;
+            }
+
+
       </style>
       <script src="bodymovin.js"></script>
       <script>
@@ -1772,8 +1836,9 @@
                   $(".hole").addClass("box_shadow");
                   anim.pause();
 
-                  $(".hole").css("cursor", "pointer");
-                  $(".white_walker").css("cursor", "pointer").hover(function() {
+                  $(".hole").css("cursor", "none");
+                  $("#game_wrapper").css("cursor", "none");
+                  $(".white_walker").css("cursor", "none").hover(function() {
                       $(this).find(".char").css("opacity",".7");
                   }, function(){
                       $(this).find(".char").css("opacity","1");
@@ -1821,6 +1886,21 @@
               tl = new TimelineLite();
               $("#bodymovin").css("z-index","0");
 
+              const cursor = document.querySelector('.cursor');
+              cursor.style.display = 'block';
+
+                document.addEventListener('mousemove', e => {
+                    cursor.setAttribute("style", "top: "+(e.pageY - 15)+"px; left: "+(e.pageX - 10)+"px;")
+                })
+
+                document.addEventListener('click', () => {
+                    cursor.classList.add("expand");
+
+                    setTimeout(() => {
+                        cursor.classList.remove("expand");
+                    }, 500)
+                })
+            
               var charLength = $(".character").length;
               for (i = 1; i <= charLength; i++){
 
@@ -2020,9 +2100,11 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           var theme = new Audio("snd/theme_bit.mp3");
           $(document).ready(function(){
-
+            const cursor = document.querySelector('.cursor');
+            cursor.style.display = 'none';
               score = 0;
               var introSlideCounter = 1;
+
 
               $(".ranking").click(function(){
                   //var alreadyRegistered = localStorage.getItem("name");
@@ -2640,6 +2722,7 @@
             ?>
         </div>
         <div id="game_wrapper">
+            <div class="cursor"></div>
             <span id="wall"></span>
             <span id="rodape"></span>
             <span id="floor1"></span>
