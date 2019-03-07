@@ -11,15 +11,15 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       <title>Acsendo Go y el Invierno laboral</title>
 
-      <meta property="og:url"                content="http://www.acsendo.com/GoT/index.html" />
+      <meta property="og:url"                content="https://www.acsendo.com/GoT/index.html" />
       <meta property="og:type"               content="website" />
       <meta property="og:title"              content="Acsendo Go y el Invierno laboral" />
       <meta property="og:description"        content="El invierno laboral esta llegando a su empresa?" />
-      <meta property="og:image"              content="http://www.acsendo.com/GoT/GoT/ImagenRedes.jpg" />
+      <meta property="og:image"              content="https://www.acsendo.com/GoT/GoT/ImagenRedes.jpg" />
 
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-      <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
-      <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+      <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Nunito:200,400,700" rel="stylesheet">
       <link rel="stylesheet" href="Font-Awesome-master/css/font-awesome.min.css">
 
@@ -74,6 +74,10 @@
           }
           .white_walker:active .char {
               opacity:1;
+              -webkit-transition: transform .2s ease-in-out;
+              -khtml-transition: transform .2s ease-in-out;
+              -moz-transition: transform .2s ease-in-out;
+              -o-transition: transform .2s ease-in-out;
           }
           .health {
               position:absolute;
@@ -685,6 +689,10 @@
           }
           .char {
               z-index:2;
+              -webkit-transition: transform .2s ease-in-out;
+              -khtml-transition: transform .2s ease-in-out;
+              -moz-transition: transform .2s ease-in-out;
+              -o-transition: transform .2s ease-in-out;
           }
           .white_walker p {
               background-color:red;
@@ -1813,6 +1821,29 @@
 
           var liderDeaths = 0;
 
+          var gameSetUp = {
+              intro: true,
+              tutorial: true,
+              mute: false,
+              character: 'dany',
+              email: null,
+              name: null,
+          }
+
+          function checkSetUp() {
+            const setUp = localStorage.getItem('setUpGame');
+            
+            if (!setUp) {
+                localStorage.setItem('setUpGame', JSON.stringify(gameSetUp))
+            } 
+            return JSON.parse(setUp)
+          }
+
+          function UpdateSetUp(data) {
+              console.log(data);
+                localStorage.setItem('setUpGame', JSON.stringify(data))
+          }
+
           function startTutorial(chosenChar) {
               theme.addEventListener('ended', function() {
                   this.currentTime = 0;
@@ -1836,12 +1867,12 @@
                   $(".hole").addClass("box_shadow");
                   anim.pause();
 
-                  $(".hole").css("cursor", "none");
-                  $("#game_wrapper").css("cursor", "none");
-                  $(".white_walker").css("cursor", "none").hover(function() {
-                      $(this).find(".char").css("opacity",".7");
+                  $(".hole").css("cursor", "pointer");
+                  $("#game_wrapper").css("cursor", "pointer");
+                  $(".white_walker").css("cursor", "pointer").hover(function() {
+                      $(this).find(".char").css("transform","scale(1.1)");
                   }, function(){
-                      $(this).find(".char").css("opacity","1");
+                      $(this).find(".char").css("transform","scale(1)");
                   });
                   //$(".white_walker").css({"cursor": "pointer", "opacity": "1"}).hover().css("opacity", ".7");
 
@@ -1866,6 +1897,11 @@
                           $(".start_game").click(function(){
                               $("#tutorial_wrapper").css("display","none");
                               startGame(chosenChar);
+                            
+                            // Actualizo el obgeto en local Storage
+                              const set = checkSetUp();
+                              set.tutorial = false;
+                              UpdateSetUp(set);
                           });
 
                       } else {
@@ -1881,7 +1917,19 @@
               tutorial = false;
               pausable = true;
               millisDiscount = 0;
-              anim.destroy();
+              
+              if (anim) {
+                anim.destroy();
+              } else {
+                theme.addEventListener('ended', function() {
+                    this.currentTime = 0;
+                    this.play();
+                }, false);
+                theme.play();
+                validateSound();
+              }
+              
+              
               $(".running_div").css("marginLeft","0");
               tl = new TimelineLite();
               $("#bodymovin").css("z-index","0");
@@ -1927,72 +1975,78 @@
               }});
           }
           function restartGame(chosenChar){
-              pausable = true;
-              endGame = false;
-              millisDiscount = 0;
-              deadCount = 0;
-              liderDeaths = 0;
-              rrhhDeaths = 0;
-              ventasDeaths = 0;
-              tecnologiaDeaths = 0;
-              customSuccDeaths = 0;
-              administracionDeaths = 0;
-              departamentoOrder = [];
+              window.location.reload();
+            //   pausable = true;
+            //   endGame = false;
+            //   millisDiscount = 0;
+            //   deadCount = 0;
+            //   liderDeaths = 0;
+            //   rrhhDeaths = 0;
+            //   ventasDeaths = 0;
+            //   tecnologiaDeaths = 0;
+            //   customSuccDeaths = 0;
+            //   administracionDeaths = 0;
+            //   departamentoOrder = [];
 
-              bonusVentas = false;
-              bonusTecnologia = false;
-              bonusRrhh = false;
-              bonusCustomSucc = false;
-              bonusAdministracion = false;
-
-
-              $("#score span").html(0);
-              anim.destroy();
-              tl.stop();
-              $(".running_div").css("marginLeft","0");
-              tl = new TimelineLite();
+            //   bonusVentas = false;
+            //   bonusTecnologia = false;
+            //   bonusRrhh = false;
+            //   bonusCustomSucc = false;
+            //   bonusAdministracion = false;
 
 
-              var charLength = $("#game_wrapper .character").length;
-              for (i = 1; i <= charLength; i++){
+            //   $("#score span").html(0);
+            //   anim.destroy();
+            //   tl.stop();
+            //   $(".running_div").css("marginLeft","0");
+            //   tl = new TimelineLite();
+
+
+            //   var charLength = $("#game_wrapper .character").length;
+            //   for (i = 1; i <= charLength; i++){
 
 
 
-                  $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".acsendo_logo").css({"opacity":"0", "marginTop":"0"});
-                  $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".health, .boss_health, .star").css("opacity","1");
-                  $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".health .healthbar, .boss_health .healthbar").css("width","100%");
-                  if (!$("#game_wrapper > .character:nth-of-type(" + i + ").character").hasClass("white_walker")) {
+            //       $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".acsendo_logo").css({"opacity":"0", "marginTop":"0"});
+            //       $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".health, .boss_health, .star").css("opacity","1");
+            //       $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".health .healthbar, .boss_health .healthbar").css("width","100%");
+            //       if (!$("#game_wrapper > .character:nth-of-type(" + i + ").character").hasClass("white_walker")) {
 
-                      var originalUrl2 = $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".char").attr("src");
-                      var urlLength2 = originalUrl2.length;
-                      var subString2 = originalUrl2.substring(0, (urlLength2 - 4));
+            //         console.log(i);
 
-                      $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".char").attr("src", subString2 + "_w.png");
-                      $("#game_wrapper > .character:nth-of-type(" + i + ").character").addClass("white_walker");
+            //           // var originalUrl2 = $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".char").attr("src");
+            //           var originalUrl2 = $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".char").attr("src");
+            //           console.log(originalUrl2);
+            //           var urlLength2 = originalUrl2.length;
+            //           console.log(urlLength2);
+            //           var subString2 = originalUrl2.substring(0, (urlLength2 - 4));
 
-                  }
+            //           $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".char").attr("src", subString2 + "_w.png");
+            //           $("#game_wrapper > .character:nth-of-type(" + i + ").character").addClass("white_walker");
 
-                  if ($("#game_wrapper > .character:nth-of-type(" + i + ").character").children('div').hasClass('health')){
-                      $("#game_wrapper > .character:nth-of-type(" + i + ").character").data("hp", 3);
-                  } else if ($("#game_wrapper > .character:nth-of-type(" + i + ").character").children('div').hasClass('boss_health')){
-                      $("#game_wrapper > .character:nth-of-type(" + i + ").character").data("hp", 5);
-                  }
+            //       }
+
+            //       if ($("#game_wrapper > .character:nth-of-type(" + i + ").character").children('div').hasClass('health')){
+            //           $("#game_wrapper > .character:nth-of-type(" + i + ").character").data("hp", 3);
+            //       } else if ($("#game_wrapper > .character:nth-of-type(" + i + ").character").children('div').hasClass('boss_health')){
+            //           $("#game_wrapper > .character:nth-of-type(" + i + ").character").data("hp", 5);
+            //       }
 
 
-                  var temp2 = $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".acsendo_logo").data("logo");
-                  $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".health, .boss_health, .star").css("left",temp2 + "vh");
-              }
+            //       var temp2 = $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".acsendo_logo").data("logo");
+            //       $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".health, .boss_health, .star").css("left",temp2 + "vh");
+            //   }
 
-              game_width = $("#wall_patt").width();
-              $("#popup").css("display","none");
-              walkCycle(chosenChar);
-              tl.to($(".running_div"), 50, {marginLeft:(-game_width),  ease: Sine. easeIn, onComplete: function(){
-                  //alert("END");
+            //   game_width = $("#wall_patt").width();
+            //   $("#popup").css("display","none");
+            //   walkCycle(chosenChar);
+            //   tl.to($(".running_div"), 50, {marginLeft:(-game_width),  ease: Sine. easeIn, onComplete: function(){
+            //       //alert("END");
 
-                  checkHighscore(chosenChar);
-                  //results();
+            //       checkHighscore(chosenChar);
+            //       //results();
 
-              }});
+            //   }});
           }
           function bonusScore(bonus, departamento) {
               triggerSuccess();
@@ -2060,6 +2114,23 @@
               $("#cheering_char p.cheering").html(cheering_p);
           }
 
+
+          function validateSound() {
+                const set = checkSetUp();
+
+                if (set.mute) {
+                    theme.volume = 0;
+                    $('#mute').removeClass("mute").addClass("unmute");
+                    $("#mute, .muter").html("<img src='btn/mute.svg'/>");
+                    mute = true;
+                } else {
+                    theme.volume = 0.3;
+                    $('#mute').removeClass("unmute").addClass("mute");
+                    $("#mute, .muter").html("<img src='btn/unmute.svg'/>");
+                    mute = false;
+                }
+            }
+
           function triggerHealspell2(){
               if (!mute){
                   var healspell2 = new Audio("snd/convert2.wav");
@@ -2100,6 +2171,9 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
           var theme = new Audio("snd/theme_bit.mp3");
           $(document).ready(function(){
+            checkSetUp ();
+            const set = checkSetUp ();
+            console.log(set);
             const cursor = document.querySelector('.cursor');
             cursor.style.display = 'none';
               score = 0;
@@ -2230,19 +2304,24 @@
                   }*/
               });
 
-              $("#mute, .muter").click(function(){
-                  if($(this).hasClass("mute")){
-                      theme.volume = 0;
-                      $(this).removeClass("mute").addClass("unmute");
-                      $("#mute, .muter").html("<img src='btn/mute.svg'/>");
-                      mute = true;
-                  } else if ($(this).hasClass("unmute")){
-                      theme.volume = 0.3;
-                      $(this).removeClass("unmute").addClass("mute");
-                      $("#mute, .muter").html("<img src='btn/unmute.svg'/>");
-                      mute = false;
-                  }
-              });
+                $("#mute, .muter").click(function(){
+                    const set = checkSetUp();
+                    if($(this).hasClass("mute")){
+                        theme.volume = 0;
+                        $(this).removeClass("mute").addClass("unmute");
+                        $("#mute, .muter").html("<img src='btn/mute.svg'/>");
+                        mute = true;
+                        set.mute = mute;
+                        UpdateSetUp(set);
+                    } else if ($(this).hasClass("unmute")){
+                        theme.volume = 0.3;
+                        $(this).removeClass("unmute").addClass("mute");
+                        $("#mute, .muter").html("<img src='btn/unmute.svg'/>");
+                        mute = false;
+                        set.mute = mute;
+                        UpdateSetUp(set);
+                    }
+                });
 
               $(".intro_bola").click(function(){
                   if (!$(this).hasClass("active")){
@@ -2316,6 +2395,7 @@
               var offset = 0;
 
               $(window).blur(function(){
+                  console.log(tl);
                   if (pausable) {
                     if (!tl.paused()){
                           pauseIt();
@@ -2385,19 +2465,31 @@
 
 
               $("#popup .char_picker").click(function(){
-                  if ($(this).is("#jon")) {
-                      chosenChar = "jon";
-                      $(".intro_custom_text.juan").css("display", "block");
+                    const set = checkSetUp();
+                    if ($(this).is("#jon")) {
+                        chosenChar = "jon";
+                        set.character = chosenChar;
+                        UpdateSetUp(set);
+                        $(".intro_custom_text.juan").css("display", "block");
                       //startGame(chosenChar);
-                  } else if ($(this).is("#dany")) {
-                      chosenChar = "dany";
-                      $(".intro_custom_text.daniela").css("display", "block");
-                      //startGame(chosenChar);
-                  }
-                  $("#intro_screen .intro1 img").attr("src", "imgs/" + chosenChar + "_intro_1.png");
-                  $("#intro_screen .intro2 img").attr("src", "imgs/" + chosenChar + "_intro_2.png");
-                  $("#char_select").fadeOut(300);
-                  $("#intro_screen").delay(400).fadeIn(300);
+                    } else if ($(this).is("#dany")) {
+                        chosenChar = "dany";
+                        set.character = chosenChar;
+                        UpdateSetUp(set);
+                        $(".intro_custom_text.daniela").css("display", "block");
+                        //startGame(chosenChar);
+                    }
+
+                    if (set.tutorial) {
+                        $("#intro_screen .intro1 img").attr("src", "imgs/" + chosenChar + "_intro_1.png");
+                        $("#intro_screen .intro2 img").attr("src", "imgs/" + chosenChar + "_intro_2.png");
+                        $("#char_select").fadeOut(300);
+                        $("#intro_screen").delay(400).fadeIn(300);
+                    } else {
+                        $("#tutorial_wrapper").css("display","none");
+                        startGame(chosenChar);
+                    }
+                  
               })
               //$(".running_div").animate({"marginLeft": game_width}, 50000);
 
@@ -3518,7 +3610,7 @@
             </div>
 
 
-            <img class="logo" src="logo_go.png"/>
+            <img class="logo" src="imgs/logoacsendo.png"/>
 
             <div class="button" id="score">
                 SCORE: <span>0</span>
