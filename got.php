@@ -1669,61 +1669,60 @@
          display: none;
          }
          .cursor {
-         width: 40px;
-         height: 40px;
-         border: 4px solid #00ccd6;
-         background-color: #00ccd6;
-         border-radius: 50%;
-         position: absolute;
-         transition-duration: 200ms;
-         transition-timing-function: ease-out;
-         animation: cursorAnim .2s infinite alternate;
-         pointer-events: none;
-         z-index: 99999999;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(0, 204, 214, .6);
+            border-radius: 50%;
+            position: absolute;
+            transition-duration: 100ms;
+            transition-timing-function: ease-out;
+            animation: cursorAnim .2s infinite alternate;
+            pointer-events: none;
+            z-index: 99999999;
          }
-         .cursor::after {
-         content: "";
-         width: 60px;
-         height: 60px;
-         position: absolute;
-         border: 8px solid #fc8238;
-         border-radius: 50%;
-         opacity: .5;
-         top: -19px;
-         left: -19px;
-         animation: cursorAnim2 .5s infinite alternate;
-         }
+         /* .cursor::after {
+            content: "";
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            border: 4px solid #fc8238;
+            border-radius: 50%;
+            opacity: .5;
+            top: -6px;
+            left: -6px;
+            animation: cursorAnim2 .5s infinite alternate;
+         } */
          @keyframes cursorAnim {
-         from {
-         transform: scale(1);
-         }
-         to {
-         transform: scale(.7);
-         }
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(.7);
+            }
          }
          @keyframes cursorAnim2 {
-         from {
-         transform: scale(1);
-         }
-         to {
-         transform: scale(.4);
-         }
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(.4);
+            }
          }
          @keyframes cursorAnim3 {
-         0% {
-         transform: scale(1);
-         }
-         50% {
-         transform: scale(3);
-         }
-         100% {
-         transform: scale(1);
-         opacity: 0;
-         }
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(2);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
          }
          .expand {
-         animation: cursorAnim3 .5s forwards;
-         border: 1px solid #fb0606;
+            animation: cursorAnim3 .5s forwards;
+            border: 4px solid #fc8238;
          }
       </style>
       <script src="bodymovin.js"></script>
@@ -1897,7 +1896,7 @@
              game_width = $("#wall_patt").width();
              $("#popup").css("display","none");
              walkCycle(chosenChar);
-             tl.to($(".running_div"), 50, {marginLeft:(-game_width),  ease: Sine. easeIn, onComplete: function(){
+             tl.to($(".running_div"), 60, {marginLeft:(-game_width),  ease: Sine. easeIn, onComplete: function(){
                  //alert("END");
          
                  checkHighscore(chosenChar);
@@ -1911,7 +1910,7 @@
            const cursor = document.querySelector('.cursor');
          
            const show = function (e) {
-               cursor.setAttribute("style", "display: block;" + "top: "+(e.pageY - 30)+"px; left: "+(e.pageX - 30)+"px;")
+               cursor.setAttribute("style", "display: block;" + "top: "+(e.pageY - 15)+"px; left: "+(e.pageX - 15)+"px;")
            }
          
            const hide = function (e) {
@@ -2031,9 +2030,7 @@
              showSpecialCursor(false);
              millisEnd = new Date();
             
-            if (!millisStart) {
-                millisStart = new Date();
-            } 
+            if (!millisStart) { millisStart = new Date(); } 
 
              var bonusMillis = (millisEnd.getTime()) - (millisStart.getTime());
              score = Math.floor((((bonusMillis - millisDiscount) * .001) * deadCount) + (deadCount*1000));
