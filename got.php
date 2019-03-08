@@ -1788,7 +1788,7 @@
             $(".hole").css("cursor", "pointer");
             $("#game_wrapper").css("cursor", "pointer");
             $(".white_walker").css("cursor", "pointer").hover(function() {
-                    $(this).find(".char").css("transform","scale(1.1)");
+                    $(this).find(".char").css("transform","scale(1.02)");
                 }, function(){
                     $(this).find(".char").css("transform","scale(1)");
             });
@@ -2030,6 +2030,11 @@
              endGame = true;
              showSpecialCursor(false);
              millisEnd = new Date();
+            
+            if (!millisStart) {
+                millisStart = new Date();
+            } 
+
              var bonusMillis = (millisEnd.getTime()) - (millisStart.getTime());
              score = Math.floor((((bonusMillis - millisDiscount) * .001) * deadCount) + (deadCount*1000));
              $(".button.large.twitter").parent().attr("href", "https://twitter.com/intent/tweet?text=¡Obtuve%20" + score + "%20puntos%20en%20el%20juego%20de%20de%20Game%20of%20Thrones%20de%20Acsendo!%20¡Pruébalo!%20http://www.acsendo.com/GoT/");
