@@ -1721,28 +1721,29 @@
           }
 
           .cursor {
-                width: 20px;
-                height: 20px;
+                width: 40px;
+                height: 40px;
                 border: 4px solid #00ccd6;
+                background-color: #00ccd6;
                 border-radius: 50%;
                 position: absolute;
                 transition-duration: 200ms;
                 transition-timing-function: ease-out;
-                animation: cursorAnim .5s infinite alternate;
+                animation: cursorAnim .2s infinite alternate;
                 pointer-events: none;
                 z-index: 99999999;
             }
 
             .cursor::after {
                 content: "";
-                width: 20px;
-                height: 20px;
+                width: 60px;
+                height: 60px;
                 position: absolute;
                 border: 8px solid #fc8238;
                 border-radius: 50%;
                 opacity: .5;
-                top: -8px;
-                left: -8px;
+                top: -19px;
+                left: -19px;
                 animation: cursorAnim2 .5s infinite alternate;
             }
 
@@ -1934,20 +1935,7 @@
               tl = new TimelineLite();
               $("#bodymovin").css("z-index","0");
 
-              const cursor = document.querySelector('.cursor');
-              cursor.style.display = 'block';
-
-                document.addEventListener('mousemove', e => {
-                    cursor.setAttribute("style", "top: "+(e.pageY - 15)+"px; left: "+(e.pageX - 10)+"px;")
-                })
-
-                document.addEventListener('click', () => {
-                    cursor.classList.add("expand");
-
-                    setTimeout(() => {
-                        cursor.classList.remove("expand");
-                    }, 500)
-                })
+              showSpecialCursor(true);
             
               var charLength = $(".character").length;
               for (i = 1; i <= charLength; i++){
@@ -1973,6 +1961,35 @@
                   //results();
 
               }});
+          }
+
+          function showSpecialCursor(val) {
+
+            const cursor = document.querySelector('.cursor');
+
+            const show = function (e) {
+                cursor.setAttribute("style", "display: block;" + "top: "+(e.pageY - 30)+"px; left: "+(e.pageX - 30)+"px;")
+            }
+
+            const hide = function (e) {
+                cursor.setAttribute("style", "display: none;" + "top: 50vh; left: 20vw;")
+            }
+
+            const effect = function (e) {
+                cursor.classList.add("expand");
+                setTimeout(() => { cursor.classList.remove("expand") }, 300)
+            }
+
+            if (val) {
+                document.removeEventListener('mousemove', hide);
+                document.addEventListener('mousemove', show);
+                document.addEventListener('click', effect);
+            } else {
+                document.removeEventListener('mousemove', show);
+                document.removeEventListener('click', effect);
+                document.addEventListener('mousemove', hide);
+            }
+            
           }
           function restartGame(chosenChar){
               window.location.reload();
@@ -2068,6 +2085,7 @@
           function checkHighscore(chosenChar){
               pausable = false;
               endGame = true;
+              showSpecialCursor(false);
               millisEnd = new Date();
               var bonusMillis = (millisEnd.getTime()) - (millisStart.getTime());
               score = Math.floor((((bonusMillis - millisDiscount) * .001) * deadCount) + (deadCount*1000));
@@ -2415,6 +2433,7 @@
                           clickable = false;
                           anim.pause();
                           $(".white_walker").css("cursor","auto");
+                          showSpecialCursor(false);
 
                           $(".white_walker").hover(function() {
                               $(this).find(".char").css("opacity","1");
@@ -2429,6 +2448,7 @@
                           clickable = true;
                           anim.play();
                           $(".white_walker").css("cursor","pointer");
+                          showSpecialCursor(true)
                           $(".white_walker").hover(function() {
                               $(this).find(".char").css("opacity",".7");
                           }, function(){
