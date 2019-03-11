@@ -1724,6 +1724,26 @@
             animation: cursorAnim3 .5s forwards;
             border: 4px solid #fc8238;
          }
+
+         .popup_module_back {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            max-width: 275px;
+            display: block;
+            padding: 16px 0;
+            text-align: center;
+         }
+         .popup_module_back p {
+            color: #fff;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+            text-decoration: none;
+         }
+         .popup_module_back p:hover {
+            cursor: pointer !important;
+         } 
       </style>
       <script src="bodymovin.js"></script>
       <script>
@@ -2128,9 +2148,8 @@
                  highscore.volume = 0.5;
              }
          }
-         
-         
-         
+
+
          /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
          var theme = new Audio("snd/theme_bit.mp3");
          $(document).ready(function(){
@@ -2141,7 +2160,8 @@
            cursor.style.display = 'none';
              score = 0;
              var introSlideCounter = 1;
-         
+            
+             
          
              $(".ranking").click(function(){
                  //var alreadyRegistered = localStorage.getItem("name");
@@ -2266,7 +2286,14 @@
                      TweenLite.to($("#disclaimer"), 1.3, {"transform":"translateX(0%)", delay:1, ease: Elastic. easeOut.config( 1, 0.3)});
                  }*/
              });
-         
+             
+             $("#btn-volver-form").click(function () {
+               // event.preventDefault();
+               console.log('aja');
+               $(".popup_module").fadeOut(300);
+               $("#share_screen").delay(400).fadeIn(300);
+             });
+
                $("#mute, .muter").click(function(){
                    const set = checkSetUp();
                    if($(this).hasClass("mute")){
@@ -3470,6 +3497,9 @@
             <script type="text/javascript">
                new RDStationForms('got-6277fc9cfc259c4784db-html', 'UA-5384729-1').createForm();
             </script>
+            <div class="popup_module_back">
+               <p id="btn-volver-form">Volver</p>
+            </div>
          </div>
          <div id="share_screen" class="popup_module">
             <div id="cheering_char">
