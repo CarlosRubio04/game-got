@@ -2154,17 +2154,27 @@
          }
 
          .btn-retar {
-            background-color: #00c780;
+            background-color: #fc8238;
+            box-shadow: 0 5px 0 #d76e2f;
             display: block;
             margin: 0 auto;
             border: 0;
-            border-radius: 6px;
+            border-radius: 10px;
             color: #fff;
             font-size: 18px;
             font-weight: bold;
             padding: 8px 16px;
+            cursor: pointer;
+            line-height: 0;
          }
          .btn-retar:hover {
+            cursor: pointer;
+         }
+
+         .retar_back {
+            position: relative;
+            text-align: center;
+            margin-top: 40px;
             cursor: pointer;
          }
 
@@ -2223,8 +2233,8 @@
          }
          
          function UpdateSetUp(data) {
-             console.log(data);
-               localStorage.setItem('setUpGame', JSON.stringify(data))
+            console.log(data);
+            localStorage.setItem('setUpGame', JSON.stringify(data))
          }
          
          function AnimCharacters() {
@@ -2578,15 +2588,14 @@
          var theme = new Audio("snd/theme_bit.mp3");
          $(document).ready(function(){
            checkSetUp ();
-           const set = checkSetUp ();
-           // console.log(set);
-           const cursor = document.querySelector('.cursor');
-           cursor.style.display = 'none';
-             score = 0;
-             var introSlideCounter = 1;
+            const set = checkSetUp ();
+            // console.log(set);
+            const cursor = document.querySelector('.cursor');
+            cursor.style.display = 'none';
+            score = 0;
+            var introSlideCounter = 1;
             
-             
-         
+            
              $(".ranking").click(function(){
                  //var alreadyRegistered = localStorage.getItem("name");
                  //if (alreadyRegistered == null) {
@@ -2612,8 +2621,12 @@
                          if (!validateEmail(email) || country == "" || nombre == ""){
                              console.log("problem!!");
                          } else {
-                             localStorage.setItem("name", nombre);
-                             localStorage.setItem("email", email);
+
+                            // Actualizo el obgeto en local Storage
+                           const set = checkSetUp();
+                           set.name = nombre;
+                           set.email = email;
+                           UpdateSetUp(set);
          
                              $.ajax({
                                  url: 'highscore/savedata.php',
@@ -2716,10 +2729,49 @@
                $("#share_screen").delay(400).fadeIn(300);
             });
 
+            $("#btn-volver-retar").click(function () {
+               $(".popup_module").fadeOut(300);
+               $("#share_screen").delay(400).fadeIn(300);
+            });
+
             $('#reta-btn').click(function () {
                $(".popup_module").fadeOut(300);
                $("#challenge").delay(400).fadeIn(300);
             });
+
+            $("#submitRetar").click(function (){
+               event.preventDefault();
+               const email = $("#email-challenge").val();
+               console.log(email);
+               const set = checkSetUp();
+               const score = localStorage.getItem('highscore');
+
+               function validateEmail(email) {
+                  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                     return re.test(email);
+               }
+               if (!validateEmail(email)) {
+                  console.log('error email');
+               } else {
+                  $.ajax({
+                     url: 'includes/validation.php',
+                     type: 'POST',
+                     data: {
+                        email: email,
+                        emailSend: set.email,
+                        nameSend: set.name,
+                        score: score,
+                     },
+                     success: function(msg) {
+                        console.log(msg);
+                        $('#retar-callback').html('<p>' + msg + '</p>');
+                     },
+                     error: function (err){
+                        console.log(err)
+                     }
+                  });
+               }
+             });
 
                $("#mute, .muter").click(function(){
                    const set = checkSetUp();
@@ -3868,7 +3920,10 @@
             <h3>¡Felicitaciones! Has quedado inscrito en el sorteo de un premio sorpresa*</h3>
             <p>Nota: Entre más veces participes, más oportunidades tendrás de ganar.</p>
             <p class="small">*El ganador será escogido aleatoriamente entre los participantes. Será contactado vía email y se le brindará información sobre el premio.</p>
-            <p class="retar" id="reta-btn">Retar a un amigo</p>
+
+            <div class="btn-retar" id="reta-btn">
+               <p>RETA A UN AMIGO</p>
+            </div>
          </div>
          <div id="fame_screen" class="popup_module">
             <h1>High Scores</h1>
@@ -4045,14 +4100,20 @@
                      <label for="email">Ingresa se email</label>
                      <input type="email" name="email-challenge" id="email-challenge" value="" class="form-control required js-email" placeholder="" required="required">
                   </div>
-                  <button type="submit" class="btn-retar">
-                     RETAR
-                  </button>
+                  <div class="btn-retar" id="submitRetar">
+                     <p>RETAR</p>
+                  </div>
                </form>
+               <div id="retar-callback">
+                  
+               </div>
+               <div class="retar_back">
+                  <p id="btn-volver-retar">Volver</p>
+               </div>
             </div>
          </div>
-
       </div>
+
       <div id="hud">
          <div id="pause" class="button">
             <img src="btn/pause.svg"/>
