@@ -3,10 +3,10 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-      <title>Acsendo Go y el Invierno laboral</title>
+      <title>Acsendo y el Invierno laboral</title>
       <meta property="og:url"                content="https://www.acsendo.com/GoT/index.html" />
       <meta property="og:type"               content="website" />
-      <meta property="og:title"              content="Acsendo Go y el Invierno laboral" />
+      <meta property="og:title"              content="Acsendo y el Invierno laboral" />
       <meta property="og:description"        content="El invierno laboral esta llegando a su empresa?" />
       <meta property="og:image"              content="https://www.acsendo.com/GoT/GoT/ImagenRedes.jpg" />
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -14,6 +14,10 @@
       <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Nunito:200,400,700" rel="stylesheet">
       <link rel="stylesheet" href="Font-Awesome-master/css/font-awesome.min.css">
+
+      <link rel="icon" href="https://www.acsendo.com/wp-content/blogs.dir/39/files/2017/07/cropped-favicon-01-01-32x32.png" sizes="32x32" />
+      <link rel="icon" href="https://www.acsendo.com/wp-content/blogs.dir/39/files/2017/07/cropped-favicon-01-01-192x192.png" sizes="192x192" />
+      <link rel="apple-touch-icon-precomposed" href="https://www.acsendo.com/wp-content/blogs.dir/39/files/2017/07/cropped-favicon-01-01-180x180.png" />
       <style>
          img {
             -webkit-touch-callout: none;
@@ -2516,7 +2520,7 @@
              if (score < 60000) {
                  cheering = "imgs/" + chosenChar + "_end_mal.png";
                  cheering_h1 = "¡Buen intento!";
-                 cheering_p = "Pero el invierno terminó por arrasar el clima laboral de Westeros. Sigue utilizando Acsendo Go para mejorar los procesos de la organización.";
+                 cheering_p = "Pero el invierno terminó por arrasar el clima laboral de Westeros. Sigue utilizando Acsendo para mejorar los procesos de la organización.";
              } else if (score < 100000) {
                  cheering = "imgs/" + chosenChar + "_end_bueno.png";
                  cheering_h1 = "¡Sigue así!";
@@ -3904,7 +3908,7 @@
                <div class="intro_slide intro4">
                    <img src="imgs/ayuda.png"/>
                    <h1>¡Necesitamos tu ayuda!</h1>
-                   <p>Como responsable de RR.HH debes ayudar a Westeros Inc a afrontar el invierno laboral con Acsendo Go y logar un ambiente de trabajo amable, motivador y transparente.</p>
+                   <p>Como responsable de RR.HH debes ayudar a Westeros Inc a afrontar el invierno laboral con Acsendo y logar un ambiente de trabajo amable, motivador y transparente.</p>
                    <div class="start button large">
                        <p>¡Jugar ahora!</p>
                    </div>
@@ -3951,7 +3955,7 @@
                    echo "Dá para imprimir, sim!";
                }*/
                
-               ?>
+            ?>
             </span>
             <a href="https://twitter.com/intent/tweet?text=Hello%20world"  onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
                <div class="button large twitter">
