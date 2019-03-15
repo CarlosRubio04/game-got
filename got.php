@@ -2034,7 +2034,7 @@
          .cursor {
             width: 20px;
             height: 20px;
-            background-color: rgba(0, 204, 214, .6);
+            background-color: transparent;
             border-radius: 50%;
             position: absolute;
             transition-duration: 100ms;
@@ -2092,6 +2092,7 @@
          .expand {
             animation: cursorAnim3 .5s forwards;
             border: 4px solid #fc8238;
+            background-color: rgba(0, 204, 214, .6);
          }
 
          .popup_module_back {
@@ -2158,21 +2159,19 @@
          }
 
          .btn-retar {
+            margin-right: 20px;
             background-color: #fc8238;
             box-shadow: 0 5px 0 #d76e2f;
-            display: block;
-            margin: 0 auto;
-            border: 0;
-            border-radius: 10px;
-            color: #fff;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 8px 16px;
-            cursor: pointer;
-            line-height: 0;
          }
+
          .btn-retar:hover {
-            cursor: pointer;
+            margin-top: 10px;
+            margin-bottom: -5px;
+            box-shadow: 0 0 0 #d76e2f;
+         }
+
+         .btn-retar:active {
+            background-color: #d76e2f;
          }
 
          .retar_back {
@@ -2180,6 +2179,17 @@
             text-align: center;
             margin-top: 40px;
             cursor: pointer;
+         }
+
+         #cheering_char .restart {
+            position: absolute;
+            left: 30px;
+            top: 20px;
+         }
+
+         #cheering_char .restart img {
+            left: 2%;
+            top: 40%;
          }
 
       </style>
@@ -3924,10 +3934,6 @@
             <h3>¡Felicitaciones! Has quedado inscrito en el sorteo de un premio sorpresa*</h3>
             <p>Nota: Entre más veces participes, más oportunidades tendrás de ganar.</p>
             <p class="small">*El ganador será escogido aleatoriamente entre los participantes. Será contactado vía email y se le brindará información sobre el premio.</p>
-
-            <div class="btn-retar" id="reta-btn">
-               <p>RETA A UN AMIGO</p>
-            </div>
          </div>
          <div id="fame_screen" class="popup_module">
             <h1>High Scores</h1>
@@ -3989,6 +3995,9 @@
          <div id="share_screen" class="popup_module">
             <div id="cheering_char">
                <h1 class="cheering"></h1>
+               <div class="restart button">
+                  <img src="btn/restart.svg">
+               </div>
                <div class="muter mute button">
                   <img src="btn/unmute.svg"/>
                </div>
@@ -4019,9 +4028,8 @@
                <div class="ranking button large">
                   <p>RANKING</p>
                </div>
-               <div class="restart button large">
-                  <img src="btn/restart.svg"/>
-                  <p>REINICIAR</p>
+               <div class="btn-retar button large" id="reta-btn">
+                  <p>RETA UN AMIGO</p>
                </div>
             </div>
          </div>
