@@ -1109,6 +1109,7 @@
             margin-bottom: 10px;
             margin-left: 10px;
             margin-right: 10px;
+            transition: all .2s ease-out;
          }
 
          .button img {
@@ -2528,11 +2529,11 @@
              }
              var cheering, cheering_h1, cheering_p;
          
-             if (score < 60000) {
+             if (score < 40000) {
                  cheering = "imgs/" + chosenChar + "_end_mal.png";
                  cheering_h1 = "¡Buen intento!";
                  cheering_p = "Pero el invierno terminó por arrasar el clima laboral de Westeros. Sigue utilizando Acsendo para mejorar los procesos de la organización.";
-             } else if (score < 100000) {
+             } else if (score < 60000) {
                  cheering = "imgs/" + chosenChar + "_end_bueno.png";
                  cheering_h1 = "¡Sigue así!";
                  cheering_p = "Existe un mejor clima laboral en Westeros. Sin embargo, aún quedan muchos más colaboradores por ser motivados.";
