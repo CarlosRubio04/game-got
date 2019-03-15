@@ -1541,6 +1541,7 @@
 
          #conversion-got-6277fc9cfc259c4784db form input {
             height: 4vh !important;
+            padding-top: 8px !important;
          }
 
          #form-container-got-6277fc9cfc259c4784db #conversion-got-6277fc9cfc259c4784db header h1 {
@@ -2748,7 +2749,7 @@
                $("#share_screen").delay(400).fadeIn(300);
             });
 
-            $('#reta-btn').click(function () {
+            $('.btn-retar').click(function () {
                $(".popup_module").fadeOut(300);
                $("#challenge").delay(400).fadeIn(300);
             });
@@ -3936,6 +3937,9 @@
             <p class="small">*El ganador será escogido aleatoriamente entre los participantes. Será contactado vía email y se le brindará información sobre el premio.</p>
          </div>
          <div id="fame_screen" class="popup_module">
+            <div class="restart button">
+               <img src="btn/restart.svg">
+            </div>
             <h1>High Scores</h1>
             <span>
             <?php
@@ -3977,9 +3981,8 @@
                   </p>
                </div>
             </a>
-            <div class="restart button large">
-               <img src="btn/restart.svg"/>
-               <p>REINICIAR</p>
+            <div class="btn-retar button large" id="">
+               <p>RETA UN AMIGO</p>
             </div>
          </div>
          <div id="share_form" class="popup_module">
@@ -4112,10 +4115,11 @@
                      <label for="email">Ingresa se email</label>
                      <input type="email" name="email-challenge" id="email-challenge" value="" class="form-control required js-email" placeholder="" required="required">
                   </div>
-                  <div class="btn-retar" id="submitRetar">
-                     <p>RETAR</p>
-                  </div>
                </form>
+
+               <div class="btn-retar button large" id="submitRetar">
+                  <p>RETAR</p>
+               </div>
                <div id="retar-callback">
                   
                </div>
