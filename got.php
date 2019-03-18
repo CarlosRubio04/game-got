@@ -2271,7 +2271,7 @@
 
          function checkMobile(x) {
             if (x.matches) { // If media query matches
-               
+               window.location.replace("mov.html");
             } else {
                console.log('Todo va bien');
             }
