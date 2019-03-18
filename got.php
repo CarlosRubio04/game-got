@@ -2194,6 +2194,36 @@
             top: 40%;
          }
 
+         .customMsg {
+            position: absolute;
+            width: 200px;
+            height: auto;
+            z-index: 999999;
+            right: 20px;
+            bottom: 40px;
+            background-color: #fc8238;
+            border-radius: 18px;
+            padding: 8px 12px;
+            box-shadow: 0 0 0 #d76e2f;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+            animation: fadeMsg .2s;
+            transform: scale(0.8);
+         }
+
+
+         @keyframes fadeMsg {
+            from {
+               transform: scale(0.8);
+               opacity: 0;
+            }
+            to {
+               transform: scale(1);
+               opacity: 1;
+            }
+         }
+
       </style>
       <script src="bodymovin.js"></script>
       <script>
@@ -2610,6 +2640,10 @@
             cursor.style.display = 'none';
             score = 0;
             var introSlideCounter = 1;
+
+
+            const customMsg = $('#customMsg');
+            customMsg.hide();
             
             
              $(".ranking").click(function(){
@@ -3017,6 +3051,60 @@
                  }
          
                  deadCount++;
+
+                 console.log(deadCount);
+
+                 function showMessage (msg) {
+                     customMsg.show();
+                     customMsg.html(msg);
+                 }
+
+                 function HideMessade () {
+                     setTimeout(() => {
+                        customMsg.fadeOut();
+                     }, 500);
+                 }
+
+                 let Msg = '';
+
+                 if(deadCount == 5) {
+                     Msg = 'Muy bien !!! 5';
+                     showMessage(Msg);
+                     HideMessade();
+                 } else if (deadCount == 10) {
+                     Msg = 'Muy bien !!! 10';
+                     showMessage(Msg);
+                     HideMessade();
+                 } else if (deadCount == 15) {
+                     Msg = 'Muy bien !!! 15';
+                     showMessage(Msg);
+                     HideMessade();
+                 } else if (deadCount == 20) {
+                     Msg = 'Muy bien !!! 20';
+                     showMessage(Msg);
+                     HideMessade();
+                 } else if (deadCount == 30) {
+                     Msg = 'Muy bien !!! 30';
+                     showMessage(Msg);
+                     HideMessade();
+                 } else if (deadCount == 40) {
+                     Msg = 'Muy bien !!! 40';
+                     showMessage(Msg);
+                     HideMessade();
+                 } else if (deadCount == 50) {
+                     Msg = 'Muy bien !!! 50';
+                     showMessage(Msg);
+                     HideMessade();
+                 } else if (deadCount == 60) {
+                     Msg = 'Muy bien !!! 60';
+                     showMessage(Msg);
+                     HideMessade();
+                 } else if (deadCount == 70) {
+                     Msg = 'Muy bien !!! 70';
+                     showMessage(Msg);
+                     HideMessade();
+                 }
+                 
              }
          
          
@@ -3294,6 +3382,7 @@
       </div>
       <div id="game_wrapper">
          <div class="cursor"></div>
+         <div class="customMsg" id="customMsg">Buen travajo !!</div>
          <span id="wall"></span>
          <span id="rodape"></span>
          <span id="floor1"></span>
