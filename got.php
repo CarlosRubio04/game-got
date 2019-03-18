@@ -4039,8 +4039,8 @@
             <p class="small">*El ganador será escogido aleatoriamente entre los participantes. Será contactado vía email y se le brindará información sobre el premio.</p>
          </div>
          <div id="fame_screen" class="popup_module">
-            <div class="restart button">
-               <img src="btn/restart.svg">
+            <div class="restart button" style="position: absolute; top: 20px; left: 20px;">
+               <img src="btn/restart.svg" style="left: 0;">
             </div>
             <h1>High Scores</h1>
             <span>
