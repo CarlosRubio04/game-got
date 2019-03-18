@@ -1129,6 +1129,9 @@
             display: inline-block;
             margin-bottom: 2vh;
          }
+         .button.large img {
+            left: 10% !important;
+         }
 
          input.button.large {
             margin-left: 0 !important;
