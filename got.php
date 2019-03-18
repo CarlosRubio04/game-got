@@ -2268,6 +2268,18 @@
              email: null,
              name: null,
          }
+
+         function checkMobile(x) {
+            if (x.matches) { // If media query matches
+               
+            } else {
+               console.log('Todo va bien');
+            }
+         }
+
+         var x = window.matchMedia("(max-width: 768px)")
+         checkMobile(x) // Call listener function at run time
+         x.addListener(checkMobile) // Attach listener function on state changes
          
          function checkSetUp() {
            const setUp = localStorage.getItem('setUpGame');
@@ -3052,7 +3064,7 @@
          
                  deadCount++;
 
-                 console.log(deadCount);
+                  // console.log(deadCount);
 
                  function showMessage (msg) {
                      customMsg.show();
