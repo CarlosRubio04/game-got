@@ -2204,11 +2204,14 @@
             z-index: 999999;
             right: 20px;
             bottom: 40px;
-            background-color: #fc8238;
-            border-radius: 18px;
+            background-color: #00c780;
+            border-radius: 16px;
             padding: 8px 12px;
-            box-shadow: 0 0 0 #d76e2f;
-            font-size: 18px;
+            -webkit-box-shadow: 0px 5px 10px 4px rgba(191,191,191,0.5);
+            -moz-box-shadow: 0px 5px 10px 4px rgba(191,191,191,0.5);
+            box-shadow: 0px 5px 10px 4px rgba(191,191,191,0.5);
+            font-size: 22px;
+            font-weight: bolder;
             color: #fff;
             text-align: center;
             animation: fadeMsg .2s;
@@ -3077,7 +3080,7 @@
                  function HideMessade () {
                      setTimeout(() => {
                         customMsg.fadeOut();
-                     }, 500);
+                     }, 700);
                  }
 
                  let Msg = '';
