@@ -8,7 +8,7 @@
       <meta property="og:type"               content="website" />
       <meta property="og:title"              content="Acsendo y el Invierno laboral" />
       <meta property="og:description"        content="El invierno laboral esta llegando a su empresa?" />
-      <meta property="og:image"              content="https://www.acsendo.com/GoT/GoT/ImagenRedes.jpg" />
+      <meta property="og:image"              content="https://www.acsendo.com/GoT/GoT/ImagenRedesGoT1.png" />
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
       <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>

@@ -15,50 +15,57 @@ $password="luna0205";
 $from= "no-repley@acsendo.com";
 $from_name= $nameSend;
 $msg="
-<table border='0' cellpadding='0' cellspacing='0' width='100%' bgcolor='#F8F8F8' style='border-collapse:collapse'>
-    <tbody>
-
-        <tr>
-            <td>
-                <table border='0' cellpadding='0' cellspacing='0' width='400' align='center' style='border-collapse:collapse;margin:auto;min-width:400px'>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <table border='0' cellpadding='0' cellspacing='0' width='740' align='right'>
-                                    <tbody>
-                                        <tr>
-                                            <td align='center'>
-                                                <a href='http://www.acsendo.com/es/' style='display:block;text-decoration:none' target='_blank'>
-                                                    <img src='http://www.acsendo.com/wp-content/blogs.dir/18/files/2016/02/logo_nuevo.png' width='160' style='border:none;display:block'>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <table border='0' cellpadding='0' cellspacing='0' width='400' align='center' style='border-collapse:collapse;margin:auto;min-width:400px'>
-                    <tbody>
-                        <tr>
-                            <td style='color:#1c263a;font-size: 20px;'>
-                                <p><b>$nameSend</b> Te reto a jugar.</p>
-                                <p>Mi mejor puntaje ha sido <b>$score</b> </p>
-                                <p><a style='color:#1c263a;font-size: 20px;' href='https://www.acsendo.com/GoT/'>Ir a Jugar</a></p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<meta http-equiv='Content-Type'  content='text/html charset=UTF-8' />
+    <table border='0' cellpadding='0' cellspacing='0' width='100%' bgcolor='#F8F8F8' style='border-collapse:collapse'>
+        <tbody>
+           <tr height='50'></tr>
+            <tr>
+                <td>
+                    <table border='0' cellpadding='0' cellspacing='0' width='400' align='center' style='border-collapse:collapse;margin:auto;min-width:400px'>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table border='0' cellpadding='0' cellspacing='0' width='400' align='center'>
+                                        <tbody>
+                                            <tr>
+                                                <td align='center'>
+                                                    <a href='http://www.acsendo.com/es/' style='display:block;text-decoration:none' target='_blank'>
+                                                        <img src='http://www.acsendo.com/wp-content/blogs.dir/18/files/2016/02/logo_nuevo.png' width='160' style='border:none;display:block'>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+    
+            <tr>
+                <td>
+                    <table border='0' cellpadding='0' cellspacing='0' width='400' align='center' style='border-collapse:collapse;margin:auto;min-width:400px'>
+                        <tbody>
+                            <tr>
+                                <td style='color:#1c263a;font-size: 20px;font-size:29px;font-weight:800;'>
+                                    <p><b>$nameSend</b> Te reto a jugar.</p>
+                                    <p>Su mejor puntaje ha sido <b>$score</b> </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align='center' style='padding:20px 0 40px'>
+                                    <a href='https://www.acsendo.com/GoT/' style='border-radius:3px;color:#FFFFFF;background-color:#df5e35;display:inline-block;font-size:18px;font-weight:600;margin:auto;padding:10px 15px;text-decoration:none' target='_blank'>
+                                        IR A JUGAR
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 "; // HTML message
 $subject="$nameSend Te ha retado";
 /*End Config*/
