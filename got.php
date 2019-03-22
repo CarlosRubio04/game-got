@@ -2141,6 +2141,9 @@
             justify-content: center;
             align-items: center;
          }
+         .modal-challenge h1 {
+            margin-bottom: 0;
+         }
 
          .modal-challenge .field{
             margin-bottom: 16px;
@@ -2822,8 +2825,15 @@
             });
 
             $('.btn-retar').click(function () {
-               $(".popup_module").fadeOut(300);
-               $("#challenge").delay(400).fadeIn(300);
+               const set = checkSetUp();
+               if (set.email) {
+                  $(".popup_module").fadeOut(300);
+                  $("#challenge").delay(400).fadeIn(300);
+               } else {
+                  $(".popup_module").fadeOut(300);
+                  $("#share_form").delay(400).fadeIn(300);
+               }
+               
             });
 
             $("#submitRetar").click(function (){

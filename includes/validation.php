@@ -42,15 +42,41 @@ $msg="
                     </table>
                 </td>
             </tr>
-    
+
+            <tr height='50'></tr>
             <tr>
                 <td>
                     <table border='0' cellpadding='0' cellspacing='0' width='400' align='center' style='border-collapse:collapse;margin:auto;min-width:400px'>
                         <tbody>
                             <tr>
+                                <td>
+                                    <table border='0' cellpadding='0' cellspacing='0' width='400' align='center'>
+                                        <tbody>
+                                            <tr>
+                                                <td align='center'>
+                                                    <a href='http://www.acsendo.com/es/' style='display:block;text-decoration:none' target='_blank'>
+                                                        <img src='https://www.acsendo.com/GoT/includes/header.jpg' width='400' style='border:none;display:block'>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+    
+            <tr>
+                <td>
+                    <table border='0' cellpadding='0' cellspacing='0' width='400' align='center' style='border-collapse:collapse;margin:auto;min-width:400px'>
+                        <tbody>
+                            <tr align='center'>
                                 <td style='color:#1c263a;font-size: 20px;font-size:29px;font-weight:800;'>
-                                    <p><b>$nameSend</b> Te reto a jugar.</p>
-                                    <p>Su mejor puntaje ha sido <b>$score</b> </p>
+                                    <p style='text-align: center;'><b>Hola</b></p>
+                                    <p style='text-align: center;'><b>$nameSend</b> obtuvo <b>$score</b> en el juego de Acsendo y te ha retado a obtener un mejor puntaje.</p>
+                                    <p style='text-align: center;'><b>¿Crees que eres capaz de superarlo?</b> Ingresa ahora:</p>
                                 </td>
                             </tr>
                             <tr>
