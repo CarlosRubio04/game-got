@@ -1062,6 +1062,9 @@
             display: none;
          }
 
+         .intro3 {
+            padding-top: 5vh !important; 
+         }
          #intro_nav {
             position: absolute;
             bottom: 20px;
@@ -1935,14 +1938,20 @@
 
          .fixed_text {
             position: absolute;
-            font-weight: 600;
             color: white;
             width: 500px;
-            size: 24pt;
-            transform: translate(-100%, -7%);
+            transform: translate(-110%, -40%);
             margin-top: 0;
          }
-
+         .fixed_text h1 {
+            font-size: 22px;
+            font-weight: 100;
+         }
+         .fixed_text .tip {
+            display: none;
+            font-size: 16px;
+            font-weight: 600;
+         }
          .intro_arrow.right {
             position: absolute;
             right: 0;
@@ -2230,6 +2239,15 @@
             }
          }
 
+         .throne {
+            position: absolute;
+            max-width: 200px;
+            left: 10px;
+         }
+         .throne img {
+            max-width: 80px;
+         }
+
       </style>
       <script src="bodymovin.js"></script>
       <script>
@@ -2337,6 +2355,7 @@
                  //$(".white_walker").css({"cursor": "pointer", "opacity": "1"}).hover().css("opacity", ".7");
          
                  $(".hole h1").fadeIn(300);
+                 $(".hole h2").fadeIn(500);
                  $(".hole").click(function(){
          
                      if(dummyHealth == 1) {
@@ -2348,7 +2367,7 @@
                          $("#dummy").find(".char").attr("src", "char/char22.png");
                          $("#dummy").removeClass("white_walker");
                          TweenLite.to($("#dummy").find(".acsendo_logo"), .5, {opacity:"1", "top":"-3vh", ease: Elastic. easeOut.config( 1, 0.3), delay:.2});
-         
+                         $(".hole h2").fadeOut();
                          $(".hole h1").fadeOut(function() {
                              $(this).text("¡Perfecto! Un empleado feliz es un empleado más productivo").fadeIn();
                              $(".hole .pause").fadeIn();
@@ -2577,18 +2596,18 @@
              }
              var cheering, cheering_h1, cheering_p;
          
-             if (score < 40000) {
+             if (score < 50000) {
                  cheering = "imgs/" + chosenChar + "_end_mal.png";
                  cheering_h1 = "¡Buen intento!";
-                 cheering_p = "Pero el invierno terminó por arrasar el clima laboral de Westeros. Sigue utilizando Acsendo para mejorar los procesos de la organización.";
-             } else if (score < 60000) {
+                 cheering_p = "Pero aún falta mucho por mejorar el clima laboral de las oficinas de Westeros.";
+             } else if (score < 70000) {
                  cheering = "imgs/" + chosenChar + "_end_bueno.png";
                  cheering_h1 = "¡Sigue así!";
-                 cheering_p = "Existe un mejor clima laboral en Westeros. Sin embargo, aún quedan muchos más colaboradores por ser motivados.";
+                 cheering_p = "Sin duda ahora existe un mejor clima laboral, pero aún quedan muchos más colaboradores por ser motivados. Inspírate en este ebook para obtener un mejor resultado.";
              } else {
                  cheering = "imgs/" + chosenChar + "_end_perfecto.png";
-                 cheering_h1 = "¡Perfecto!";
-                 cheering_p = "Westeros superó el invierno gracias a tu ayuda. La compañía ahora podrá seguir siendo un ejemplo de éxito para las demás organizaciones.";
+                 cheering_h1 = "¡Victoria!";
+                 cheering_p = "Westeros superó el invierno con éxito gracias a tu ayuda. Se nota con verte que eres un gran líder de Recursos Humanos.";
              }
              $("#cheering_char>img").attr("src", cheering);
              $("#cheering_char h1.cheering").html(cheering_h1);
@@ -3086,39 +3105,75 @@
                  let Msg = '';
 
                  if(deadCount == 5) {
-                     Msg = 'Muy bien !!! 5';
+                    if (chosenChar == 'dany') {
+                        Msg = '¡Bien hecho!';
+                    } else {
+                        Msg = '¡Buen trabajo!';
+                    }
                      showMessage(Msg);
                      HideMessade();
                  } else if (deadCount == 10) {
-                     Msg = 'Muy bien !!! 10';
+                     if (chosenChar == 'dany') {
+                        Msg = '¡Valoro tu trabajo!' ;
+                     } else {
+                        Msg = '¡Sigue así, equipo!';
+                     }
                      showMessage(Msg);
                      HideMessade();
                  } else if (deadCount == 15) {
-                     Msg = 'Muy bien !!! 15';
+                     if (chosenChar == 'dany') {
+                        Msg = '¡Increíble!';
+                     } else {
+                        Msg = 'Rumbo a la victoria';
+                     }
                      showMessage(Msg);
                      HideMessade();
                  } else if (deadCount == 20) {
-                     Msg = 'Muy bien !!! 20';
+                     if (chosenChar == 'dany') {
+                        Msg = '¡Eres la mejor!';
+                     } else {
+                        Msg = '¡Detendremos a los otros!';
+                     }
                      showMessage(Msg);
                      HideMessade();
                  } else if (deadCount == 30) {
-                     Msg = 'Muy bien !!! 30';
+                     if (chosenChar == 'dany') {
+                        Msg = '¡Dracarys!';
+                     } else {
+                        Msg = '¡Cuento contigo!';
+                     }
                      showMessage(Msg);
                      HideMessade();
                  } else if (deadCount == 40) {
-                     Msg = 'Muy bien !!! 40';
+                     if (chosenChar == 'dany') {
+                        Msg = '¡Eres la mejor!';
+                     } else {
+                        Msg = 'Eres tan bueno como Samwell';
+                     }
                      showMessage(Msg);
                      HideMessade();
                  } else if (deadCount == 50) {
-                     Msg = 'Muy bien !!! 50';
+                     if (chosenChar == 'dany') {
+                        Msg = '¡Eres la mejor!';
+                     } else {
+                        Msg = '¡Detendremos a los otros!';
+                     }
                      showMessage(Msg);
                      HideMessade();
                  } else if (deadCount == 60) {
-                     Msg = 'Muy bien !!! 60';
+                     if (chosenChar == 'dany') {
+                        Msg = '¡Dracarys!';
+                     } else {
+                        Msg = '¡Cuento contigo!';
+                     }
                      showMessage(Msg);
                      HideMessade();
                  } else if (deadCount == 70) {
-                     Msg = 'Muy bien !!! 70';
+                     if (chosenChar == 'dany') {
+                        Msg = '¡Valoro tu trabajo!' ;
+                     } else {
+                        Msg = '¡Sigue así, equipo!';
+                     }
                      showMessage(Msg);
                      HideMessade();
                  }
@@ -3982,7 +4037,12 @@
                <img class="char" src="char/char22_w.png"/>
             </div>
             <div class="fixed_text">
-               <h1>Haz clic sobre los empleados desmotivados</h1>
+               <h1>
+                  Para enfrentar el invierno tendrás que dar clic sobre cada uno de los colaboradores contagiados por el invierno hasta que vuelvan a la normalidad.
+               </h1>
+               <h2 class="tip">
+                  <span>Tip:</span> Concéntrate en los líderes que tienen una estrella sobre sus cabezas. Convertirlos primero te ayudará con el resto. 
+               </h2>
                <div class="pause button large hidden start_game">
                   <img src="btn/play.svg"/>
                   <p>Empezar</p>
@@ -4049,6 +4109,9 @@
                <img src="btn/restart.svg" style="left: 0;">
             </div>
             <h1>High Scores</h1>
+            <div class="throne">
+               <img src="trhone.png" alt="throne">
+            </div>
             <span>
             <?php
                /*
@@ -4090,7 +4153,7 @@
                </div>
             </a>
             <div class="btn-retar button large" id="">
-               <p>RETA UN AMIGO</p>
+               <p>RETA UN COLEGA</p>
             </div>
          </div>
          <div id="share_form" class="popup_module">
@@ -4148,14 +4211,16 @@
             <div class="muter mute button">
                <img src="btn/unmute.svg"/>
             </div>
-            <h1>Escoge tu personaje</h1>
+            <h1>Escoge un personaje</h1>
             <div id="picker_wrapper">
                <div class="char_picker" id="dany">
                   <span>
                      <p class="char_nombre">DANIELA TARAZONA</p>
                      <p class="char_cargo">Directora de RRHH</p>
-                     <p class="habilidade">Liderazgo</p>
-                     <div class="barra_habilidade liderazgo">
+                     <p class="habilidade">
+                        Daniela Tamayo es una persona metódica y pensativa. Sin embargo, cuando se trata de gestionar el talento humano, la domina una energía de mil dragones lanzando fuego por los aires.  
+                     </p>
+                     <!-- <div class="barra_habilidade liderazgo">
                         <div class="nivel_habilidade"></div>
                      </div>
                      <p class="habilidade">Trabajo en equipo</p>
@@ -4169,7 +4234,7 @@
                      <p class="habilidade">Desarrollo de habilidades</p>
                      <div class="barra_habilidade desarrollo margin_bottom_20">
                         <div class="nivel_habilidade"></div>
-                     </div>
+                     </div> -->
                      <div class="boton_seleccionar">Seleccionar</div>
                   </span>
                   <img src="dany.png"/>
@@ -4178,8 +4243,10 @@
                   <span>
                      <p class="char_nombre">JUAN NIEVE</p>
                      <p class="char_cargo">Director de RRHH</p>
-                     <p class="habilidade">Liderazgo</p>
-                     <div class="barra_habilidade liderazgo">
+                     <p class="habilidade">
+                        No te dejes engañar por su apellido, Juan es reconocido por ser una persona cálida y aguerrida. Siempre está dispuesto a ayudar a los demás con tal de que se sientan bien y alcancen sus metas. 
+                     </p>
+                     <!-- <div class="barra_habilidade liderazgo">
                         <div class="nivel_habilidade"></div>
                      </div>
                      <p class="habilidade">Trabajo en equipo</p>
@@ -4193,7 +4260,7 @@
                      <p class="habilidade">Desarrollo de habilidades</p>
                      <div class="barra_habilidade desarrollo margin_bottom_20">
                         <div class="nivel_habilidade"></div>
-                     </div>
+                     </div> -->
                      <div class="boton_seleccionar">Seleccionar</div>
                   </span>
                   <img src="jon.png"/>
@@ -4217,10 +4284,11 @@
 
          <div id="challenge" class="popup_module">
             <div class="modal-challenge">
-               <h1>Reta a un amigo</h1>
+               <h1>Reta a un colega</h1>
+               <p>Reta ahora a uno de tus colegas y compite por ver quién obtiene un mejor puntaje.</p>
                <form id="form-challenge">
                   <div class="field">
-                     <label for="email">Ingresa se email</label>
+                     <label for="email">Ingresa su email</label>
                      <input type="email" name="email-challenge" id="email-challenge" value="" class="form-control required js-email" placeholder="" required="required">
                   </div>
                </form>
