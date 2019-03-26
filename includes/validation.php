@@ -10,7 +10,7 @@ $nameSend = $_POST['nameSend'];
 $score = $_POST['score'];
 
 $account="senderemailer@gmail.com";
-$password="luna0205";
+$password="charlie0516*";
 
 $from= "no-repley@acsendo.com";
 $from_name= $nameSend;

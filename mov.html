@@ -37,45 +37,38 @@
           padding: 0;
       }
       .load {
-          position: fixed;
-          z-index: 999;
+          position: relative;
+          bottom: 0;
           width: 100%;
-          height: 100vh;
-          background-color:#33384f;
-          display: flex;
-          justify-content: center;
-          align-items: flex-end;
       }
       .load img {
           position: relative;
-          width: 100%;
+          width: 55%;
       }
-      #conversion-got-movil-2f16a83fd40adf67b13d.custom {
-        background-color: transparent !important;
-      }
-      #conversion-got-movil-2f16a83fd40adf67b13d.custom header {
-        background-color: transparent !important;
-      }
+      
       .error_message {
           position: relative;
-          color: red;
+          color: white;
           display: none;
       }
       .success_message {
           position: relative;
-          color: #fff;
+          height: 400px;
           display: none;
+      }
+      .success_message h1 {
+          color: white;
+          font-size: 32px!important;
+      }
+      .success_message h4 {
+          font-weight: 100;
       }
   </style>
   
   <script>
         $(document).ready(function(){
             setTimeout(() => {
-                $('h1').html('¡Aquí no podrás luchar!');
-                $('h2').html('Completa este formulario con tus datos para poder combatir en Westeros desde tu computador de escritorio.');
-                $('input.call_button').val('Enviar');
-                $('#conversion-got-movil-2f16a83fd40adf67b13d').addClass('custom');
-                $('.load').fadeOut();
+               // $('.load').fadeOut();
 
                 $("#cf_submit-got-movil-2f16a83fd40adf67b13d").click(function(){
                     var email = $("#got-movil-2f16a83fd40adf67b13d input[name='email']").val();
@@ -91,7 +84,8 @@
                     if (!validateEmail(email)){
                         $("p.error_message").fadeIn(300);
                     } else {
-                        $("p.success_message").fadeIn(300);
+                        $("#got-movil-2f16a83fd40adf67b13d").fadeOut(200);
+                        $(".success_message").fadeIn(300);
                     }
                 });
             }, 800);
@@ -104,20 +98,26 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDDNRW"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div class="load">
-        <img src="imgs/mobile.png"/>
-    </div>
     <div role="main" id="got-movil-2f16a83fd40adf67b13d"></div>
     <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
     <script type="text/javascript">
-        new RDStationForms('got-movil-2f16a83fd40adf67b13d-html', 'UA-5384729-1').createForm();
+    new RDStationForms('got-movil-2f16a83fd40adf67b13d-html', 'UA-5384729-1').createForm();
     </script>
 
+    <div class="success_message">
+        <h1>
+            Gracias
+        </h1>
+        <h4>
+            Hemos recivido correctamente <br> tu información.
+        </h4>
+    </div>
     <p class="error_message">
         Error al enviar tus datos
     </p>
-    <p class="success_message">
-        Gracias
-    </p>
+
+    <div class="load">
+            <img src="imgs/mobile.png"/>
+        </div>
     </body>
 </html>
