@@ -2251,6 +2251,22 @@
             max-width: 80px;
          }
 
+         .btn-ebook {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            background-color: #33384f;
+            border-radius: 8px;
+            padding: 8px 12px;
+            -webkit-box-shadow: 0px 2px 0px 1px rgba(51,56,79,0.5);
+            -moz-box-shadow: 0px 2px 0px 1px rgba(51,56,79,0.5);
+            box-shadow: 0px 2px 0px 1px rgba(51,56,79,0.5);
+            font-size: 16px;
+            font-weight: bolder;
+            color: #fff;
+            text-align: center;
+         }
+
       </style>
       <script src="bodymovin.js"></script>
       <script>
@@ -2350,12 +2366,10 @@
              tl.to($(".running_div"), 120, {marginLeft:(-game_width)});
              setTimeout(function(){
                  tl.pause();
-                 //TweenLite.to($(".hole"), .5, {boxShadow: "0 0 0 99999px rgba(0, 0, 0, .7)", ease: Power1. easeInOut});
                  $(".hole").addClass("box_shadow");
                  anim.pause();
          
                 AnimCharacters();
-                 //$(".white_walker").css({"cursor": "pointer", "opacity": "1"}).hover().css("opacity", ".7");
          
                  $(".hole h1").fadeIn(300);
                  $(".hole h2").fadeIn(500);
@@ -2475,77 +2489,6 @@
          }
          function restartGame(chosenChar){
              window.location.reload();
-           //   pausable = true;
-           //   endGame = false;
-           //   millisDiscount = 0;
-           //   deadCount = 0;
-           //   liderDeaths = 0;
-           //   rrhhDeaths = 0;
-           //   ventasDeaths = 0;
-           //   tecnologiaDeaths = 0;
-           //   customSuccDeaths = 0;
-           //   administracionDeaths = 0;
-           //   departamentoOrder = [];
-         
-           //   bonusVentas = false;
-           //   bonusTecnologia = false;
-           //   bonusRrhh = false;
-           //   bonusCustomSucc = false;
-           //   bonusAdministracion = false;
-         
-         
-           //   $("#score span").html(0);
-           //   anim.destroy();
-           //   tl.stop();
-           //   $(".running_div").css("marginLeft","0");
-           //   tl = new TimelineLite();
-         
-         
-           //   var charLength = $("#game_wrapper .character").length;
-           //   for (i = 1; i <= charLength; i++){
-         
-         
-         
-           //       $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".acsendo_logo").css({"opacity":"0", "marginTop":"0"});
-           //       $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".health, .boss_health, .star").css("opacity","1");
-           //       $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".health .healthbar, .boss_health .healthbar").css("width","100%");
-           //       if (!$("#game_wrapper > .character:nth-of-type(" + i + ").character").hasClass("white_walker")) {
-         
-           //         console.log(i);
-         
-           //           // var originalUrl2 = $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".char").attr("src");
-           //           var originalUrl2 = $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".char").attr("src");
-           //           console.log(originalUrl2);
-           //           var urlLength2 = originalUrl2.length;
-           //           console.log(urlLength2);
-           //           var subString2 = originalUrl2.substring(0, (urlLength2 - 4));
-         
-           //           $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".char").attr("src", subString2 + "_w.png");
-           //           $("#game_wrapper > .character:nth-of-type(" + i + ").character").addClass("white_walker");
-         
-           //       }
-         
-           //       if ($("#game_wrapper > .character:nth-of-type(" + i + ").character").children('div').hasClass('health')){
-           //           $("#game_wrapper > .character:nth-of-type(" + i + ").character").data("hp", 3);
-           //       } else if ($("#game_wrapper > .character:nth-of-type(" + i + ").character").children('div').hasClass('boss_health')){
-           //           $("#game_wrapper > .character:nth-of-type(" + i + ").character").data("hp", 5);
-           //       }
-         
-         
-           //       var temp2 = $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".acsendo_logo").data("logo");
-           //       $("#game_wrapper > .character:nth-of-type(" + i + ").character").find(".health, .boss_health, .star").css("left",temp2 + "vh");
-           //   }
-         
-           //   game_width = $("#wall_patt").width();
-           //   $("#popup").css("display","none");
-           //   walkCycle(chosenChar);
-           //   tl.to($(".running_div"), 50, {marginLeft:(-game_width),  ease: Sine. easeIn, onComplete: function(){
-           //       //alert("END");
-         
-           //       checkHighscore(chosenChar);
-           //       //results();
-         
-           //   }});
          }
          function bonusScore(bonus, departamento) {
              triggerSuccess();
@@ -2687,8 +2630,7 @@
             
             
              $(".ranking").click(function(){
-                 //var alreadyRegistered = localStorage.getItem("name");
-                 //if (alreadyRegistered == null) {
+
                      $(".popup_module").fadeOut(300);
                      $("#share_form").delay(400).fadeIn(300);
          
@@ -2783,35 +2725,6 @@
          
                          }
                      });
-                 /*} else {
-                     //showRanking alreadyRegistered
-                     var nombre = localStorage.getItem("name");
-                     var email =  localStorage.getItem("email");
-         
-                     $.ajax({
-                         url: 'highscore/savedata.php',
-                         type: 'POST',
-                         data: {
-                             name: nombre,
-                             score: score,
-                             email: email
-                         },
-                         //dataType: 'json',//envia na mesma para BaseDados, mas corre error:function()
-                         success: function(msg) {
-                             $("#fame_screen>span").html(msg);
-                             var player1_rank = $("#player_one_rank").html();
-                             $(".button.large.twitter").parent().attr("href", "https://twitter.com/intent/tweet?text=¡Estoy%20en%20el%20puesto%20" + player1_rank + "%20del%20juego%20de%20Acsendo!%20¿Podrás%20superar%20mi%20puntaje?%20http://www.acsendo.com/GoT/");
-                         },
-                         error: function (){
-                             alert("error calling table");
-                         }
-                     });
-         
-                     $(".popup_module").fadeOut(300);
-         
-                     $("#fame_screen, #disclaimer").delay(400).fadeIn(300);
-                     TweenLite.to($("#disclaimer"), 1.3, {"transform":"translateX(0%)", delay:1, ease: Elastic. easeOut.config( 1, 0.3)});
-                 }*/
              });
              
             $("#btn-volver-form").click(function () {
@@ -3051,9 +2964,7 @@
                    }
                  
              })
-             //$(".running_div").animate({"marginLeft": game_width}, 50000);
-         
-         
+               
              $("#restart, .restart").click(function(){
                  if (!tutorial){
                      if ((tl.paused())){
@@ -4093,16 +4004,7 @@
                   <p>¡Jugar ahora!</p>
                </div>
             </div>
-            <!--
-               <div class="intro_slide intro4">
-                   <img src="imgs/ayuda.png"/>
-                   <h1>¡Necesitamos tu ayuda!</h1>
-                   <p>Como responsable de RR.HH debes ayudar a Westeros Inc a afrontar el invierno laboral con Acsendo y logar un ambiente de trabajo amable, motivador y transparente.</p>
-                   <div class="start button large">
-                       <p>¡Jugar ahora!</p>
-                   </div>
-               </div>
-               -->
+
             <div id="intro_nav">
                <div data-num="1" class="intro_bola bola1 active"></div>
                <div data-num="2" class="intro_bola bola2"></div>
@@ -4110,9 +4012,9 @@
             </div>
          </div>
          <div id="disclaimer" class="popup_module">
-            <h3>¡Felicitaciones! Has quedado inscrito en el sorteo de un premio sorpresa*</h3>
-            <p>Nota: Entre más veces participes, más oportunidades tendrás de ganar.</p>
-            <p class="small">*El ganador será escogido aleatoriamente entre los participantes. Será contactado vía email y se le brindará información sobre el premio.</p>
+            <h3>¡Felicitaciones! </h3>
+            <p>Descarga gratis el ebook de clima laboral</p>
+            <a href="https://www.acsendo.com/landing/es/" class="btn-ebook">Click Aquí</a>
          </div>
          <div id="fame_screen" class="popup_module">
             <div class="restart button" style="position: absolute; top: 20px; left: 20px;">
@@ -4123,30 +4025,7 @@
                <img src="trhone.png" alt="throne">
             </div>
             <span>
-            <?php
-               /*
-               $sql = "SELECT * FROM got LIMIT 5";
-               $result = $conn->query($sql);
-               
-               echo "<table>
-               <tr>
-               <th>Name</th>
-               <th>Score</th>
-               </tr>";
-               while($row = mysqli_fetch_array($result)) {
-                   echo "<tr>";
-                   echo "<td>" . $row['name'] . "</td>";
-                   echo "<td>" . $row['score'] . "</td>";
-                   echo "</tr>";
-               }
-               echo "</table>";
-               mysqli_close($con);*/
-               /*
-               functon teste(){
-                   echo "Dá para imprimir, sim!";
-               }*/
-               
-            ?>
+               <!-- ACA VA EL RANKING -->
             </span>
             <a href="https://twitter.com/intent/tweet?text=Hello%20world"  onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
                <div class="button large twitter">
@@ -4189,10 +4068,6 @@
                <p class="cheering"></p>
             </div>
             <div style="height:40%;position:absolute;top:60%;">
-               <!--
-                  <h1 class="score_display"></h1>
-                  <h2 class="best_display"></h2>
-                  -->
                <a href="https://twitter.com/intent/tweet?text=Hello%20world"  onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
                   <div class="button large twitter">
                      <p>
@@ -4205,7 +4080,6 @@
                   <div class="button large facebook">
                      <p>
                         <i class="fa fa-facebook" aria-hidden="true"></i>
-                        
                      </p>
                   </div>
                </a>
@@ -4230,21 +4104,6 @@
                      <p class="habilidade">
                         Daniela Tamayo es una persona metódica y pensativa. Sin embargo, cuando se trata de gestionar el talento humano, la domina una energía de mil dragones lanzando fuego por los aires.  
                      </p>
-                     <!-- <div class="barra_habilidade liderazgo">
-                        <div class="nivel_habilidade"></div>
-                     </div>
-                     <p class="habilidade">Trabajo en equipo</p>
-                     <div class="barra_habilidade trabajo">
-                        <div class="nivel_habilidade"></div>
-                     </div>
-                     <p class="habilidade">Influencia y negociación</p>
-                     <div class="barra_habilidade influencia">
-                        <div class="nivel_habilidade"></div>
-                     </div>
-                     <p class="habilidade">Desarrollo de habilidades</p>
-                     <div class="barra_habilidade desarrollo margin_bottom_20">
-                        <div class="nivel_habilidade"></div>
-                     </div> -->
                      <div class="boton_seleccionar">Seleccionar</div>
                   </span>
                   <img src="dany.png"/>
@@ -4256,21 +4115,6 @@
                      <p class="habilidade">
                         No te dejes engañar por su apellido, Juan es reconocido por ser una persona cálida y aguerrida. Siempre está dispuesto a ayudar a los demás con tal de que se sientan bien y alcancen sus metas. 
                      </p>
-                     <!-- <div class="barra_habilidade liderazgo">
-                        <div class="nivel_habilidade"></div>
-                     </div>
-                     <p class="habilidade">Trabajo en equipo</p>
-                     <div class="barra_habilidade trabajo">
-                        <div class="nivel_habilidade"></div>
-                     </div>
-                     <p class="habilidade">Influencia y negociación</p>
-                     <div class="barra_habilidade influencia">
-                        <div class="nivel_habilidade"></div>
-                     </div>
-                     <p class="habilidade">Desarrollo de habilidades</p>
-                     <div class="barra_habilidade desarrollo margin_bottom_20">
-                        <div class="nivel_habilidade"></div>
-                     </div> -->
                      <div class="boton_seleccionar">Seleccionar</div>
                   </span>
                   <img src="jon.png"/>
@@ -4330,10 +4174,6 @@
          <div class="button" id="score">
             SCORE: <span>0</span>
          </div>
-         <!--
-            <div class="score_bar">
-                <div class="barscore"></div>
-            </div>-->
       </div>
       <div id="mobile">
          <img src="imgs/mobile.png"/>
