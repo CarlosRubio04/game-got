@@ -2545,7 +2545,7 @@
              if (score < 50000) {
                  cheering = "imgs/" + chosenChar + "_end_mal.png";
                  cheering_h1 = "¡Buen intento!";
-                 cheering_p = "Pero aún falta mucho por mejorar el clima laboral de las oficinas de Westeros.";
+                 cheering_p = "Pero aún falta mucho por mejorar el clima laboral de las oficinas de Westeros Inc.";
              } else if (score < 70000) {
                  cheering = "imgs/" + chosenChar + "_end_bueno.png";
                  cheering_h1 = "¡Sigue así!";
@@ -3993,13 +3993,13 @@
             <div class="intro_slide intro2">
                <img src="imgs/dany_intro_2.png"/>
                <p class="intro_custom_text juan">Sin embargo, ahora se enfrenta a un gran reto. Como nuevo encargado de gestionar el talento de la compañía deberá mejorar el clima laboral y aumentar el compromiso de los colaboradores.</p>
-               <p class="intro_custom_text daniela">Tras su llegada a la empresa, Daniela ha previsto una gran catástrofe para Westeros si no se logran mejoras en el clima laboral.</p>
+               <p class="intro_custom_text daniela">Tras su llegada a la empresa, Daniela ha previsto una gran catástrofe para Westeros Inc si no se logran mejoras en el clima laboral.</p>
             </div>
             <div class="intro_slide intro3">
                <img src="imgs/invierno.png"/>
                <h1>¡El invierno ha llegado!</h1>
                <p class="intro_custom_text juan">¿Tienes lo que hace falta para afrontar el invierno junto a Juan?</p>
-               <p class="intro_custom_text daniela">El fin de Westeros parece acercarse, ¡ayuda a Daniela a evitarlo antes de que sea muy tarde!</p>
+               <p class="intro_custom_text daniela">El fin de Westeros Inc parece acercarse, ¡ayuda a Daniela a evitarlo antes de que sea muy tarde!</p>
                <div class="start button large">
                   <p>¡Jugar ahora!</p>
                </div>
