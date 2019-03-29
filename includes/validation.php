@@ -58,14 +58,14 @@ $msg="
                                 <tr align='center'>
                                     <td>
                                         <p style='text-align:center;color:#1c263a;font-size: 28px;font-weight:800;'><b>Hola</b></p>
-                                        <p style='color:#2d2d2e;font-size: 16px;font-weight:400;text-align:left;padding: 0 20px;text-align:center;'><b>$nameSend</b> obtuvo <b>$score</b> en el juego de Acsendo y te ha retado a obtener un mejor puntaje.</p>
-                                        <p style='color:#2d2d2e;font-size: 18px;font-weight:400;text-align:center;padding: 0 20px;'><b>¿Crees que eres capaz de superarlo?</b></p>
+                                        <p style='color:#2d2d2e;font-size: 16px;font-weight:400;text-align:left;padding: 0 20px;text-align:center;'><b>$nameSend</b> estuvo librando una fiera batalla en el juego de Acsendo y obtuvo <b>$score</b> mejorando el clima laboral de Westeros Inc. </br> Sin embargo, ahora te ha retado a obtener un mejor puntaje que el suyo.</p>
+                                        <p style='color:#2d2d2e;font-size: 18px;font-weight:400;text-align:center;padding: 0 20px;'><b>Ingresa ahora y supéralo</b></p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align='center' style='padding:20px 0 40px'>
                                         <a href='https://www.acsendo.com/GoT/' style='border-radius:3px;color:#FFFFFF;background-color:#df5e35;display:inline-block;font-size:18px;font-weight:600;margin:auto;padding:10px 15px;text-decoration:none' target='_blank'>
-                                            IR A JUGAR
+                                            ¡Jugar ahora!
                                         </a>
                                     </td>
                                 </tr>

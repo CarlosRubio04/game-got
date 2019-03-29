@@ -6,8 +6,8 @@
       <title>Acsendo y el Invierno laboral</title>
       <meta property="og:url"                content="https://www.acsendo.com/GoT/index.html" />
       <meta property="og:type"               content="website" />
-      <meta property="og:title"              content="Acsendo y el Invierno laboral" />
-      <meta property="og:description"        content="El invierno laboral esta llegando a su empresa?" />
+      <meta property="og:title"              content="¡Westeros Inc necesita tu ayuda!" />
+      <meta property="og:description"        content="Con la llegada del invierno el fin de Westeros Inc parece acercarse, ¡evítalo con Acsendo!" />
       <meta property="og:image"              content="https://www.acsendo.com/GoT/GoT/ImagenRedesGoT1.png" />
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
@@ -1381,9 +1381,34 @@
             float: left;
             font-size: 1.7vh;
          }
-
+         #fame_screen > span > div:nth-child(1){
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
+         #fame_screen > span > div:nth-child(1):before {
+            display: inline-block;
+            content: "";
+            height: 36px;
+            width: 30px;
+            background-image: url(trhone.png);
+            background-size: 25px;
+            background-repeat: no-repeat;
+         }
+         #fame_screen > span > div:nth-child(1) > .name {
+            margin-left: 10px;
+            font-weight: 600;
+            font-size: 15px;
+         }
+         #fame_screen > span > div:nth-child(1) > .score {
+            margin-left: 10px;
+            margin-right: 0px;
+            font-weight: 600;
+            font-size: 15px;
+         }
          #fame_screen h1 {
-            padding-top: 5vh;
+            padding-top: 3vh;
+            margin: 14px 0;
          }
 
          #fame_screen .bottom_list .entry:first-child {
@@ -2267,6 +2292,10 @@
             text-align: center;
          }
 
+         .modal-challenge form {
+            width: 100%;
+         }
+
       </style>
       <script src="bodymovin.js"></script>
       <script>
@@ -2372,7 +2401,7 @@
                 AnimCharacters();
          
                  $(".hole h1").fadeIn(300);
-                 $(".hole h2").fadeIn(500);
+                 $(".hole h2").fadeOut(100);
                  $(".hole").click(function(){
          
                      if(dummyHealth == 1) {
@@ -2384,9 +2413,9 @@
                          $("#dummy").find(".char").attr("src", "char/char22.png");
                          $("#dummy").removeClass("white_walker");
                          TweenLite.to($("#dummy").find(".acsendo_logo"), .5, {opacity:"1", "top":"-3vh", ease: Elastic. easeOut.config( 1, 0.3), delay:.2});
-                         $(".hole h2").fadeOut();
+                         $(".hole h2").fadeIn();
                          $(".hole h1").fadeOut(function() {
-                             $(this).text("¡Perfecto! Un empleado feliz es un empleado más productivo").fadeIn();
+                             $(this).text("¡Bien hecho! Este colaborador está contento y motivado. Haz lo mismo con los demás").fadeIn();
                              $(".hole .pause").fadeIn();
                          });
          
@@ -2517,7 +2546,7 @@
 
              var bonusMillis = (millisEnd.getTime()) - (millisStart.getTime());
              score = Math.floor((((bonusMillis - millisDiscount) * .001) * deadCount) + (deadCount*1000));
-             $(".button.large.twitter").parent().attr("href", "https://twitter.com/intent/tweet?text=¡Obtuve%20" + score + "%20puntos%20en%20el%20juego%20de%20de%20Game%20of%20Thrones%20de%20Acsendo!%20¡Pruébalo!%20http://www.acsendo.com/GoT/");
+             $(".button.large.twitter").parent().attr("href", "https://twitter.com/intent/tweet?text=¡Obtuve%20" + score + "%20puntos%20en%20el%20juego%20de%20de%20#GameofThrones%20de%20Acsendo!%20¡Pruébalo!%20http://www.acsendo.com/GoT/");
          
              $(".popup_module").css("display","none");
              $("#popup, #share_screen").css("display","block");
@@ -2544,20 +2573,23 @@
          
              if (score < 50000) {
                  cheering = "imgs/" + chosenChar + "_end_mal.png";
-                 cheering_h1 = "¡Buen intento!";
-                 cheering_p = "Pero aún falta mucho por mejorar el clima laboral de las oficinas de Westeros Inc.";
+                 cheering_h1 = "¡Inténtalo nuevamente!";
+                 cheering_p = "Aún hay colaboradores que afectan el ambiente laboral. Juega de nuevo y conviértelos a todos.";
              } else if (score < 70000) {
                  cheering = "imgs/" + chosenChar + "_end_bueno.png";
                  cheering_h1 = "¡Sigue así!";
-                 cheering_p = "Sin duda ahora existe un mejor clima laboral, pero aún quedan muchos más colaboradores por ser motivados. Inspírate en este ebook para obtener un mejor resultado.";
+                 cheering_p = "Aún falta mucho por hacer para mejorar el clima de Westeros Inc. Inténtalo nuevamente.";
              } else {
                  cheering = "imgs/" + chosenChar + "_end_perfecto.png";
                  cheering_h1 = "¡Victoria!";
-                 cheering_p = "Westeros superó el invierno con éxito gracias a tu ayuda. Se nota con verte que eres un gran líder de Recursos Humanos.";
+                 cheering_p = "Superaste el invierno con éxito. ¡Tu nombre será recordado para siempre en Westeros Inc!";
              }
              $("#cheering_char>img").attr("src", cheering);
              $("#cheering_char h1.cheering").html(cheering_h1);
              $("#cheering_char p.cheering").html(cheering_p);
+
+            $("#disclaimer").delay(400).fadeIn(300);
+            TweenLite.to($("#disclaimer"), 1.3, {"transform":"translateX(0%)", delay:1, ease: Elastic. easeOut.config( 1, 0.3)});
          }
          
          
@@ -2630,14 +2662,17 @@
             
             
              $(".ranking").click(function(){
+                     
+                  $("#got-6277fc9cfc259c4784db h1").text('Descubre tu puntaje');
+                  $("#got-6277fc9cfc259c4784db h2").text('Ingresa tus datos para saber si tu puntaje está entre los mejores resultados.');
 
                      $(".popup_module").fadeOut(300);
                      $("#share_form").delay(400).fadeIn(300);
          
                      $("#cf_submit-got-6277fc9cfc259c4784db").click(function(){
-                         var email = $("#got-6277fc9cfc259c4784db input[name='email']").val();
-                         var nombre = $("#got-6277fc9cfc259c4784db input[name='name']").val();
-                         var country = $("#got-6277fc9cfc259c4784db #custom_fields_128333").val();
+                         let email = $("#got-6277fc9cfc259c4784db input[name='email']").val();
+                         let nombre = $("#got-6277fc9cfc259c4784db input[name='name']").val();
+                         let country = $("#got-6277fc9cfc259c4784db #custom_fields_128333").val();
          
                          console.log("alguma coisa?");
          
@@ -2681,8 +2716,8 @@
          
                              $(".popup_module").fadeOut(300);
          
-                             $("#fame_screen, #disclaimer").delay(400).fadeIn(300);
-                             TweenLite.to($("#disclaimer"), 1.3, {"transform":"translateX(0%)", delay:1, ease: Elastic. easeOut.config( 1, 0.3)});
+                           //   $("#fame_screen, #disclaimer").delay(400).fadeIn(300);
+                           //   TweenLite.to($("#disclaimer"), 1.3, {"transform":"translateX(0%)", delay:1, ease: Elastic. easeOut.config( 1, 0.3)});
                              var fameHTML = $(".hidden_highscore .entry");
                              //$("#fame_screen span").html(fameHTML);
                              var score_temp = score;
@@ -2745,8 +2780,21 @@
                } else {
                   $(".popup_module").fadeOut(300);
                   $("#share_form").delay(400).fadeIn(300);
+                  $("#got-6277fc9cfc259c4784db h1").text('Regístrate');
+                  $("#got-6277fc9cfc259c4784db h2").text('Ingresa primero tus datos para poder retar a un colega.');
+                  $("#cf_submit-got-6277fc9cfc259c4784db").val('ENVIAR');               
+                  $("#cf_submit-got-6277fc9cfc259c4784db").click(function(){
+                     let email = $("#got-6277fc9cfc259c4784db input[name='email']").val();
+                     let nombre = $("#got-6277fc9cfc259c4784db input[name='name']").val();
+                     let country = $("#got-6277fc9cfc259c4784db #custom_fields_128333").val();
+                     const set = checkSetUp();
+                     set.name = nombre;
+                     set.email = email;
+                     UpdateSetUp(set);
+                     $(".popup_module").fadeOut(300);
+                     $("#challenge").delay(400).fadeIn(300);
+                  });
                }
-               
             });
 
             $("#submitRetar").click(function (){
@@ -3020,80 +3068,80 @@
                  function HideMessade () {
                      setTimeout(() => {
                         customMsg.fadeOut();
-                     }, 700);
+                     }, 1000);
                  }
 
                  let Msg = '';
 
                  if(deadCount == 5) {
                     if (chosenChar == 'dany') {
-                        Msg = '¡Bien hecho!';
+                        Msg = 'Crea un ambiente de confianza';
                     } else {
-                        Msg = '¡Buen trabajo!';
+                        Msg = 'Crea un ambiente de confianza';
                     }
                      showMessage(Msg);
                      HideMessade();
                  } else if (deadCount == 10) {
                      if (chosenChar == 'dany') {
-                        Msg = '¡Valoro tu trabajo!' ;
+                        Msg = 'Escucha a tus empleados' ;
                      } else {
-                        Msg = '¡Sigue así, equipo!';
+                        Msg = 'Escucha a tus empleados';
                      }
                      showMessage(Msg);
                      HideMessade();
                  } else if (deadCount == 15) {
                      if (chosenChar == 'dany') {
-                        Msg = '¡Increíble!';
+                        Msg = 'Impulsa la formación';
                      } else {
-                        Msg = 'Rumbo a la victoria';
+                        Msg = 'Impulsa la formación';
                      }
                      showMessage(Msg);
                      HideMessade();
                  } else if (deadCount == 20) {
                      if (chosenChar == 'dany') {
-                        Msg = '¡Eres la mejor!';
+                        Msg = 'Brindar feedback es clave';
                      } else {
-                        Msg = '¡Detendremos a los otros!';
+                        Msg = 'Brindar feedback es clave';
                      }
                      showMessage(Msg);
                      HideMessade();
                  } else if (deadCount == 30) {
                      if (chosenChar == 'dany') {
-                        Msg = '¡Dracarys!';
-                     } else {
-                        Msg = '¡Cuento contigo!';
-                     }
+                        Msg = 'Celebra los logros';
+                    } else {
+                        Msg = 'Celebra los logros';
+                    }
                      showMessage(Msg);
                      HideMessade();
                  } else if (deadCount == 40) {
                      if (chosenChar == 'dany') {
-                        Msg = '¡Eres la mejor!';
+                        Msg = 'Acsendo es un gran aliado' ;
                      } else {
-                        Msg = 'Eres tan bueno como Samwell';
+                        Msg = 'Acsendo es un gran aliado';
                      }
                      showMessage(Msg);
                      HideMessade();
                  } else if (deadCount == 50) {
                      if (chosenChar == 'dany') {
-                        Msg = '¡Eres la mejor!';
+                        Msg = 'Impulsa la formación';
                      } else {
-                        Msg = '¡Detendremos a los otros!';
+                        Msg = 'Impulsa la formación';
                      }
                      showMessage(Msg);
                      HideMessade();
                  } else if (deadCount == 60) {
                      if (chosenChar == 'dany') {
-                        Msg = '¡Dracarys!';
+                        Msg = 'Escucha a tus empleados' ;
                      } else {
-                        Msg = '¡Cuento contigo!';
+                        Msg = 'Escucha a tus empleados';
                      }
                      showMessage(Msg);
                      HideMessade();
                  } else if (deadCount == 70) {
                      if (chosenChar == 'dany') {
-                        Msg = '¡Valoro tu trabajo!' ;
+                        Msg = 'Brindar feedback es clave';
                      } else {
-                        Msg = '¡Sigue así, equipo!';
+                        Msg = 'Brindar feedback es clave';
                      }
                      showMessage(Msg);
                      HideMessade();
@@ -3377,6 +3425,11 @@
       <div id="game_wrapper">
          <div class="cursor"></div>
          <div class="customMsg" id="customMsg">Buen travajo !!</div>
+         <!-- <div class="StartTip">
+            <h2 class="tip">
+               <span>Tip:</span> ¡Concéntrate en los líderes! Convertirlos primero te ayudará con los demás. 
+            </h2>
+         </div> -->
          <span id="wall"></span>
          <span id="rodape"></span>
          <span id="floor1"></span>
@@ -3959,11 +4012,8 @@
             </div>
             <div class="fixed_text">
                <h1>
-                  Para enfrentar el invierno tendrás que dar clic sobre cada uno de los colaboradores contagiados por el invierno hasta que vuelvan a la normalidad.
+                  Haz clic sobre los colaboradores contagiados hasta que vuelvan a la normalidad. 
                </h1>
-               <h2 class="tip">
-                  <span>Tip:</span> Concéntrate en los líderes que tienen una estrella sobre sus cabezas. Convertirlos primero te ayudará con el resto. 
-               </h2>
                <div class="pause button large hidden start_game">
                   <img src="btn/play.svg"/>
                   <p>Empezar</p>
@@ -3987,19 +4037,18 @@
             </div>
             <div class="intro_slide intro1">
                <img src="imgs/dany_intro_1.png"/>
-               <p class="intro_custom_text juan">Juan Nieve ascendió como un colaborador más, empezó en un cargo operativo y escaló en la organización hasta ser nombrado Director de RR.HH. Lo que lo convierte en uno de los empleados con mayor trayectoria en Westeros Inc.</p>
-               <p class="intro_custom_text daniela">Daniela Tamayo, heredera legítima del Trono, es la nueva Directora de RR.HH. Tras varios años fuera del país, regresó para incorporarse al negocio que fue fundado por su familia cuando ella aún era una niña.</p>
+               <p class="intro_custom_text juan">Juan Nieve fue nombrado director de RRHH de Westeros Inc y ahora se enfrenta a un gran reto. </p>
+               <p class="intro_custom_text daniela">Daniela ingresó a Westeros Inc para dirigir el área de RR.HH. Pero ha encontrado un mal clima laboral a causa de la llegada del invierno. </p>
             </div>
             <div class="intro_slide intro2">
                <img src="imgs/dany_intro_2.png"/>
-               <p class="intro_custom_text juan">Sin embargo, ahora se enfrenta a un gran reto. Como nuevo encargado de gestionar el talento de la compañía deberá mejorar el clima laboral y aumentar el compromiso de los colaboradores.</p>
-               <p class="intro_custom_text daniela">Tras su llegada a la empresa, Daniela ha previsto una gran catástrofe para Westeros Inc si no se logran mejoras en el clima laboral.</p>
+               <p class="intro_custom_text juan">Deberá mejorar el mal clima laboral que ha traído consigo el invierno y necesita que le ayudes a usar Acsendo para lograrlo.</p>
+               <p class="intro_custom_text daniela">El invierno ha generado un ambiente negativo donde nadie trabaja de la mejor manera y necesita que le ayudes a usar Acsendo para mejorarlo.</p>
             </div>
             <div class="intro_slide intro3">
                <img src="imgs/invierno.png"/>
-               <h1>¡El invierno ha llegado!</h1>
-               <p class="intro_custom_text juan">¿Tienes lo que hace falta para afrontar el invierno junto a Juan?</p>
-               <p class="intro_custom_text daniela">El fin de Westeros Inc parece acercarse, ¡ayuda a Daniela a evitarlo antes de que sea muy tarde!</p>
+               <h1 class="intro_custom_text daniela">Ayúdala ahora a salvar <br> Westeros Inc.</h1>
+               <h1 class="intro_custom_text juan">Ayúdalo ahora a salvar <br> Westeros Inc.</h1>
                <div class="start button large">
                   <p>¡Jugar ahora!</p>
                </div>
@@ -4011,19 +4060,22 @@
                <div data-num="3" class="intro_bola bola3"></div>
             </div>
          </div>
+         <!-- <div id="disclaimer" class="popup_module">
+            <h3>¡Descubre qué tipo de líder eres según Game of Thrones!</h3>
+            <p>Obtén nuestro ebook gratuito y averigua a qué personaje te pareces según tu estilo de liderazgo.</p>
+            <a href="https://www.acsendo.com/landing/es/" class="btn-ebook" target="_blank">DESCARGAR AHORA</a>
+         </div> -->
          <div id="disclaimer" class="popup_module">
-            <h3>¡Felicitaciones! </h3>
-            <p>Descarga gratis el ebook de clima laboral</p>
-            <a href="https://www.acsendo.com/landing/es/" class="btn-ebook">Click Aquí</a>
+            <video width="260" controls>
+               <source src="pruebaVid.mp4" type="video/mp4">
+               Your browser does not support HTML5 video.
+            </video>
          </div>
          <div id="fame_screen" class="popup_module">
             <div class="restart button" style="position: absolute; top: 20px; left: 20px;">
                <img src="btn/restart.svg" style="left: 0;">
             </div>
             <h1>High Scores</h1>
-            <div class="throne">
-               <img src="trhone.png" alt="throne">
-            </div>
             <span>
                <!-- ACA VA EL RANKING -->
             </span>
@@ -4087,7 +4139,7 @@
                   <p>RANKING</p>
                </div>
                <div class="btn-retar button large" id="reta-btn">
-                  <p>RETA UN AMIGO</p>
+                  <p>RETA UN COLEGA</p>
                </div>
             </div>
          </div>
@@ -4095,14 +4147,14 @@
             <div class="muter mute button">
                <img src="btn/unmute.svg"/>
             </div>
-            <h1>Escoge un personaje</h1>
+            <h1>Escoge un líder</h1>
             <div id="picker_wrapper">
                <div class="char_picker" id="dany">
                   <span>
-                     <p class="char_nombre">DANIELA TARAZONA</p>
+                     <p class="char_nombre">DANIELA TARGARONA</p>
                      <p class="char_cargo">Directora de RRHH</p>
                      <p class="habilidade">
-                        Daniela Tamayo es una persona metódica y pensativa. Sin embargo, cuando se trata de gestionar el talento humano, la domina una energía de mil dragones lanzando fuego por los aires.  
+                        Daniela es una persona metódica y pensativa que se apoya en Acsendo para mejorar el engagement de los colaboradores.
                      </p>
                      <div class="boton_seleccionar">Seleccionar</div>
                   </span>
@@ -4113,7 +4165,7 @@
                      <p class="char_nombre">JUAN NIEVE</p>
                      <p class="char_cargo">Director de RRHH</p>
                      <p class="habilidade">
-                        No te dejes engañar por su apellido, Juan es reconocido por ser una persona cálida y aguerrida. Siempre está dispuesto a ayudar a los demás con tal de que se sientan bien y alcancen sus metas. 
+                        No te dejes engañar por su apellido, Juan es reconocido por ser una persona cálida y aguerrida. Le gusta usar Acsendo para gestionar el desempeño de su equipo. 
                      </p>
                      <div class="boton_seleccionar">Seleccionar</div>
                   </span>
@@ -4139,7 +4191,7 @@
          <div id="challenge" class="popup_module">
             <div class="modal-challenge">
                <h1>Reta a un colega</h1>
-               <p>Reta ahora a uno de tus colegas y compite por ver quién obtiene un mejor puntaje.</p>
+               <p>Ingresa el correo de la persona que deseas retar y compite por ver quién obtiene mejor puntaje</p>
                <form id="form-challenge">
                   <div class="field">
                      <label for="email">Ingresa su email</label>
@@ -4148,7 +4200,7 @@
                </form>
 
                <div class="btn-retar button large" id="submitRetar">
-                  <p>RETAR</p>
+                  <p>DESAFIAR</p>
                </div>
                <div id="retar-callback">
                   
