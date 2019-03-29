@@ -1594,7 +1594,7 @@
             background-color: #05c9a3 !important;
             box-shadow: 0 5px 0 #037c59 !important;
             border-radius: 10px !important;
-            height: 6vh !important;
+            height: 50px !important;
             font-family: "Nunito", sans-serif !important;
          }
 
