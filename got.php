@@ -4075,12 +4075,12 @@
             </div>
             <div class="intro_slide intro1">
                <img src="imgs/dany_intro_1.png"/>
-               <p class="intro_custom_text juan">Juan Nieve fue nombrado director de RRHH de Westeros Inc y ahora se enfrenta a un gran reto. </p>
+               <p class="intro_custom_text juan">Juan Nieve fue nombrado director de RRHH en Westeros Inc y deberá afrontar el mal clima laboral que ha traído consigo la llegada del invierno.</p>
                <p class="intro_custom_text daniela">Daniela ingresó a Westeros Inc para dirigir el área de RRHH y se encontró con que el invierno ha deteriorado el buen clima laboral de todas las áreas.</p>
             </div>
             <div class="intro_slide intro2">
                <img src="imgs/dany_intro_2.png"/>
-               <p class="intro_custom_text juan">Deberá mejorar el mal clima laboral que ha traído consigo el invierno y necesita que le ayudes a usar Acsendo para lograrlo.</p>
+               <p class="intro_custom_text juan">Hay vientos gélidos, baja motivación y las metas no están siendo alcanzadas. Por ello, Juan necesita de tu ayuda y la de las herramientas de Acsendo para mejorarlo.</p>
                <p class="intro_custom_text daniela">Ahora Daniela necesita tu ayuda y la de las herramientas de Acsendo para mejorarlo. ¿Estás preparado?</p>
             </div>
             <div class="intro_slide intro3">
