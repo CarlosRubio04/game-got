@@ -47,7 +47,6 @@
             overflow: hidden;
             font-family: 'Nunito', sans-serif;
             font-weight: 400;
-            cursor: url('shoot.png'), auto !important;
          }
 
          #game_wrapper {
@@ -1987,7 +1986,7 @@
             height: 40px;
             padding: 5px;
             border-radius: 8px;
-            background-color: #feffdb;
+            background-color: #fffdaf;
             margin-right: 4px;
          }
          .StartTip .tip {
@@ -1995,8 +1994,8 @@
             height: 40px;
             padding: 5px 8px;
             border-radius: 8px;
-            background-color: #feffdb;
-            color: #ff8b00;
+            background-color: #fffdaf;
+            color: #428DFF;
             margin-left: 4px;
             font-size: 14px;
             display: flex;
@@ -2169,21 +2168,27 @@
          .modal-challenge {
             position: relative;
             width: 100%;
+            height: 100%;
             max-width: 300px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
          }
          .modal-challenge h1 {
             margin-bottom: 0;
          }
-
+         .modal-challenge p {
+            font-size: 13px;
+         }
          .modal-challenge .field{
             margin-bottom: 16px;
          }
-
+         .modal-challenge > .button > p {
+            font-weight: 600;
+            font-size: 16px;
+         }
          .form-control {
             display: inline-block !important;
             background-color: #FFFFFF !important;
@@ -2247,6 +2252,7 @@
          .customMsg {
             position: absolute;
             display: flex;
+            flex-direction: row-reverse;
             bottom: 40px;
             right: 40px;
             z-index: 999;
@@ -2257,7 +2263,7 @@
             padding: 5px;
             border-radius: 8px;
             background-color: #feffdb;
-            margin-right: 4px;
+            margin-left: 4px;
          }
          .customMsg .tip {
             width: auto;
@@ -2266,7 +2272,7 @@
             border-radius: 8px;
             background-color: #feffdb;
             color: #ff8b00;
-            margin-left: 4px;
+            margin-right: 4px;
             font-size: 14px;
             display: flex;
             align-items: center;
@@ -2481,7 +2487,7 @@
 
             setTimeout(() => {
                StartTip();
-               $("#StartTip").delay(800).fadeOut(400);
+               $("#StartTip").delay(1800).fadeOut(800);
             }, 300);
 
             function StartTip() {
@@ -3452,22 +3458,7 @@
       </div>
       <div id="game_wrapper">
          <div class="cursor"></div>
-         <div class="customMsg" id="customMsg">
-            <div class="icon">
-               <img src="idea.svg" alt="Tip">
-            </div>
-            <div class="tip">
-               
-            </div>
-         </div>
-         <div class="StartTip" id="StartTip">
-            <div class="icon">
-               <img src="idea.svg" alt="Tip">
-            </div>
-            <div class="tip">
-               <span>Tip:</span> ¡Concéntrate en los líderes! Convertirlos primero te ayudará con los demás. 
-            </div>
-         </div>
+         
          <span id="wall"></span>
          <span id="rodape"></span>
          <span id="floor1"></span>
@@ -4268,6 +4259,24 @@
             SCORE: <span>0</span>
          </div>
       </div>
+
+      <div class="customMsg" id="customMsg">
+            <div class="icon">
+               <img src="idea.svg" alt="Tip">
+            </div>
+            <div class="tip">
+               
+            </div>
+         </div>
+         
+         <div class="StartTip" id="StartTip">
+            <div class="icon">
+               <img src="idea.svg" alt="Tip">
+            </div>
+            <div class="tip">
+               <span>Tip:</span> ¡Concéntrate en los líderes! Convertirlos primero te ayudará con los demás. 
+            </div>
+         </div>
       <div id="mobile">
          <img src="imgs/mobile.png"/>
          <h1>Ingrese desde un ordenador para jugar</h1>
