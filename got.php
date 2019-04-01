@@ -2601,11 +2601,11 @@
              if (score < 50000) {
                  cheering = "imgs/" + chosenChar + "_end_mal.png";
                  cheering_h1 = "¡Inténtalo nuevamente!";
-                 cheering_p = "Aún hay colaboradores que afectan el ambiente laboral. Juega de nuevo y conviértelos a todos.";
+                 cheering_p = "El invierno arrasó con el clima laboral de Westeros Inc y tuvo que cerrar sus puertas. ¡Vuelve a jugar!";
              } else if (score < 70000) {
                  cheering = "imgs/" + chosenChar + "_end_bueno.png";
                  cheering_h1 = "¡Sigue así!";
-                 cheering_p = "Aún falta mucho por hacer para mejorar el clima de Westeros Inc. Inténtalo nuevamente.";
+                 cheering_p = "Aún hay colaboradores que afectan el ambiente laboral. Juega de nuevo y conviértelos a todos.";
              } else {
                  cheering = "imgs/" + chosenChar + "_end_perfecto.png";
                  cheering_h1 = "¡Victoria!";
@@ -4050,7 +4050,7 @@
             </div>
             <div class="fixed_text">
                <h1>
-                  Haz clic sobre los colaboradores contagiados hasta que vuelvan a la normalidad. 
+                  Haz clic sobre los colaboradores contagiados hasta que vuelvan a sentirse comprometidos con su trabajo.
                </h1>
                <div class="pause button large hidden start_game">
                   <img src="btn/play.svg"/>
