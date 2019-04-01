@@ -1972,10 +1972,32 @@
             font-size: 22px;
             font-weight: 100;
          }
-         .fixed_text .tip {
-            display: none;
-            font-size: 16px;
-            font-weight: 600;
+         .StartTip {
+            position: absolute;
+            display: flex;
+            bottom: 40px;
+            left: 40px;
+            z-index: 999;
+         }
+         .StartTip .icon {
+            width: 40px;
+            height: 40px;
+            padding: 5px;
+            border-radius: 8px;
+            background-color: #feffdb;
+            margin-right: 4px;
+         }
+         .StartTip .tip {
+            width: auto;
+            height: 40px;
+            padding: 5px 8px;
+            border-radius: 8px;
+            background-color: #feffdb;
+            color: #ff8b00;
+            margin-left: 4px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
          }
          .intro_arrow.right {
             position: absolute;
@@ -2082,21 +2104,6 @@
             pointer-events: none;
             z-index: 99999999;
          }
-
-
-         /* .cursor::after {
-                     content: "";
-                     width: 24px;
-                     height: 24px;
-                     position: absolute;
-                     border: 4px solid #fc8238;
-                     border-radius: 50%;
-                     opacity: .5;
-                     top: -6px;
-                     left: -6px;
-                     animation: cursorAnim2 .5s infinite alternate;
-                  } */
-
          @keyframes cursorAnim {
             from {
                transform: scale(1);
@@ -2236,23 +2243,30 @@
 
          .customMsg {
             position: absolute;
-            width: 200px;
-            height: auto;
-            z-index: 999999;
-            right: 20px;
+            display: flex;
             bottom: 40px;
-            background-color: #00c780;
-            border-radius: 16px;
-            padding: 8px 12px;
-            -webkit-box-shadow: 0px 5px 10px 4px rgba(191,191,191,0.5);
-            -moz-box-shadow: 0px 5px 10px 4px rgba(191,191,191,0.5);
-            box-shadow: 0px 5px 10px 4px rgba(191,191,191,0.5);
-            font-size: 22px;
-            font-weight: bolder;
-            color: #fff;
-            text-align: center;
-            animation: fadeMsg .2s;
-            transform: scale(0.8);
+            right: 40px;
+            z-index: 999;
+         }
+         .customMsg .icon {
+            width: 40px;
+            height: 40px;
+            padding: 5px;
+            border-radius: 8px;
+            background-color: #feffdb;
+            margin-right: 4px;
+         }
+         .customMsg .tip {
+            width: auto;
+            height: 40px;
+            padding: 5px 8px;
+            border-radius: 8px;
+            background-color: #feffdb;
+            color: #ff8b00;
+            margin-left: 4px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
          }
 
 
@@ -2461,7 +2475,17 @@
              $("#bodymovin").css("z-index","0");
          
              showSpecialCursor(true);
-           
+
+            setTimeout(() => {
+               StartTip();
+               $("#StartTip").delay(800).fadeOut(400);
+            }, 300);
+
+            function StartTip() {
+               $("#StartTip").delay(400).fadeIn(300);
+               TweenLite.to($("#StartTip"), 1.3, {"transform":"translateX(0%)", delay:1, ease: Elastic. easeOut.config( 1, 0.3)});
+            }
+            
              var charLength = $(".character").length;
              for (i = 1; i <= charLength; i++){
          
@@ -2588,8 +2612,8 @@
              $("#cheering_char h1.cheering").html(cheering_h1);
              $("#cheering_char p.cheering").html(cheering_p);
 
-            $("#disclaimer").delay(400).fadeIn(300);
-            TweenLite.to($("#disclaimer"), 1.3, {"transform":"translateX(0%)", delay:1, ease: Elastic. easeOut.config( 1, 0.3)});
+               $("#disclaimer").delay(400).fadeIn(300);
+               TweenLite.to($("#disclaimer"), 1.3, {"transform":"translateX(0%)", delay:1, ease: Elastic. easeOut.config( 1, 0.3)});
          }
          
          
@@ -2654,6 +2678,7 @@
             const cursor = document.querySelector('.cursor');
             cursor.style.display = 'none';
             score = 0;
+            $("#StartTip").hide();
             var introSlideCounter = 1;
 
 
@@ -3061,14 +3086,13 @@
                   // console.log(deadCount);
 
                  function showMessage (msg) {
-                     customMsg.show();
-                     customMsg.html(msg);
+                     $('#customMsg').delay(400).fadeIn(300);
+                     TweenLite.to($('#customMsg'), 1.3, {"transform":"translateX(0%)", delay:1, ease: Elastic. easeOut.config( 1, 0.3)});
+                     $('#customMsg > .tip').html(msg);
                  }
 
                  function HideMessade () {
-                     setTimeout(() => {
-                        customMsg.fadeOut();
-                     }, 1000);
+                     $('#customMsg').delay(800).fadeOut(600);
                  }
 
                  let Msg = '';
@@ -3424,12 +3448,22 @@
       </div>
       <div id="game_wrapper">
          <div class="cursor"></div>
-         <div class="customMsg" id="customMsg">Buen travajo !!</div>
-         <!-- <div class="StartTip">
-            <h2 class="tip">
+         <div class="customMsg" id="customMsg">
+            <div class="icon">
+               <img src="idea.svg" alt="Tip">
+            </div>
+            <div class="tip">
+               
+            </div>
+         </div>
+         <div class="StartTip" id="StartTip">
+            <div class="icon">
+               <img src="idea.svg" alt="Tip">
+            </div>
+            <div class="tip">
                <span>Tip:</span> ¡Concéntrate en los líderes! Convertirlos primero te ayudará con los demás. 
-            </h2>
-         </div> -->
+            </div>
+         </div>
          <span id="wall"></span>
          <span id="rodape"></span>
          <span id="floor1"></span>
