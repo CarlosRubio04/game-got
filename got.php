@@ -1399,6 +1399,9 @@
             margin-left: 10px;
             font-weight: 600;
             font-size: 15px;
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis;
          }
          #fame_screen > span > div:nth-child(1) > .score {
             margin-left: 10px;
@@ -2290,7 +2293,7 @@
             max-width: 80px;
          }
 
-         .btn-ebook {
+         .btn-ebook, .videoCta {
             position: relative;
             display: block;
             text-decoration: none;
@@ -2685,7 +2688,8 @@
             const customMsg = $('#customMsg');
             customMsg.hide();
             
-            
+            $("#got-6277fc9cfc259c4784db input[name='name']").attr('maxlength','6');
+
              $(".ranking").click(function(){
                      
                   $("#got-6277fc9cfc259c4784db h1").text('Descubre tu puntaje');
@@ -2704,7 +2708,7 @@
                          console.log("Nombre:   " + nombre);
                          console.log("Email:   " + email);
                          console.log("Country:   " + country);
-         
+
                          function validateEmail(email) {
                              var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                              return re.test(email);
@@ -2741,7 +2745,7 @@
          
                              $(".popup_module").fadeOut(300);
          
-                           //   $("#fame_screen, #disclaimer").delay(400).fadeIn(300);
+                              $("#fame_screen").delay(400).fadeIn(300);
                            //   TweenLite.to($("#disclaimer"), 1.3, {"transform":"translateX(0%)", delay:1, ease: Elastic. easeOut.config( 1, 0.3)});
                              var fameHTML = $(".hidden_highscore .entry");
                              //$("#fame_screen span").html(fameHTML);
@@ -4100,10 +4104,13 @@
             <a href="https://www.acsendo.com/landing/es/" class="btn-ebook" target="_blank">DESCARGAR AHORA</a>
          </div> -->
          <div id="disclaimer" class="popup_module">
-            <video width="260" controls>
+            <video width="100%" height="220px" style="background-color: #000;" controls>
                <source src="pruebaVid.mp4" type="video/mp4">
                Your browser does not support HTML5 video.
             </video>
+            <a href="#" class="videoCta">
+               VIDEO CTA
+            </a>
          </div>
          <div id="fame_screen" class="popup_module">
             <div class="restart button" style="position: absolute; top: 20px; left: 20px;">
