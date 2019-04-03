@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
       <title>Acsendo y el Invierno laboral</title>
       <meta property="og:url"                content="https://www.acsendo.com/GoT/index.html" />
       <meta property="og:type"               content="website" />
@@ -2364,6 +2364,7 @@
              name: null,
          }
 
+
          function checkMobile(x) {
             if (x.matches) { // If media query matches
                window.location.replace("mov.html");
@@ -2487,7 +2488,7 @@
 
             setTimeout(() => {
                StartTip();
-               $("#StartTip").delay(1800).fadeOut(800);
+               $("#StartTip").delay(1800).fadeOut(1200);
             }, 300);
 
             function StartTip() {
@@ -2604,22 +2605,35 @@
              }
              var cheering, cheering_h1, cheering_p;
          
-             if (score < 50000) {
+             if (score < 40000) {
                  cheering = "imgs/" + chosenChar + "_end_mal.png";
                  cheering_h1 = "¡Inténtalo nuevamente!";
                  cheering_p = "El invierno arrasó con el clima laboral de Westeros Inc y tuvo que cerrar sus puertas. ¡Vuelve a jugar!";
-             } else if (score < 70000) {
+                  video = ` <video width="100%" height="220px" style="background-color: #000;" controls>
+                  <source src="pruebaVid1.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video.
+               </video>`
+              } else if (score < 90000) {
                  cheering = "imgs/" + chosenChar + "_end_bueno.png";
                  cheering_h1 = "¡Sigue así!";
                  cheering_p = "Aún hay colaboradores que afectan el ambiente laboral. Juega de nuevo y conviértelos a todos.";
+                 video = ` <video width="100%" height="220px" style="background-color: #000;" controls>
+                  <source src="pruebaVid2.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video.
+               </video>`
              } else {
                  cheering = "imgs/" + chosenChar + "_end_perfecto.png";
                  cheering_h1 = "¡Victoria!";
                  cheering_p = "Superaste el invierno con éxito. ¡Tu nombre será recordado para siempre en Westeros Inc!";
+                 video = ` <video width="100%" height="220px" style="background-color: #000;" controls>
+                  <source src="pruebaVid3.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video.
+               </video>`
              }
              $("#cheering_char>img").attr("src", cheering);
              $("#cheering_char h1.cheering").html(cheering_h1);
              $("#cheering_char p.cheering").html(cheering_p);
+             $("#video").html(video);
 
                $("#disclaimer").delay(400).fadeIn(300);
                TweenLite.to($("#disclaimer"), 1.3, {"transform":"translateX(0%)", delay:1, ease: Elastic. easeOut.config( 1, 0.3)});
@@ -4095,10 +4109,7 @@
             <a href="https://www.acsendo.com/landing/es/" class="btn-ebook" target="_blank">DESCARGAR AHORA</a>
          </div> -->
          <div id="disclaimer" class="popup_module">
-            <video width="100%" height="220px" style="background-color: #000;" controls>
-               <source src="pruebaVid.mp4" type="video/mp4">
-               Your browser does not support HTML5 video.
-            </video>
+            <div id="video"></div>
             <a href="#" class="videoCta">
                VIDEO CTA
             </a>
@@ -4264,9 +4275,7 @@
             <div class="icon">
                <img src="idea.svg" alt="Tip">
             </div>
-            <div class="tip">
-               
-            </div>
+            <div class="tip"></div>
          </div>
          
          <div class="StartTip" id="StartTip">
