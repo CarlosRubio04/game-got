@@ -7,7 +7,7 @@
       <meta property="og:url"                content="https://www.acsendo.com/GoT/index.html" />
       <meta property="og:type"               content="website" />
       <meta property="og:title"              content="¡Westeros Inc necesita tu ayuda!" />
-      <meta property="og:description"        content="Con la llegada del invierno el fin de Westeros Inc parece acercarse, ¡evítalo con Acsendo!" />
+      <meta property="og:description"        content="Ingresa ahora y mejora el mal clima laboral que ha causado el invierno." />
       <meta property="og:image"              content="https://www.acsendo.com/GoT/GoT/ImagenRedesGoT1.png" />
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
@@ -2319,6 +2319,13 @@
             width: 100%;
          }
 
+
+         #videoText {
+            font-size: 14px;
+            text-align: center;
+            margin: 10px 0;
+            padding: 0 36px;
+         }
       </style>
       <script src="bodymovin.js"></script>
       <script>
@@ -2580,7 +2587,7 @@
 
              var bonusMillis = (millisEnd.getTime()) - (millisStart.getTime());
              score = Math.floor((((bonusMillis - millisDiscount) * .001) * deadCount) + (deadCount*1000));
-             $(".button.large.twitter").parent().attr("href", "https://twitter.com/intent/tweet?text=¡Obtuve%20" + score + "%20puntos%20en%20el%20juego%20de%20de%20#GameofThrones%20de%20Acsendo!%20¡Pruébalo!%20http://www.acsendo.com/GoT/");
+             $(".button.large.twitter").parent().attr("href", "https://twitter.com/intent/tweet?text=¡Obtuve%20" + score + "%20puntos%20mejorando%20el%20#climalaboral%20en%20el%20juego%20de%20Acsendo.%20de%20¡Ingresa%20ahora%20y%20supera%20mi%20resultado!%20#GameOfThrones%20http://www.acsendo.com/GoT/");
          
              $(".popup_module").css("display","none");
              $("#popup, #share_screen").css("display","block");
@@ -2609,31 +2616,45 @@
                  cheering = "imgs/" + chosenChar + "_end_mal.png";
                  cheering_h1 = "¡Inténtalo nuevamente!";
                  cheering_p = "El invierno arrasó con el clima laboral de Westeros Inc y tuvo que cerrar sus puertas. ¡Vuelve a jugar!";
-                  video = ` <video width="100%" height="220px" style="background-color: #000;" controls>
-                  <source src="pruebaVid1.mp4" type="video/mp4">
+                  video = ` <video width="100%" height="auto" style="background-color: #000;" controls>
+                  <source src="vids/Eduardo.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
-               </video>`
+               </video>`;
+               videoText = "Obtén ahora la guía para mejorar el clima laboral";
+               videoCta = `<a href="https://pages.acsendo.com/ebook-clima-laboral" target="_blank" class="videoCta">
+                  DESCARGAR
+               </a>`;
               } else if (score < 90000) {
                  cheering = "imgs/" + chosenChar + "_end_bueno.png";
                  cheering_h1 = "¡Sigue así!";
                  cheering_p = "Aún hay colaboradores que afectan el ambiente laboral. Juega de nuevo y conviértelos a todos.";
-                 video = ` <video width="100%" height="220px" style="background-color: #000;" controls>
-                  <source src="pruebaVid2.mp4" type="video/mp4">
+                 video = ` <video width="100%" height="auto" style="background-color: #000;" controls>
+                  <source src="vids/Ricardo.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
-               </video>`
+               </video>`;
+               videoText = "Descubre 30 ideas para mejorar el clima de tu empresa";
+               videoCta = `<a href="https://pages.acsendo.com/ebook-ideas-mejorar-clima-laboral" target="_blank" class="videoCta">
+                  DESCARGAR
+               </a>`;
              } else {
                  cheering = "imgs/" + chosenChar + "_end_perfecto.png";
                  cheering_h1 = "¡Victoria!";
                  cheering_p = "Superaste el invierno con éxito. ¡Tu nombre será recordado para siempre en Westeros Inc!";
-                 video = ` <video width="100%" height="220px" style="background-color: #000;" controls>
-                  <source src="pruebaVid3.mp4" type="video/mp4">
+                 video = ` <video width="100%" height="auto" style="background-color: #000;" controls>
+                  <source src="Mabel.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
-               </video>`
+               </video>`;
+               videoText = "Ingresa ahora y encuentra contenido gratuito de RRHH";
+               videoCta = `<a href="https://blog.acsendo.com/recursos/" target="_blank" class="videoCta">
+                  VER AHORA
+               </a>`;
              }
              $("#cheering_char>img").attr("src", cheering);
              $("#cheering_char h1.cheering").html(cheering_h1);
              $("#cheering_char p.cheering").html(cheering_p);
              $("#video").html(video);
+             $("#videoText").html(videoText);
+             $("#videoCta").html(videoCta);
 
                $("#disclaimer").delay(400).fadeIn(300);
                TweenLite.to($("#disclaimer"), 1.3, {"transform":"translateX(0%)", delay:1, ease: Elastic. easeOut.config( 1, 0.3)});
@@ -4110,9 +4131,12 @@
          </div> -->
          <div id="disclaimer" class="popup_module">
             <div id="video"></div>
-            <a href="#" class="videoCta">
-               VIDEO CTA
-            </a>
+            <div id="videoText"></div>
+            <div id="videoCta">
+               <a href="#" class="videoCta">
+                  VIDEO CTA
+               </a>
+            </div>
          </div>
          <div id="fame_screen" class="popup_module">
             <div class="restart button" style="position: absolute; top: 20px; left: 20px;">

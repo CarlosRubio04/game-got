@@ -90,7 +90,7 @@ $msg="
     </body>
 </html>
 "; // HTML message
-$subject="$nameSend Te ha retado";
+$subject="Te han retado a obtener un mejor puntaje, ¿serás capaz?";
 /*End Config*/
 
 include("phpmailer/class.phpmailer.php");
