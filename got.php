@@ -4,6 +4,7 @@
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
       <title>Acsendo y el Invierno laboral</title>
+      <!-- <meta property="description" content="El invierno ha llegado a Westeros Inc y ha causado un mal clima laboral que ha afectado a todos los colaboradores. ¡Ingresa ahora para mejorarlo!"/> -->
       <meta property="og:url"                content="https://www.acsendo.com/GoT/index.html" />
       <meta property="og:type"               content="website" />
       <meta property="og:title"              content="¡Westeros Inc necesita tu ayuda!" />
@@ -2524,6 +2525,8 @@
                  //alert("END");
          
                  checkHighscore(chosenChar);
+                 theme.pause();
+                  //theme.volume = 0.3;
                  //results();
          
              }});
@@ -2587,7 +2590,7 @@
 
              var bonusMillis = (millisEnd.getTime()) - (millisStart.getTime());
              score = Math.floor((((bonusMillis - millisDiscount) * .001) * deadCount) + (deadCount*1000));
-             $(".button.large.twitter").parent().attr("href", "https://twitter.com/intent/tweet?text=¡Obtuve%20" + score + "%20puntos%20mejorando%20el%20#climalaboral%20en%20el%20juego%20de%20Acsendo.%20de%20¡Ingresa%20ahora%20y%20supera%20mi%20resultado!%20#GameOfThrones%20http://www.acsendo.com/GoT/");
+             $(".button.large.twitter").parent().attr("href", "https://twitter.com/intent/tweet?text=¡Obtuve%20" + score + "%20puntos%20mejorando%20el%20Clima%20laboral%20en%20el%20juego%20de%20@Acsendo%20¡Ingresa%20ahora%20y%20supera%20mi%20resultado!&url=http://www.acsendo.com/GoT&hashtags=ClimaLaboral,GameOfThrones");
          
              $(".popup_module").css("display","none");
              $("#popup, #share_screen").css("display","block");
@@ -2777,7 +2780,7 @@
                                  success: function(msg) {
                                      $("#fame_screen>span").html(msg);
                                      var player1_rank = $("#player_one_rank").html();
-                                     $(".button.large.twitter").parent().attr("href", "https://twitter.com/intent/tweet?text=¡Estoy%20en%20el%20puesto%20" + player1_rank + "%20del%20juego%20de%20Acsendo!%20¿Podrás%20superar%20mi%20puntaje?%20http://www.acsendo.com/GoT/");
+                                     $(".button.large.twitter").parent().attr("href", "https://twitter.com/intent/tweet?text=¡Estoy%20en%20el%20puesto%20" + player1_rank + "%20del%20juego%20de%20@Acsendo%20¡Ingresa%20ahora%20y%20supera%20mi%20resultado!&url=http://www.acsendo.com/GoT&hashtags=ClimaLaboral,GameOfThrones");
                                  },
                                  error: function (){
                                      alert("error calling table");
