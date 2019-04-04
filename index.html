@@ -1,3 +1,11 @@
+<!-- 
+
+            "Este juego no sería posible sin los esfuerzos de Carlos Rubio @charlsdesigner, Catalina Segovia, Juliana Sánchez y Francisco Morales. Muchas gracias por sus esfuerzos, con ustedes el invierno laboral nunca llegará :)
+
+            Um abraço especial para o elbot111 e a Marisa pela ideia e pelo trabalho incansável em prol da inovação nesta organização! Com vocês está sempre altos..mesmo muito calor e tudo!"
+
+         -->
+
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -5,16 +13,16 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       <title>Acsendo y el Invierno laboral</title>
       <!-- <meta property="description" content="El invierno ha llegado a Westeros Inc y ha causado un mal clima laboral que ha afectado a todos los colaboradores. ¡Ingresa ahora para mejorarlo!"/> -->
-      <meta property="og:url"                content="https://www.acsendo.com/GoT/GoT/index.html" />
+      <meta property="og:url"                content="https://www.acsendo.com/got/got/index.html" />
       <meta property="og:type"               content="website" />
       <meta property="og:title"              content="¡Westeros Inc necesita tu ayuda!" />
       <meta property="og:description"        content="Ingresa ahora y mejora el mal clima laboral que ha causado el invierno." />
-      <meta property="og:image"              content="https://www.acsendo.com/GoT/ImagenRedesGoT1.png" />
+      <meta property="og:image"              content="https://www.acsendo.com/got/ImagenRedesGoT1.png" />
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Nunito:200,400,700|Poppins:400,500,600,700|Quattrocento" rel="stylesheet">
-
+      <link rel="stylesheet" href="Font-Awesome-master/css/font-awesome.min.css">
         <link rel="icon" href="https://www.acsendo.com/wp-content/blogs.dir/39/files/2017/07/cropped-favicon-01-01-32x32.png" sizes="32x32" />
         <link rel="icon" href="https://www.acsendo.com/wp-content/blogs.dir/39/files/2017/07/cropped-favicon-01-01-192x192.png" sizes="192x192" />
         <link rel="apple-touch-icon-precomposed" href="https://www.acsendo.com/wp-content/blogs.dir/39/files/2017/07/cropped-favicon-01-01-180x180.png" />
@@ -155,6 +163,27 @@
                 font-size: 20px;
             }
         }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 4px 0 4px 0;
+            background-color: #33384f;
+        }
+        .footer p {
+            font-size: 9px;
+            padding: 0;
+            margin: 0;
+        }
+        .footer p i {
+            color: #05c9a3;
+        }
+        .footer p a {
+            color: #fff;
+            text-decoration: none;
+        }
   </style>
     <!-- Google Tag Manager -->
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -163,6 +192,18 @@
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-TDDNRW');</script>
     <!-- End Google Tag Manager -->
+
+    <!-- Google Analytics -->
+<script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-5384729-1', 'auto');
+        ga('send', 'pageview');
+        </script>
+        <!-- End Google Analytics -->
   </head>
     <body>
 
@@ -181,10 +222,14 @@
             Enfréntate a los colaboradores que han puesto en riesgo el buen ambiente laboral de las oficinas de Westeros Inc.
         </p>
       <h3>¿Estás preparado?</h3>
-      <a href="got.php">
+      <a href="got.php" onclick="ga('send', 'event', 'GetInGame', 'click', 'Click en el botón para ingresar al juego');">
           <div class="start button large">
               <p>¡Jugar ahora!</p>
           </div>
       </a>
+
+      <div class="footer">
+          <p>Hecho con <i class="fa fa-heart"></i> en <a href="https://www.acsendo.com/" target="_blank">Acsendo</a></p>
+      </div>
     </body>
 </html>

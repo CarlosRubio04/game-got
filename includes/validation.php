@@ -12,8 +12,9 @@ $score = $_POST['score'];
 $account="senderemailer@gmail.com";
 $password="charlie0516*";
 
-$from= "no-repley@acsendo.com";
-$from_name= $nameSend;
+$from= "tools@acsendo.com";
+$from_name= "Tools de Talento Humano";
+$subject= "Has sido retado en el juego de Clima Laboral.";
 $msg="
 <html>
     <head>
@@ -64,7 +65,7 @@ $msg="
                                 </tr>
                                 <tr>
                                     <td align='center' style='padding:20px 0 40px'>
-                                        <a href='https://www.acsendo.com/GoT/' style='border-radius:3px;color:#FFFFFF;background-color:#df5e35;display:inline-block;font-size:18px;font-weight:600;margin:auto;padding:10px 15px;text-decoration:none' target='_blank'>
+                                        <a href='https://www.acsendo.com/got/' style='border-radius:3px;color:#FFFFFF;background-color:#df5e35;display:inline-block;font-size:18px;font-weight:600;margin:auto;padding:10px 15px;text-decoration:none' target='_blank'>
                                             ¡Jugar ahora!
                                         </a>
                                     </td>
@@ -90,7 +91,7 @@ $msg="
     </body>
 </html>
 "; // HTML message
-$subject="Te han retado a obtener un mejor puntaje, ¿serás capaz?";
+
 /*End Config*/
 
 include("phpmailer/class.phpmailer.php");

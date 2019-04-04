@@ -1,3 +1,10 @@
+<!-- 
+
+            "Este juego no sería posible sin los esfuerzos de Carlos Rubio @charlsdesigner, Catalina Segovia, Juliana Sánchez y Francisco Morales. Muchas gracias por sus esfuerzos, con ustedes el invierno laboral nunca llegará :)
+
+            Um abraço especial para o elbot111 e a Marisa pela ideia e pelo trabalho incansável em prol da inovação nesta organização! Com vocês está sempre altos..mesmo muito calor e tudo!"
+
+         -->
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
@@ -5,11 +12,11 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
       <title>Acsendo y el Invierno laboral</title>
       <!-- <meta property="description" content="El invierno ha llegado a Westeros Inc y ha causado un mal clima laboral que ha afectado a todos los colaboradores. ¡Ingresa ahora para mejorarlo!"/> -->
-      <meta property="og:url"                content="https://www.acsendo.com/GoT/index.html" />
+      <meta property="og:url"                content="https://www.acsendo.com/got/index.html" />
       <meta property="og:type"               content="website" />
       <meta property="og:title"              content="¡Westeros Inc necesita tu ayuda!" />
       <meta property="og:description"        content="Ingresa ahora y mejora el mal clima laboral que ha causado el invierno." />
-      <meta property="og:image"              content="https://www.acsendo.com/GoT/GoT/ImagenRedesGoT1.png" />
+      <meta property="og:image"              content="https://www.acsendo.com/got/got/ImagenRedesGoT1.png" />
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
       <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.0/jquery.validate.min.js"></script>
@@ -1474,7 +1481,7 @@
 
          #share_form {
             width: calc(60vh - 100px);
-            height: calc(70vh - 100px);
+            height: calc(70vh - 65px);
             padding: 50px;
             text-align: left;
          }
@@ -1620,6 +1627,9 @@
             border-top-right-radius: 20px;
             width: 100%;
             height: 50%;
+         }
+         .top {
+            top: 10%;
          }
 
          #cheering_char img {
@@ -2590,7 +2600,7 @@
 
              var bonusMillis = (millisEnd.getTime()) - (millisStart.getTime());
              score = Math.floor((((bonusMillis - millisDiscount) * .001) * deadCount) + (deadCount*1000));
-             $(".button.large.twitter").parent().attr("href", "https://twitter.com/intent/tweet?text=¡Obtuve%20" + score + "%20puntos%20mejorando%20el%20Clima%20laboral%20en%20el%20juego%20de%20@Acsendo%20¡Ingresa%20ahora%20y%20supera%20mi%20resultado!&url=http://www.acsendo.com/GoT&hashtags=ClimaLaboral,GameOfThrones");
+             $(".button.large.twitter").parent().attr("href", "https://twitter.com/intent/tweet?text=¡Obtuve%20" + score + "%20puntos%20mejorando%20el%20Clima%20laboral%20en%20el%20juego%20de%20@Acsendo%20¡Ingresa%20ahora%20y%20supera%20mi%20resultado!&url=http://www.acsendo.com/got&hashtags=ClimaLaboral,GameOfThrones");
          
              $(".popup_module").css("display","none");
              $("#popup, #share_screen").css("display","block");
@@ -2624,7 +2634,7 @@
                   Your browser does not support HTML5 video.
                </video>`;
                videoText = "Obtén ahora la guía para mejorar el clima laboral";
-               videoCta = `<a href="https://pages.acsendo.com/ebook-clima-laboral" target="_blank" class="videoCta">
+               videoCta = `<a href="https://pages.acsendo.com/ebook-clima-laboral" target="_blank" class="videoCta" onclick="SendEvent('DownLoadEbookClima', 'Click', 'Descargo ebook Clima laboral')">
                   DESCARGAR
                </a>`;
               } else if (score < 90000) {
@@ -2636,7 +2646,7 @@
                   Your browser does not support HTML5 video.
                </video>`;
                videoText = "Descubre 30 ideas para mejorar el clima de tu empresa";
-               videoCta = `<a href="https://pages.acsendo.com/ebook-ideas-mejorar-clima-laboral" target="_blank" class="videoCta">
+               videoCta = `<a href="https://pages.acsendo.com/ebook-ideas-mejorar-clima-laboral" target="_blank" class="videoCta" onclick="SendEvent('DownLoad30ideas', 'Click', 'Descargo ebook 30 Ideas')">
                   DESCARGAR
                </a>`;
              } else {
@@ -2644,11 +2654,11 @@
                  cheering_h1 = "¡Victoria!";
                  cheering_p = "Superaste el invierno con éxito. ¡Tu nombre será recordado para siempre en Westeros Inc!";
                  video = ` <video width="100%" height="auto" style="background-color: #000;" controls>
-                  <source src="Mabel.mp4" type="video/mp4">
+                  <source src="vids/Mabel.mp4" type="video/mp4">
                   Your browser does not support HTML5 video.
                </video>`;
                videoText = "Ingresa ahora y encuentra contenido gratuito de RRHH";
-               videoCta = `<a href="https://blog.acsendo.com/recursos/" target="_blank" class="videoCta">
+               videoCta = `<a href="https://blog.acsendo.com/recursos/" target="_blank" class="videoCta" onclick="SendEvent('NavigateResources', 'Click', 'Navegó a recursos')">
                   VER AHORA
                </a>`;
              }
@@ -2735,7 +2745,7 @@
             $("#got-6277fc9cfc259c4784db input[name='name']").attr('maxlength','6');
 
              $(".ranking").click(function(){
-                     
+                  SendEvent('ViewRanking', 'Click', 'Click en el botón ver mi ranking')
                   $("#got-6277fc9cfc259c4784db h1").text('Descubre tu puntaje');
                   $("#got-6277fc9cfc259c4784db h2").text('Ingresa tus datos para saber si tu puntaje está entre los mejores resultados.');
 
@@ -2780,7 +2790,8 @@
                                  success: function(msg) {
                                      $("#fame_screen>span").html(msg);
                                      var player1_rank = $("#player_one_rank").html();
-                                     $(".button.large.twitter").parent().attr("href", "https://twitter.com/intent/tweet?text=¡Estoy%20en%20el%20puesto%20" + player1_rank + "%20del%20juego%20de%20@Acsendo%20¡Ingresa%20ahora%20y%20supera%20mi%20resultado!&url=http://www.acsendo.com/GoT&hashtags=ClimaLaboral,GameOfThrones");
+                                     $(".button.large.twitter").parent().attr("href", "https://twitter.com/intent/tweet?text=¡Estoy%20en%20el%20puesto%20" + player1_rank + "%20del%20juego%20de%20@Acsendo%20¡Ingresa%20ahora%20y%20supera%20mi%20resultado!&url=http://www.acsendo.com/got&hashtags=ClimaLaboral,GameOfThrones");
+                                     SendEvent('SubmitFormRanking', 'Click', 'Envio datos para ranking');
                                  },
                                  error: function (){
                                      alert("error calling table");
@@ -2846,6 +2857,7 @@
             });
 
             $('.btn-retar').click(function () {
+               SendEvent('ChallengeButton', 'Click', 'Click Al boton de retar');
                const set = checkSetUp();
                if (set.email) {
                   $(".popup_module").fadeOut(300);
@@ -2896,6 +2908,7 @@
                      success: function(msg) {
                         console.log(msg);
                         $('#retar-callback').html('<p>' + msg + '</p>');
+                        SendEvent('SubmitFormChallenge', 'Click', 'Retó a una persona');
                      },
                      error: function (err){
                         console.log(err)
@@ -3065,12 +3078,14 @@
                        set.character = chosenChar;
                        UpdateSetUp(set);
                        $(".intro_custom_text.juan").css("display", "block");
+                       SendEvent('ChooseJuan', 'Click', 'Escogio a Juan')
                      //startGame(chosenChar);
                    } else if ($(this).is("#dany")) {
                        chosenChar = "dany";
                        set.character = chosenChar;
                        UpdateSetUp(set);
                        $(".intro_custom_text.daniela").css("display", "block");
+                       SendEvent('ChooseDany', 'Click', 'Escogio a Daniela')
                        //startGame(chosenChar);
                    }
          
@@ -3092,6 +3107,7 @@
                          pauseIt();
                      }
                      restartGame(chosenChar);
+                     SendEvent('ReStartGame', 'Click', 'Volvio a Jugar');
                  }
              });
          
@@ -3487,8 +3503,30 @@
          
          
       </script>
+
+
+ <!-- Google Analytics -->
+ <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-5384729-1', 'auto');
+        ga('send', 'pageview');
+        </script>
+        <!-- End Google Analytics -->
+
+
+        <script>
+           function SendEvent(category, action, label) {
+               ga('send', 'event', category, action, label);
+           }
+        </script>
    </head>
    <body>
+
+         
       <div class="hidden_highscore">
          <?php
             include 'highscore/halloffame.txt';
@@ -4149,14 +4187,14 @@
             <span>
                <!-- ACA VA EL RANKING -->
             </span>
-            <a href="https://twitter.com/intent/tweet?text=Hello%20world"  onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
+            <a href="https://twitter.com/intent/tweet?text=Hello%20world"  onclick="SendEvent('ShareOnTwitter', 'Click', 'Compartir en Twitter'); window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
                <div class="button large twitter">
                   <p>
                      <i class="fa fa-twitter" aria-hidden="true"></i>
                   </p>
                </div>
             </a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.acsendo.com%2FGoT%2Fgot.php&amp;src=sdkpreparse" onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.acsendo.com%2Fgot%2Fgot.php&amp;src=sdkpreparse" onclick="SendEvent('ShareOnFaceBook', 'Click', 'Compartir en Facebook'); window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
                <div class="button large facebook">
                   <p>
                      <i class="fa fa-facebook" aria-hidden="true"></i>
@@ -4178,7 +4216,7 @@
             </div>
          </div>
          <div id="share_screen" class="popup_module">
-            <div id="cheering_char">
+            <div id="cheering_char" class="top">
                <h1 class="cheering"></h1>
                <div class="restart button">
                   <img src="btn/restart.svg">
@@ -4189,8 +4227,8 @@
                <img src=""/>
                <p class="cheering"></p>
             </div>
-            <div style="height:40%;position:absolute;top:60%;">
-               <a href="https://twitter.com/intent/tweet?text=Hello%20world"  onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
+            <div style="height:25%;position:absolute;top:70%;width:100%;">
+               <!-- <a href="https://twitter.com/intent/tweet?text=Hello%20world"  onclick="window.open(this.href, 'mywin', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">
                   <div class="button large twitter">
                      <p>
                         <i class="fa fa-twitter" aria-hidden="true"></i>
@@ -4204,13 +4242,13 @@
                         <i class="fa fa-facebook" aria-hidden="true"></i>
                      </p>
                   </div>
-               </a>
+               </a> -->
                <div class="ranking button large">
-                  <p>RANKING</p>
+                  <p>VER MI RANKING</p>
                </div>
-               <div class="btn-retar button large" id="reta-btn">
+               <!-- <div class="btn-retar button large" id="reta-btn">
                   <p>RETA UN COLEGA</p>
-               </div>
+               </div> -->
             </div>
          </div>
          <div id="char_select" class="popup_module">
