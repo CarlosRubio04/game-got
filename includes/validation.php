@@ -12,8 +12,8 @@ $score = $_POST['score'];
 $account="senderemailer@gmail.com";
 $password="charlie0516*";
 
-$from= "tools@acsendo.com";
-$from_name= "Tools de Talento Humano";
+$from= "invierno@acsendo.com";
+$from_name= "Invierno Laboral";
 $subject= "Has sido retado en el juego de Clima Laboral.";
 $msg="
 <html>

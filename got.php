@@ -10,7 +10,7 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-      <title>Acsendo y el Invierno laboral</title>
+      <title>Invierno Laboral - Juega Ahora</title>
       <!-- <meta property="description" content="El invierno ha llegado a Westeros Inc y ha causado un mal clima laboral que ha afectado a todos los colaboradores. ¡Ingresa ahora para mejorarlo!"/> -->
       <meta property="og:url"                content="https://www.acsendo.com/got/index.html" />
       <meta property="og:type"               content="website" />
@@ -1389,30 +1389,38 @@
             font-size: 1.7vh;
          }
          #fame_screen > span > div:nth-child(1){
-            display: flex;
+            /* display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center; */
          }
          #fame_screen > span > div:nth-child(1):before {
-            display: inline-block;
+            /* display: inline-block;
             content: "";
             height: 36px;
             width: 30px;
             background-image: url(trhone.png);
             background-size: 25px;
-            background-repeat: no-repeat;
+            background-repeat: no-repeat; */
+         }
+         #fame_screen > span > div > .name {
+            white-space: nowrap; 
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 110px;
+            text-align: left;
          }
          #fame_screen > span > div:nth-child(1) > .name {
-            margin-left: 10px;
+            /* margin-left: 10px; */
             font-weight: 600;
             font-size: 15px;
             white-space: nowrap; 
             overflow: hidden;
             text-overflow: ellipsis;
+            width: 110px;
          }
          #fame_screen > span > div:nth-child(1) > .score {
-            margin-left: 10px;
-            margin-right: 0px;
+            /* margin-left: 10px;
+            margin-right: 0px; */
             font-weight: 600;
             font-size: 15px;
          }
