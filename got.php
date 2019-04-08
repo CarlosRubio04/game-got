@@ -1402,7 +1402,7 @@
             background-size: 25px;
             background-repeat: no-repeat; */
          }
-         #fame_screen > span > div > .name {
+         .entry .name {
             white-space: nowrap; 
             overflow: hidden;
             text-overflow: ellipsis;
@@ -2766,7 +2766,7 @@
                          let country = $("#got-6277fc9cfc259c4784db #custom_fields_128333").val();
          
                          console.log("alguma coisa?");
-         
+
                          console.log("Nombre:   " + nombre);
                          console.log("Email:   " + email);
                          console.log("Country:   " + country);
